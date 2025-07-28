@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech2Wear - Shop All Categories</title>
-    <meta name="description" content="Browse our complete collection of premium electronics, smart home devices, wearable tech, VR gear, and cutting-edge gadgets. Find the perfect tech products for your lifestyle.">
+    <meta name="description" content="Browse our complete collection of premium electronics, smart home devices, wearable tech, and cutting-edge gadgets. Find the perfect tech products for your lifestyle.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -17,7 +17,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Structured Data -->
+    <!-- Updated Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -27,24 +27,20 @@
       "description": "Browse our complete collection of premium electronics and smart devices",
       "mainEntity": {
         "@type": "ItemList",
-        "numberOfItems": "9",
+        "numberOfItems": "5",
         "itemListElement": [
           {"@type": "ListItem", "position": 1, "name": "AI-Powered Smart Home"},
           {"@type": "ListItem", "position": 2, "name": "Wearable Tech & Fitness"},
-          {"@type": "ListItem", "position": 3, "name": "Solar-Powered Gadgets"},
-          {"@type": "ListItem", "position": 4, "name": "VR & AR Gear"},
-          {"@type": "ListItem", "position": 5, "name": "Foldable Phones & Accessories"},
-          {"@type": "ListItem", "position": 6, "name": "Wireless Earbuds & Headphones"},
-          {"@type": "ListItem", "position": 7, "name": "Drones & Accessories"},
-          {"@type": "ListItem", "position": 8, "name": "Portable Projectors"},
-          {"@type": "ListItem", "position": 9, "name": "Electric Personal Care"}
+          {"@type": "ListItem", "position": 3, "name": "Wireless Earbuds & Headphones"},
+          {"@type": "ListItem", "position": 4, "name": "Drones & Accessories"},
+          {"@type": "ListItem", "position": 5, "name": "Portable Projectors"}
         ]
       }
     }
     </script>
 
     <style>
-        /* CSS Variables */
+        /* CSS Variables - Added header height for overlap fix */
 :root {
   --color-primary-dark: #0a0a0a;
   --color-secondary-dark: #1a1a1a;
@@ -66,6 +62,9 @@
   --transition: all 0.3s ease;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   --shadow-hover: 0 15px 40px rgba(0, 255, 255, 0.2);
+  
+  /* Header height variable for consistent spacing */
+  --header-height: 80px;
 }
 
 /* Reset and Base Styles */
@@ -151,18 +150,6 @@ a:hover {
   box-shadow: var(--shadow-hover);
 }
 
-.btn-secondary {
-  background: transparent;
-  color: var(--color-accent-blue);
-  border: 2px solid var(--color-accent-blue);
-}
-
-.btn-secondary:hover {
-  background: var(--color-accent-blue);
-  color: var(--color-primary-dark);
-  transform: translateY(-3px);
-}
-
 .btn-outline {
   background: transparent;
   color: var(--color-text-light);
@@ -184,6 +171,7 @@ a:hover {
   right: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--color-border);
+  height: var(--header-height);
 }
 
 .header-wrapper {
@@ -191,6 +179,7 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
+  height: 100%;
 }
 
 .site-logo a {
@@ -265,7 +254,7 @@ a:hover {
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   padding: 2rem;
-  min-width: 600px;
+  min-width: 500px;
   opacity: 0;
   visibility: hidden;
   transition: var(--transition);
@@ -279,9 +268,10 @@ a:hover {
   margin-top: 0.5rem;
 }
 
+/* Changed from 3 columns to 2 */
 .dropdown-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
@@ -502,10 +492,11 @@ a:hover {
   font-size: 1rem;
 }
 
-/* Page Header */
+/* Page Header - FIXED: Added margin-top to push content below fixed header */
 .page-header {
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-secondary-dark) 100%);
-  padding: 120px 0 60px;
+  padding: 60px 0 60px;
+  margin-top: var(--header-height); /* This fixes the overlap issue */
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -954,15 +945,31 @@ a:hover {
   align-items: center;
 }
 
-.payment-icon {
-  height: 30px;
-  width: auto;
+/* Updated Payment Icon Styles */
+.payment-methods .payment-icon {
   opacity: 0.7;
   transition: var(--transition);
 }
 
-.payment-icon:hover {
+.payment-methods .payment-icon:hover {
   opacity: 1;
+}
+
+/* Image-based payment icons */
+.payment-methods img.payment-icon {
+  height: 30px;
+  width: auto;
+}
+
+/* Font Awesome payment icons */
+.payment-methods i.payment-icon {
+  font-size: 2.5rem;
+  color: var(--color-text-muted);
+  line-height: 1;
+}
+
+.payment-methods i.payment-icon:hover {
+  color: var(--color-accent-blue);
 }
 
 /* Back to Top Button */
@@ -1028,8 +1035,16 @@ a:hover {
     display: flex;
   }
   
+  .dropdown-grid {
+    grid-template-columns: 1fr;
+  }
+  
   .page-title {
     font-size: 2.5rem;
+  }
+  
+  .page-header {
+    padding: 40px 0 40px;
   }
   
   .category-header {
@@ -1077,6 +1092,10 @@ a:hover {
     font-size: 2rem;
   }
   
+  .page-header {
+    padding: 30px 0 30px;
+  }
+  
   .category-details h3 {
     font-size: 1.3rem;
   }
@@ -1108,29 +1127,15 @@ a:hover {
                         <div class="dropdown-menu">
                             <div class="dropdown-grid">
                                 <div class="dropdown-column">
-                                    <a href="../index.html/shop.html" class="dropdown-item">
+                                    <a href="../index.html/shop.html/ai-smart-home" class="dropdown-item">
                                         <i class="fas fa-home"></i>
                                         <span>AI-Powered Smart Home</span>
                                     </a>
-                                    <a href="../index.html/shop.html" class="dropdown-item">
+                                    <a href="../index.html/shop.html/wearable-tech" class="dropdown-item">
                                         <i class="fas fa-watch"></i>
                                         <span>Wearable Tech & Fitness</span>
                                     </a>
-                                    <a href="../index.html/shop.html" class="dropdown-item">
-                                        <i class="fas fa-solar-panel"></i>
-                                        <span>Solar-Powered Gadgets</span>
-                                    </a>
-                                </div>
-                                <div class="dropdown-column">
-                                    <a href="../index.html/shop.html" class="dropdown-item">
-                                        <i class="fas fa-vr-cardboard"></i>
-                                        <span>VR & AR Gear</span>
-                                    </a>
-                                    <a href="../index.html/shop.html/foldable-phones" class="dropdown-item">
-                                        <i class="fas fa-mobile-alt"></i>
-                                        <span>Foldable Phones & Accessories</span>
-                                    </a>
-                                    <a href="../index.html/shop.html" class="dropdown-item">
+                                    <a href="../index.html/shop.html/wireless-audio" class="dropdown-item">
                                         <i class="fas fa-headphones"></i>
                                         <span>Wireless Earbuds & Headphones</span>
                                     </a>
@@ -1144,19 +1149,13 @@ a:hover {
                                         <i class="fas fa-video"></i>
                                         <span>Portable Projectors</span>
                                     </a>
-                                    <a href="../index.html/shop.html/personal-care" class="dropdown-item">
-                                        <i class="fas fa-cut"></i>
-                                        <span>Electric Personal Care</span>
-                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <a href="/deals" class="nav-link">Deals</a>
-                    <a href="/blog" class="nav-link">Blog</a>
                     <a href="/about" class="nav-link">About Us</a>
                     <a href="/contact" class="nav-link">Contact</a>
-                    <a href="/track-order" class="nav-link">Track Order</a>
                 </nav>
                 
                 <!-- Header Actions -->
@@ -1204,7 +1203,7 @@ a:hover {
             </button>
         </div>
         <nav class="mobile-menu-nav">
-            <a href="/" class="mobile-nav-link">Home</a>
+            <a href="../index.html/homepage.html" class="mobile-nav-link">Home</a>
             <div class="mobile-nav-dropdown">
                 <button class="mobile-nav-toggle">
                     Shop <i class="fas fa-chevron-down"></i>
@@ -1212,13 +1211,9 @@ a:hover {
                 <div class="mobile-dropdown-content">
                     <a href="/shop/ai-smart-home">AI-Powered Smart Home</a>
                     <a href="/shop/wearable-tech">Wearable Tech & Fitness</a>
-                    <a href="/shop/solar-gadgets">Solar-Powered Gadgets</a>
-                    <a href="/shop/vr-ar-gear">VR & AR Gear</a>
-                    <a href="/shop/foldable-phones">Foldable Phones & Accessories</a>
                     <a href="/shop/wireless-audio">Wireless Earbuds & Headphones</a>
                     <a href="/shop/drones">Drones & Accessories</a>
                     <a href="/shop/projectors">Portable Projectors</a>
-                    <a href="/shop/personal-care">Electric Personal Care</a>
                 </div>
             </div>
             <a href="/deals" class="mobile-nav-link">Deals</a>
@@ -1244,7 +1239,7 @@ a:hover {
     <section class="breadcrumb">
         <div class="container">
             <nav class="breadcrumb-nav">
-                <a href="/">Home</a>
+                <a href="../index.html/homepage.html">Home</a>
                 <span class="breadcrumb-separator">/</span>
                 <span class="current">Shop</span>
             </nav>
@@ -1481,159 +1476,6 @@ a:hover {
                 </div>
             </section>
             
-            <!-- Solar-Powered Gadgets Category -->
-            <section class="category-section">
-                <div class="category-header" onclick="toggleCategory('solar-gadgets')">
-                    <div class="category-header-content">
-                        <div class="category-info">
-                            <div class="category-icon">
-                                <i class="fas fa-solar-panel"></i>
-                            </div>
-                            <div class="category-details">
-                                <h3>Solar-Powered Gadgets</h3>
-                                <p>Eco-friendly technology for sustainable living</p>
-                            </div>
-                        </div>
-                        <button class="category-toggle" id="toggle-solar-gadgets">
-                            <span>View Products</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="products-container" id="products-solar-gadgets">
-                    <div class="empty-category">
-                        <i class="fas fa-solar-panel"></i>
-                        <h4>Coming Soon</h4>
-                        <p>Solar-powered gadgets will be available soon. Stay tuned for eco-friendly tech solutions!</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- VR & AR Gear Category -->
-            <section class="category-section">
-                <div class="category-header" onclick="toggleCategory('vr-ar-gear')">
-                    <div class="category-header-content">
-                        <div class="category-info">
-                            <div class="category-icon">
-                                <i class="fas fa-vr-cardboard"></i>
-                            </div>
-                            <div class="category-details">
-                                <h3>VR & AR Gear</h3>
-                                <p>Immersive experiences and virtual worlds</p>
-                            </div>
-                        </div>
-                        <button class="category-toggle" id="toggle-vr-ar-gear">
-                            <span>View Products</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="products-container" id="products-vr-ar-gear">
-                    <div class="products-grid">
-                        <!-- VR & AR Products -->
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="images/products/vr-headset.jpg" alt="VR Headset Elite" loading="lazy">
-                                <div class="product-badges">
-                                    <span class="badge badge-hot">Hot</span>
-                                </div>
-                                <div class="product-overlay">
-                                    <button class="quick-view-btn" data-product-id="vr1">
-                                        <i class="fas fa-eye"></i>
-                                        Quick View
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <div class="product-category">VR & AR Gear</div>
-                                <h3 class="product-title">VR Headset Elite</h3>
-                                <div class="product-rating">
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <span class="rating-count">(203)</span>
-                                </div>
-                                <div class="product-price">
-                                    <span class="current-price">$549.99</span>
-                                </div>
-                                <button class="add-to-cart-btn" data-product-id="vr1">
-                                    <i class="fas fa-cart-plus"></i>
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="product-card">
-                            <div class="product-image">
-                                <img src="images/products/ar-glasses.jpg" alt="AR Smart Glasses" loading="lazy">
-                                <div class="product-badges">
-                                    <span class="badge badge-new">New</span>
-                                </div>
-                                <div class="product-overlay">
-                                    <button class="quick-view-btn" data-product-id="vr2">
-                                        <i class="fas fa-eye"></i>
-                                        Quick View
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <div class="product-category">VR & AR Gear</div>
-                                <h3 class="product-title">AR Smart Glasses</h3>
-                                <div class="product-rating">
-                                    <div class="stars">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                    <span class="rating-count">(87)</span>
-                                </div>
-                                <div class="product-price">
-                                    <span class="current-price">$799.99</span>
-                                </div>
-                                <button class="add-to-cart-btn" data-product-id="vr2">
-                                    <i class="fas fa-cart-plus"></i>
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Foldable Phones & Accessories Category -->
-            <section class="category-section">
-                <div class="category-header" onclick="toggleCategory('foldable-phones')">
-                    <div class="category-header-content">
-                        <div class="category-info">
-                            <div class="category-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <div class="category-details">
-                                <h3>Foldable Phones & Accessories</h3>
-                                <p>Next-generation mobile technology that unfolds possibilities</p>
-                            </div>
-                        </div>
-                        <button class="category-toggle" id="toggle-foldable-phones">
-                            <span>View Products</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="products-container" id="products-foldable-phones">
-                    <div class="empty-category">
-                        <i class="fas fa-mobile-alt"></i>
-                        <h4>Coming Soon</h4>
-                        <p>Foldable phones and accessories will be available soon. Experience the future of mobile technology!</p>
-                    </div>
-                </div>
-            </section>
-            
             <!-- Wireless Earbuds & Headphones Category -->
             <section class="category-section">
                 <div class="category-header" onclick="toggleCategory('wireless-audio')">
@@ -1818,34 +1660,6 @@ a:hover {
                 </div>
             </section>
             
-            <!-- Electric Personal Care Category -->
-            <section class="category-section">
-                <div class="category-header" onclick="toggleCategory('personal-care')">
-                    <div class="category-header-content">
-                        <div class="category-info">
-                            <div class="category-icon">
-                                <i class="fas fa-cut"></i>
-                            </div>
-                            <div class="category-details">
-                                <h3>Electric Personal Care</h3>
-                                <p>Advanced grooming and personal care technology</p>
-                            </div>
-                        </div>
-                        <button class="category-toggle" id="toggle-personal-care">
-                            <span>View Products</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="products-container" id="products-personal-care">
-                    <div class="empty-category">
-                        <i class="fas fa-cut"></i>
-                        <h4>Coming Soon</h4>
-                        <p>Electric personal care devices will be available soon. Experience advanced grooming technology!</p>
-                    </div>
-                </div>
-            </section>
-            
         </div>
     </main>
     
@@ -1883,7 +1697,6 @@ a:hover {
                     <ul class="footer-links">
                         <li><a href="/shop/ai-smart-home">Smart Home</a></li>
                         <li><a href="/shop/wearable-tech">Wearable Tech</a></li>
-                        <li><a href="/shop/vr-ar-gear">VR & AR</a></li>
                         <li><a href="/shop/wireless-audio">Audio</a></li>
                         <li><a href="/shop/drones">Drones</a></li>
                         <li><a href="/deals">Deals</a></li>
@@ -1894,7 +1707,6 @@ a:hover {
                     <h4 class="footer-title">Support</h4>
                     <ul class="footer-links">
                         <li><a href="/contact">Contact Us</a></li>
-                        <li><a href="/track-order">Track Order</a></li>
                         <li><a href="/shipping">Shipping Info</a></li>
                         <li><a href="/returns">Returns</a></li>
                         <li><a href="/warranty">Warranty</a></li>
@@ -1906,9 +1718,6 @@ a:hover {
                     <h4 class="footer-title">Company</h4>
                     <ul class="footer-links">
                         <li><a href="/about">About Us</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/careers">Careers</a></li>
-                        <li><a href="/press">Press</a></li>
                         <li><a href="/privacy">Privacy Policy</a></li>
                         <li><a href="/terms">Terms of Service</a></li>
                     </ul>
@@ -1921,11 +1730,12 @@ a:hover {
                         © 2024 Tech2Wear. All rights reserved.
                     </p>
                     <div class="payment-methods">
-                        <img src="images/payments/visa.svg" alt="Visa" class="payment-icon">
-                        <img src="images/payments/mastercard.svg" alt="Mastercard" class="payment-icon">
-                        <img src="images/payments/paypal.svg" alt="PayPal" class="payment-icon">
-                        <img src="images/payments/apple-pay.svg" alt="Apple Pay" class="payment-icon">
-                        <img src="images/payments/google-pay.svg" alt="Google Pay" class="payment-icon">
+                        <i class="fab fa-cc-visa payment-icon" aria-label="Visa"></i>
+                        <i class="fab fa-cc-mastercard payment-icon" aria-label="Mastercard"></i>
+                        <i class="fab fa-cc-paypal payment-icon" aria-label="PayPal"></i>
+                        <i class="fab fa-cc-apple-pay payment-icon" aria-label="Apple Pay"></i>
+                        <i class="fab fa-google-pay payment-icon" aria-label="Google Pay"></i>
+                        <img src="../images/payments/ideal.jpg" alt="iDEAL" class="payment-icon">
                     </div>
                 </div>
             </div>
