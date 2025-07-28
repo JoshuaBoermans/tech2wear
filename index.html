@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech2wear - Discover Tomorrow's Technology Today</title>
-    <meta name="description" content="Premium electronics, smart devices, and cutting-edge gadgets delivered worldwide. Shop AI-powered smart home devices, wearable tech, VR gear, and more.">
+    <meta name="description" content="Premium electronics, smart devices, and cutting-edge gadgets delivered worldwide. Shop AI-powered smart home devices, wearable tech, and more.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -19,19 +19,31 @@
     
     <!-- Structured Data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Tech2Wear",
-      "url": "https://tech2wear.com",
-      "description": "Premium electronics and smart devices store",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://tech2wear.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Tech2Wear",
+  "url": "https://tech2wear.com",
+  "description": "Premium electronics and smart devices store",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://tech2wear.com/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": "5",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "AI-Powered Smart Home"},
+      {"@type": "ListItem", "position": 2, "name": "Wearable Tech & Fitness"},
+      {"@type": "ListItem", "position": 3, "name": "Wireless Audio"},
+      {"@type": "ListItem", "position": 4, "name": "Drones & Accessories"},
+      {"@type": "ListItem", "position": 5, "name": "Portable Projectors"}
+    ]
+  }
+}
+</script>
+
 
     <style>
         /* CSS Variables */
@@ -255,7 +267,7 @@ a:hover {
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   padding: 2rem;
-  min-width: 600px;
+  min-width: 500px;
   opacity: 0;
   visibility: hidden;
   transition: var(--transition);
@@ -269,9 +281,10 @@ a:hover {
   margin-top: 0.5rem;
 }
 
+/* Changed from 3 columns to 2 columns */
 .dropdown-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
@@ -492,14 +505,15 @@ a:hover {
   font-size: 1rem;
 }
 
-/* Hero Section */
+/* Hero Section - UPDATED TO FIX SPACING ISSUE */
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  /* min-height: 100vh; */ /* Removed this line to eliminate excessive space */
+  padding: 80px 0; /* Added padding to provide appropriate vertical spacing */
   display: flex;
   align-items: center;
   overflow: hidden;
-  margin-top: 80px;
+  margin-top: 80px; /* Keeps content below the fixed header */
 }
 
 .hero-background {
@@ -1158,15 +1172,31 @@ a:hover {
   align-items: center;
 }
 
-.payment-icon {
-  height: 30px;
-  width: auto;
+/* Styles for payment icons */
+.payment-methods .payment-icon {
   opacity: 0.7;
   transition: var(--transition);
 }
 
-.payment-icon:hover {
+.payment-methods .payment-icon:hover {
   opacity: 1;
+}
+
+/* Specific styles for image-based payment icons */
+.payment-methods img.payment-icon {
+  height: 30px;
+  width: auto;
+}
+
+/* Specific styles for Font Awesome payment icons */
+.payment-methods i.payment-icon {
+  font-size: 2.5rem;
+  color: var(--color-text-muted);
+  line-height: 1;
+}
+
+.payment-methods i.payment-icon:hover {
+  color: var(--color-accent-blue);
 }
 
 /* Email Popup */
@@ -1318,6 +1348,19 @@ a:hover {
   transform: translateY(-3px);
 }
 
+/* Bounce animation for cart count */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .hero-section .container {
@@ -1354,7 +1397,7 @@ a:hover {
   }
   
   .dropdown-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
   
   .hero-title {
@@ -1403,6 +1446,10 @@ a:hover {
     font-size: 2rem;
   }
   
+  .hero-section {
+    padding: 60px 0; /* Reduce padding on mobile for tighter spacing */
+  }
+  
   .section-title {
     font-size: 2rem;
   }
@@ -1410,10 +1457,6 @@ a:hover {
   .dropdown-menu {
     min-width: 300px;
     padding: 1.5rem;
-  }
-  
-  .dropdown-grid {
-    grid-template-columns: 1fr;
   }
   
   .popup-content {
@@ -1441,7 +1484,7 @@ a:hover {
                 
                 <!-- Navigation -->
                 <nav class="site-nav">
-                    <a href="/" class="nav-link active">Home</a>
+                    <a href="../index.html/homepage.html" class="nav-link active">Home</a>
                     <div class="nav-dropdown">
                         <a href="../index.html/shop.html" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-menu">
@@ -1454,20 +1497,6 @@ a:hover {
                                     <a href="../index.html/shop.html/wearable-tech" class="dropdown-item">
                                         <i class="fas fa-watch"></i>
                                         <span>Wearable Tech & Fitness</span>
-                                    </a>
-                                    <a href="../index.html/shop.html/solar-gadgets" class="dropdown-item">
-                                        <i class="fas fa-solar-panel"></i>
-                                        <span>Solar-Powered Gadgets</span>
-                                    </a>
-                                </div>
-                                <div class="dropdown-column">
-                                    <a href="../index.html/shop.html/vr-ar-gear" class="dropdown-item">
-                                        <i class="fas fa-vr-cardboard"></i>
-                                        <span>VR & AR Gear</span>
-                                    </a>
-                                    <a href="../index.html/shop.html/foldable-phones" class="dropdown-item">
-                                        <i class="fas fa-mobile-alt"></i>
-                                        <span>Foldable Phones & Accessories</span>
                                     </a>
                                     <a href="../index.html/shop.html/wireless-audio" class="dropdown-item">
                                         <i class="fas fa-headphones"></i>
@@ -1483,19 +1512,13 @@ a:hover {
                                         <i class="fas fa-video"></i>
                                         <span>Portable Projectors</span>
                                     </a>
-                                    <a href="../index.html/shop.html/personal-care" class="dropdown-item">
-                                        <i class="fas fa-cut"></i>
-                                        <span>Electric Personal Care</span>
-                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a href="/deals" class="nav-link">Deals</a>
-                    <a href="/blog" class="nav-link">Blog</a>
-                    <a href="/about" class="nav-link">About Us</a>
-                    <a href="/contact" class="nav-link">Contact</a>
-                    <a href="/track-order" class="nav-link">Track Order</a>
+                    <a href="../index.html/deals.html" class="nav-link">Deals</a>
+                    <a href="../index.html/about.html" class="nav-link">About Us</a>
+                    <a href="../index.html/contact.html" class="nav-link">Contact</a>
                 </nav>
                 
                 <!-- Header Actions -->
@@ -1543,28 +1566,23 @@ a:hover {
             </button>
         </div>
         <nav class="mobile-menu-nav">
-            <a href="/" class="mobile-nav-link">Home</a>
+            <a href="../index.html/homepage.html" class="mobile-nav-link">Home</a>
             <div class="mobile-nav-dropdown">
                 <button class="mobile-nav-toggle">
                     Shop <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="mobile-dropdown-content">
-                    <a href="/shop/ai-smart-home">AI-Powered Smart Home</a>
-                    <a href="/shop/wearable-tech">Wearable Tech & Fitness</a>
-                    <a href="/shop/solar-gadgets">Solar-Powered Gadgets</a>
-                    <a href="/shop/vr-ar-gear">VR & AR Gear</a>
-                    <a href="/shop/foldable-phones">Foldable Phones & Accessories</a>
-                    <a href="/shop/wireless-audio">Wireless Earbuds & Headphones</a>
-                    <a href="/shop/drones">Drones & Accessories</a>
-                    <a href="/shop/projectors">Portable Projectors</a>
-                    <a href="/shop/personal-care">Electric Personal Care</a>
-                </div>
+    <a href="../index.html/shop.html">AI-Powered Smart Home</a>
+    <a href="../index.html/shop.html">Wearable Tech & Fitness</a>
+    <a href="../index.html/shop.html">Wireless Earbuds & Headphones</a>
+    <a href="../index.html/shop.html">Drones & Accessories</a>
+    <a href="../index.html/shop.html/projectors">Portable Projectors</a>
+</div>
+
             </div>
-            <a href="/deals" class="mobile-nav-link">Deals</a>
-            <a href="/blog" class="mobile-nav-link">Blog</a>
-            <a href="/about" class="mobile-nav-link">About Us</a>
-            <a href="/contact" class="mobile-nav-link">Contact</a>
-            <a href="/track-order" class="mobile-nav-link">Track Order</a>
+            <a href="../index.html/deals.html" class="mobile-nav-link">Deals</a>
+            <a href="../index.html/about.html" class="mobile-nav-link">About Us</a>
+            <a href="../index.html/contact.html" class="mobile-nav-link">Contact</a>
         </nav>
     </div>
     
@@ -1591,7 +1609,7 @@ a:hover {
                             <span>Shop Now</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
-                        <a href="/deals" class="btn btn-secondary">
+                        <a href="../index.html/deals.html" class="btn btn-secondary">
                             <span>View Deals</span>
                             <i class="fas fa-percentage"></i>
                         </a>
@@ -1611,20 +1629,7 @@ a:hover {
                         </div>
                     </div>
                 </div>
-                <div class="hero-visual">
-                    <div class="hero-device">
-                        <img src="images/hero-device.png" alt="Latest Tech Device" class="hero-device-image">
-                        <div class="floating-elements">
-                            <div class="floating-icon" style="--delay: 0s;">
-                                <i class="fas fa-wifi"></i>
-                            </div>
-                            <div class="floating-icon" style="--delay: 1s;">
-                                <i class="fas fa-bluetooth"></i>
-                            </div>
-                            <div class="floating-icon" style="--delay: 2s;">
-                                <i class="fas fa-battery-full"></i>
-                            </div>
-                        </div>
+               
                     </div>
                 </div>
             </div>
@@ -1663,19 +1668,6 @@ a:hover {
                         </a>
                     </div>
                     
-                    <div class="category-card" data-category="vr-ar-gear">
-                        <div class="category-icon">
-                            <i class="fas fa-vr-cardboard"></i>
-                        </div>
-                        <h3 class="category-title">VR & AR Gear</h3>
-                        <p class="category-description">Immersive experiences and virtual worlds</p>
-                        <a href="/shop/vr-ar-gear" class="category-link">
-                            <span>Explore</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <div class="category-badge hot">Hot</div>
-                    </div>
-                    
                     <div class="category-card" data-category="wireless-audio">
                         <div class="category-icon">
                             <i class="fas fa-headphones"></i>
@@ -1683,18 +1675,6 @@ a:hover {
                         <h3 class="category-title">Wireless Audio</h3>
                         <p class="category-description">Premium sound quality without the wires</p>
                         <a href="/shop/wireless-audio" class="category-link">
-                            <span>Explore</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="category-card" data-category="solar-gadgets">
-                        <div class="category-icon">
-                            <i class="fas fa-solar-panel"></i>
-                        </div>
-                        <h3 class="category-title">Solar-Powered Gadgets</h3>
-                        <p class="category-description">Eco-friendly technology for sustainable living</p>
-                        <a href="/shop/solar-gadgets" class="category-link">
                             <span>Explore</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -1711,6 +1691,21 @@ a:hover {
                             <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
+
+                    <!-- Portable Projectors Category -->
+<div class="category-card" data-category="portable-projectors">
+    <div class="category-icon">
+        <i class="fas fa-video"></i>
+    </div>
+    <h3 class="category-title">Portable Projectors</h3>
+    <p class="category-description">Big screen entertainment anywhere you go</p>
+    <a href="../index.html/shop.html/projectors" class="category-link">
+        <span>Explore</span>
+        <i class="fas fa-arrow-right"></i>
+    </a>
+    <div class="category-badge hot">Hot</div>
+</div>
+
                 </div>
                 <div class="categories-cta">
                     <a href="../index.html/shop.html" class="btn btn-outline">
@@ -1805,49 +1800,15 @@ a:hover {
                         </div>
                     </div>
                     
-                    <!-- Product 3 -->
+                    <!-- Product 3 (Changed from VR to Smart Home) -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/products/vr-headset.jpg" alt="VR Headset Elite" loading="lazy">
+                            <img src="images/products/smart-home-hub.jpg" alt="Smart Home Hub" loading="lazy">
                             <div class="product-badges">
                                 <span class="badge badge-hot">Hot</span>
                             </div>
                             <div class="product-overlay">
                                 <button class="quick-view-btn" data-product-id="3">
-                                    <i class="fas fa-eye"></i>
-                                    Quick View
-                                </button>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-category">VR & AR Gear</div>
-                            <h3 class="product-title">VR Headset Elite</h3>
-                            <div class="product-rating">
-                                <div class="stars">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <span class="rating-count">(203)</span>
-                            </div>
-                            <div class="product-price">
-                                <span class="current-price">$549.99</span>
-                            </div>
-                            <button class="add-to-cart-btn" data-product-id="3">
-                                <i class="fas fa-cart-plus"></i>
-                                Add to Cart
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Product 4 -->
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="images/products/smart-home-hub.jpg" alt="Smart Home Hub" loading="lazy">
-                            <div class="product-overlay">
-                                <button class="quick-view-btn" data-product-id="4">
                                     <i class="fas fa-eye"></i>
                                     Quick View
                                 </button>
@@ -1862,12 +1823,46 @@ a:hover {
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count">(203)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">$199.99</span>
+                            </div>
+                            <button class="add-to-cart-btn" data-product-id="3">
+                                <i class="fas fa-cart-plus"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/products/drone-pro.jpg" alt="Drone Pro X" loading="lazy">
+                            <div class="product-overlay">
+                                <button class="quick-view-btn" data-product-id="4">
+                                    <i class="fas fa-eye"></i>
+                                    Quick View
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-category">Drones</div>
+                            <h3 class="product-title">Drone Pro X</h3>
+                            <div class="product-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
                                     <i class="far fa-star"></i>
                                 </div>
                                 <span class="rating-count">(156)</span>
                             </div>
                             <div class="product-price">
-                                <span class="current-price">$199.99</span>
+                                <span class="current-price">$549.99</span>
                             </div>
                             <button class="add-to-cart-btn" data-product-id="4">
                                 <i class="fas fa-cart-plus"></i>
@@ -1895,7 +1890,7 @@ a:hover {
                         </div>
                         <div class="trust-content">
                             <h4 class="trust-title">Free Worldwide Shipping</h4>
-                            <p class="trust-description">On all orders over $50</p>
+                            <p class="trust-description">On all orders over €50</p>
                         </div>
                     </div>
                     
@@ -1972,55 +1967,51 @@ a:hover {
                         Your trusted destination for premium electronics and cutting-edge technology. 
                         Discover the future today.
                     </p>
+                    
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
+                            <i class=""></i>
                         </a>
                         <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
+                            <i class="r"></i>
                         </a>
                         <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
+                            <i class=""></i>
                         </a>
                         <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
+                            <i class=""></i>
                         </a>
                     </div>
                 </div>
                 
-                <div class="footer-section">
-                    <h4 class="footer-title">Shop</h4>
-                    <ul class="footer-links">
-                        <li><a href="/shop/ai-smart-home">Smart Home</a></li>
-                        <li><a href="/shop/wearable-tech">Wearable Tech</a></li>
-                        <li><a href="/shop/vr-ar-gear">VR & AR</a></li>
-                        <li><a href="/shop/wireless-audio">Audio</a></li>
-                        <li><a href="/shop/drones">Drones</a></li>
-                        <li><a href="/deals">Deals</a></li>
-                    </ul>
-                </div>
+               <div class="footer-section">
+    <h4 class="footer-title">Shop</h4>
+    <ul class="footer-links">
+        <li><a href="/shop/ai-smart-home">Smart Home</a></li>
+        <li><a href="/shop/wearable-tech">Wearable Tech</a></li>
+        <li><a href="/shop/wireless-audio">Wireless Audio</a></li>
+        <li><a href="/shop/drones">Drones</a></li>
+        <li><a href="../index.html/shop.html/projectors">Portable Projectors</a></li>
+        <li><a href="../index.html/deals.html">Deals</a></li>
+    </ul>
+</div>
+
                 
-                <div class="footer-section">
+               <div class="footer-section">
                     <h4 class="footer-title">Support</h4>
                     <ul class="footer-links">
-                        <li><a href="/contact">Contact Us</a></li>
-                        <li><a href="/track-order">Track Order</a></li>
-                        <li><a href="/shipping">Shipping Info</a></li>
-                        <li><a href="/returns">Returns</a></li>
-                        <li><a href="/warranty">Warranty</a></li>
-                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="../index.html/contact.html">Contact Us</a></li>
+                        <li><a href="../index.html/warranty.html">Warranty</a></li>
+                        <li><a href="../index.html/faq.html">FAQ</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4 class="footer-title">Company</h4>
                     <ul class="footer-links">
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/blog">Blog</a></li>
-                        <li><a href="/careers">Careers</a></li>
-                        <li><a href="/press">Press</a></li>
-                        <li><a href="/privacy">Privacy Policy</a></li>
-                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="../index.html/about.html">About Us</a></li>
+                        <li><a href="../index.html/privacy.html">Privacy Policy</a></li>
+                        <li><a href="../index.html/terms.html">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
@@ -2031,11 +2022,12 @@ a:hover {
                         © 2024 Tech2Wear. All rights reserved.
                     </p>
                     <div class="payment-methods">
-                        <img src="images/payments/visa.svg" alt="Visa" class="payment-icon">
-                        <img src="images/payments/mastercard.svg" alt="Mastercard" class="payment-icon">
-                        <img src="images/payments/paypal.svg" alt="PayPal" class="payment-icon">
-                        <img src="images/payments/apple-pay.svg" alt="Apple Pay" class="payment-icon">
-                        <img src="images/payments/google-pay.svg" alt="Google Pay" class="payment-icon">
+                        <i class="fab fa-cc-visa payment-icon" aria-label="Visa"></i>
+                        <i class="fab fa-cc-mastercard payment-icon" aria-label="Mastercard"></i>
+                        <i class="fab fa-cc-paypal payment-icon" aria-label="PayPal"></i>
+                        <i class="fab fa-cc-apple-pay payment-icon" aria-label="Apple Pay"></i>
+                        <i class="fab fa-google-pay payment-icon" aria-label="Google Pay"></i>
+                        <img src="../images/payments/ideal.jpg" alt="iDEAL" class="payment-icon">
                     </div>
                 </div>
             </div>
@@ -2400,6 +2392,10 @@ a:hover {
             }
         `;
         document.head.appendChild(style);
+
+        
     </script>
+
+    
 </body>
 </html>
