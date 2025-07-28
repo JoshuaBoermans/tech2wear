@@ -1154,8 +1154,8 @@ a:hover {
                         </div>
                     </div>
                     <a href="/deals" class="nav-link">Deals</a>
-                    <a href="/about" class="nav-link">About Us</a>
-                    <a href="/contact" class="nav-link">Contact</a>
+                    <a href="../index.html/about.html" class="nav-link">About Us</a>
+                    <a href="../index.html/contact.html" class="nav-link">Contact</a>
                 </nav>
                 
                 <!-- Header Actions -->
@@ -1216,11 +1216,9 @@ a:hover {
                     <a href="/shop/projectors">Portable Projectors</a>
                 </div>
             </div>
-            <a href="/deals" class="mobile-nav-link">Deals</a>
-            <a href="/blog" class="mobile-nav-link">Blog</a>
-            <a href="/about" class="mobile-nav-link">About Us</a>
-            <a href="/contact" class="mobile-nav-link">Contact</a>
-            <a href="/track-order" class="mobile-nav-link">Track Order</a>
+            <a href="../index.html/deals.html" class="mobile-nav-link">Deals</a>
+            <a href="../index.html/about.html" class="mobile-nav-link">About Us</a>
+            <a href="../index.html/contact.html" class="mobile-nav-link">Contact</a>
         </nav>
     </div>
     
@@ -1632,33 +1630,181 @@ a:hover {
                 </div>
             </section>
             
-            <!-- Portable Projectors Category -->
-            <section class="category-section">
-                <div class="category-header" onclick="toggleCategory('projectors')">
-                    <div class="category-header-content">
-                        <div class="category-info">
-                            <div class="category-icon">
-                                <i class="fas fa-video"></i>
-                            </div>
-                            <div class="category-details">
-                                <h3>Portable Projectors</h3>
-                                <p>Big screen entertainment anywhere you go</p>
-                            </div>
-                        </div>
-                        <button class="category-toggle" id="toggle-projectors">
-                            <span>View Products</span>
-                            <i class="fas fa-chevron-down"></i>
+          <!-- Portable Projectors Category -->
+<section class="category-section">
+    <div class="category-header" onclick="toggleCategory('projectors')">
+        <div class="category-header-content">
+            <div class="category-info">
+                <div class="category-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <div class="category-details">
+                    <h3>Portable Projectors</h3>
+                    <p>Big screen entertainment anywhere you go</p>
+                </div>
+            </div>
+            <button class="category-toggle" id="toggle-projectors">
+                <span>View Products</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+        </div>
+    </div>
+    <div class="products-container" id="products-projectors">
+        <div class="products-grid">
+            <!-- Projector Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/products/mini-projector.jpg" alt="Mini Smart Projector" loading="lazy">
+                    <div class="product-badges">
+                        <span class="badge badge-new">New</span>
+                    </div>
+                    <div class="product-overlay">
+                        <button class="quick-view-btn" data-product-id="pj1">
+                            <i class="fas fa-eye"></i>
+                            Quick View
                         </button>
                     </div>
                 </div>
-                <div class="products-container" id="products-projectors">
-                    <div class="empty-category">
-                        <i class="fas fa-video"></i>
-                        <h4>Coming Soon</h4>
-                        <p>Portable projectors will be available soon. Get ready for big screen entertainment anywhere!</p>
+                <div class="product-info">
+                    <div class="product-category">Projectors</div>
+                    <h3 class="product-title">Mini Smart Projector</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="rating-count">(67)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$229.99</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-product-id="pj1">
+                        <i class="fas fa-cart-plus"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Projector Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/products/hd-portable-projector.jpg" alt="HD Portable Projector" loading="lazy">
+                    <div class="product-badges">
+                        <span class="badge badge-hot">Hot</span>
+                    </div>
+                    <div class="product-overlay">
+                        <button class="quick-view-btn" data-product-id="pj2">
+                            <i class="fas fa-eye"></i>
+                            Quick View
+                        </button>
                     </div>
                 </div>
-            </section>
+                <div class="product-info">
+                    <div class="product-category">Projectors</div>
+                    <h3 class="product-title">HD Portable Projector</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-count">(142)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$349.99</span>
+                        <span class="original-price">$399.99</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-product-id="pj2">
+                        <i class="fas fa-cart-plus"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Projector Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/products/4k-projector.jpg" alt="4K Cinema Projector" loading="lazy">
+                    <div class="product-badges">
+                        <span class="badge badge-sale">15% OFF</span>
+                    </div>
+                    <div class="product-overlay">
+                        <button class="quick-view-btn" data-product-id="pj3">
+                            <i class="fas fa-eye"></i>
+                            Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Projectors</div>
+                    <h3 class="product-title">4K Cinema Projector</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="rating-count">(55)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$679.99</span>
+                        <span class="original-price">$799.99</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-product-id="pj3">
+                        <i class="fas fa-cart-plus"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Projector Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/products/pocket-projector.jpg" alt="Ultra Compact Pocket Projector" loading="lazy">
+                    <div class="product-badges">
+                        <span class="badge badge-new">New</span>
+                    </div>
+                    <div class="product-overlay">
+                        <button class="quick-view-btn" data-product-id="pj4">
+                            <i class="fas fa-eye"></i>
+                            Quick View
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Projectors</div>
+                    <h3 class="product-title">Ultra Compact Pocket Projector</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="rating-count">(89)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">$199.99</span>
+                        <span class="original-price">$249.99</span>
+                    </div>
+                    <button class="add-to-cart-btn" data-product-id="pj4">
+                        <i class="fas fa-cart-plus"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
             
         </div>
     </main>
@@ -1678,48 +1824,48 @@ a:hover {
                     </p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
+                            <i class=""></i>
                         </a>
                         <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
+                            <i class="r"></i>
                         </a>
                         <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
+                            <i class=""></i>
                         </a>
                         <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
+                            <i class=""></i>
                         </a>
                     </div>
                 </div>
                 
-                <div class="footer-section">
-                    <h4 class="footer-title">Shop</h4>
-                    <ul class="footer-links">
-                        <li><a href="/shop/ai-smart-home">Smart Home</a></li>
-                        <li><a href="/shop/wearable-tech">Wearable Tech</a></li>
-                        <li><a href="/shop/wireless-audio">Audio</a></li>
-                        <li><a href="/shop/drones">Drones</a></li>
-                        <li><a href="/deals">Deals</a></li>
-                    </ul>
-                </div>
+              <div class="footer-section">
+    <h4 class="footer-title">Shop</h4>
+    <ul class="footer-links">
+        <li><a href="/shop/ai-smart-home">Smart Home</a></li>
+        <li><a href="/shop/wearable-tech">Wearable Tech</a></li>
+        <li><a href="/shop/wireless-audio">Wireless Audio</a></li>
+        <li><a href="/shop/drones">Drones</a></li>
+        <li><a href="../index.html/shop.html/projectors">Portable Projectors</a></li>
+        <li><a href="/deals">Deals</a></li>
+    </ul>
+</div>
+
                 
                 <div class="footer-section">
                     <h4 class="footer-title">Support</h4>
                     <ul class="footer-links">
-                        <li><a href="/contact">Contact Us</a></li>
-                        <li><a href="/shipping">Shipping Info</a></li>
-                        <li><a href="/returns">Returns</a></li>
-                        <li><a href="/warranty">Warranty</a></li>
-                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="../index.html/contact.html">Contact Us</a></li>
+                        <li><a href="../index.html/warranty.html">Warranty</a></li>
+                        <li><a href="../index.html/faq.html">FAQ</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4 class="footer-title">Company</h4>
                     <ul class="footer-links">
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/privacy">Privacy Policy</a></li>
-                        <li><a href="/terms">Terms of Service</a></li>
+                        <li><a href="../index.html/about.html">About Us</a></li>
+                        <li><a href="../index.html/privacy.html">Privacy Policy</a></li>
+                        <li><a href="../index.html/terms.html">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
