@@ -45,7 +45,7 @@
 </script>
 
     <style>
-        /* CSS Variables */
+        /* CSS Variables - HEADER HOOGTE AANGEPAST NAAR DEALS PAGINA */
 :root {
   --color-primary-dark: #0a0a0a;
   --color-secondary-dark: #1a1a1a;
@@ -67,6 +67,9 @@
   --transition: all 0.3s ease;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   --shadow-hover: 0 15px 40px rgba(0, 255, 255, 0.2);
+  
+  /* AANGEPAST: Header hoogte consistent met deals pagina */
+  --header-height: 80px;
 }
 
 /* Reset and Base Styles */
@@ -175,7 +178,7 @@ a:hover {
   color: var(--color-accent-blue);
 }
 
-/* Header */
+/* Header - AANGEPAST OM OVEREEN TE KOMEN MET DEALS PAGINA */
 .site-header {
   background: rgba(26, 26, 26, 0.95);
   backdrop-filter: blur(10px);
@@ -185,13 +188,15 @@ a:hover {
   right: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--color-border);
+  height: var(--header-height); /* Consistent met deals pagina */
 }
 
 .header-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 1rem 0; /* Consistent met deals pagina */
+  height: 100%; /* Volledige header hoogte gebruiken */
 }
 
 .site-logo a {
@@ -201,32 +206,33 @@ a:hover {
   text-decoration: none;
 }
 
+/* AANGEPAST: Logo styling consistent met deals pagina */
 .logo-text {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 1.8rem; /* Consistent met deals pagina */
   font-weight: 700;
   color: var(--color-accent-blue);
   line-height: 1;
 }
 
 .logo-tagline {
-  font-size: 0.7rem;
+  font-size: 0.7rem; /* Consistent met deals pagina */
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
-/* Navigation */
+/* Navigation - AANGEPAST: Spacing consistent met deals pagina */
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2rem; /* Consistent met deals pagina */
 }
 
 .nav-link {
   color: var(--color-text-light);
   font-weight: 500;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0; /* Consistent met deals pagina */
   position: relative;
   transition: var(--transition);
 }
@@ -306,17 +312,17 @@ a:hover {
   width: 20px;
 }
 
-/* Header Actions */
+/* Header Actions - AANGEPAST: Spacing consistent met deals pagina */
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.5rem; /* Consistent met deals pagina */
 }
 
 .header-action,
 .search-toggle {
   color: var(--color-text-light);
-  font-size: 1.2rem;
+  font-size: 1.2rem; /* Consistent met deals pagina */
   background: none;
   border: none;
   cursor: pointer;
@@ -503,14 +509,14 @@ a:hover {
   font-size: 1rem;
 }
 
-/* Hero Section */
+/* Hero Section - AANGEPAST: Margin-top gebruikt header hoogte */
 .hero-section {
   position: relative;
   padding: 80px 0;
   display: flex;
   align-items: center;
   overflow: hidden;
-  margin-top: 80px;
+  margin-top: var(--header-height); /* KERNWIJZIGING: Gebruikt header hoogte variabele */
 }
 
 .hero-background {
