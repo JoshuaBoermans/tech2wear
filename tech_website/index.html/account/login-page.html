@@ -341,10 +341,10 @@
                     if (!user.emailVerified) {
                         // Send verification email again
                         await user.sendEmailVerification();
-                        await auth.signOut();
+                        // Skip sign out - allow unverified users to stay logged in
                         
                         showNotification('⚠️ Verifieer eerst je email. We hebben een nieuwe verificatie link gestuurd.', 'warning');
-                        return;
+                        // Don't return - continue with login
                     }
                     
                     // Update last login in Firestore

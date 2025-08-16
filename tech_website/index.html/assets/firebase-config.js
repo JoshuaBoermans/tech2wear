@@ -235,11 +235,23 @@ function getCorrectPath(relativePath) {
 auth.onAuthStateChanged(function(user) {
     currentUser = user;
     
-    if (user && user.emailVerified) {
-        console.log('✅ User logged in:', user.email);
+    if (user) {
+        // Allow both verified and unverified users to access the system
+        console.log('✅ User logged in:', user.email, user.emailVerified ? '(verified)' : '(unverified)');
         updateUIForLoggedInUser(user);
         loadUserProfile(user.uid);
-    } else if (user && !user.emailVerified) {
+        
+        // Show verification reminder for unverified users, but don't block access
+        if (!user.emailVerified) {
+            console.log('⚠️ User needs email verification (but access granted)');
+            // Optional: Show a gentle reminder
+            setTimeout(() => {
+                if (window.showNotification) {
+                    showNotification('💡 Tip: Verifieer je email voor volledige functionaliteit', 'info', 8000);
+                }
+            }, 3000);
+        }
+    } else if (false) { // Disabled email verification requirement
         console.log('⚠️ User needs email verification');
         updateUIForUnverifiedUser(user);
     } else {

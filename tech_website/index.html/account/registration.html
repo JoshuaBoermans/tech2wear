@@ -311,13 +311,13 @@
             </form>
             
             <div class="auth-links">
-                <p>Heb je al een account? <a href="login.html">Inloggen</a></p>
+                <p>Heb je al een account? <a href="login-page.html">Inloggen</a></p>
             </div>
         </div>
     </div>
 
     <!-- Firebase Configuration -->
-    <script src="../../assets/firebase-config.js"></script>
+    <script src="../assets/firebase-config.js"></script>
 
    <script>
     // Wacht tot Firebase volledig geladen is
@@ -415,14 +415,15 @@
                 });
                 
                 // Success - gebruik globale showNotification
-                showNotification('🎉 Account succesvol aangemaakt! Controleer je email voor verificatie.', 'success');
+                showNotification('🎉 Account succesvol aangemaakt! Je wordt ingelogd...', 'success');
                 
                 // Clear form
                 registerForm.reset();
                 
                 // Redirect after delay
                 setTimeout(() => {
-                    window.location.href = 'login-page.html?registered=true';
+                    // Redirect to homepage - user is already logged in
+                    window.location.href = '../../../index.html';
                 }, 2000);
                 
             } catch (error) {
