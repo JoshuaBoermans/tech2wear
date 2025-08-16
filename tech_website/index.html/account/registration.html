@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Aanmaken - Tech2Wear</title>
+    <meta name="description" content="Maak een account aan bij Tech2Wear voor sneller bestellen en exclusieve aanbiedingen.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <style>
+        :root {
+            --color-primary-dark: #0a0a0a;
+            --color-secondary-dark: #1a1a1a;
+            --color-accent-blue: #00ffff;
+            --color-accent-secondary: #0099cc;
+            --color-text-light: #ffffff;
+            --color-text-muted: #cccccc;
+            --color-border: #333333;
+            --color-success: #00ff88;
+            --color-warning: #ff9500;
+            --color-error: #ff3860;
+            
+            --font-primary: 'Open Sans', sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+            --font-button: 'Montserrat', sans-serif;
+            
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-secondary-dark) 100%);
+            color: var(--color-text-light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .auth-card {
+            background: var(--color-secondary-dark);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .auth-title {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .auth-subtitle {
+            color: var(--color-text-muted);
+            font-size: 1rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-text-muted);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--color-accent-blue);
+        }
+
+        .auth-form {
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--color-text-light);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            background: var(--color-primary-dark);
+            color: var(--color-text-light);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--color-accent-blue);
+            box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.1);
+        }
+
+        .form-help {
+            display: block;
+            margin-top: 0.25rem;
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-top: 0.25rem;
+        }
+
+        .checkbox-group label {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: var(--font-button);
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-secondary));
+            color: var(--color-primary-dark);
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-full {
+            width: 100%;
+        }
+
+        .auth-links {
+            text-align: center;
+        }
+
+        .auth-links p {
+            color: var(--color-text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .auth-links a {
+            color: var(--color-accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .auth-links a:hover {
+            color: var(--color-accent-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .auth-card {
+                padding: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <a href="../../../index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Terug naar home
+        </a>
+        
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1 class="auth-title">Account Aanmaken</h1>
+                <p class="auth-subtitle">Word lid van Tech2Wear voor exclusieve aanbiedingen</p>
+            </div>
+            
+            <form id="register-form" class="auth-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Voornaam *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Achternaam *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email adres *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Telefoonnummer</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+31 6 12345678">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Wachtwoord *</label>
+                    <input type="password" id="password" name="password" required minlength="8">
+                    <small class="form-help">Minimaal 8 karakters, met hoofdletter, kleine letter en cijfer</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Bevestig wachtwoord *</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="acceptsMarketing" name="acceptsMarketing">
+                    <label for="acceptsMarketing">
+                        Ik wil marketing emails ontvangen over nieuwe producten en aanbiedingen
+                    </label>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="acceptsPrivacy" name="acceptsPrivacy" required>
+                    <label for="acceptsPrivacy">
+                        Ik ga akkoord met de <a href="../privacy.html" target="_blank">privacyverklaring</a> en <a href="../terms.html" target="_blank">algemene voorwaarden</a> *
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                    <span class="btn-text">Account Aanmaken</span>
+                    <i class="fas fa-spinner fa-spin btn-loader" style="display: none;"></i>
+                </button>
+            </form>
+            
+            <div class="auth-links">
+                <p>Heb je al een account? <a href="login.html">Inloggen</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Configuration -->
+    <script src="../../assets/firebase-config.js"></script>
+
+   <script>
+    // Wacht tot Firebase volledig geladen is
+    document.addEventListener('DOMContentLoaded', function() {
+        // Firebase loading verificatie
+        function waitForFirebase() {
+            if (typeof firebase !== 'undefined' && typeof auth !== 'undefined' && typeof showNotification === 'function') {
+                console.log('✅ Firebase and dependencies loaded successfully');
+                initializeRegistrationForm();
+            } else {
+                console.log('⏳ Waiting for Firebase to load...');
+                setTimeout(waitForFirebase, 100);
+            }
+        }
+        
+        waitForFirebase();
+    });
+
+    function initializeRegistrationForm() {
+        const registerForm = document.getElementById('register-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoader = submitBtn.querySelector('.btn-loader');
+
+        registerForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Disable form during submission
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'inline-block';
+            
+            try {
+                // Get form data
+                const formData = new FormData(this);
+                const data = {
+                    firstName: formData.get('firstName').trim(),
+                    lastName: formData.get('lastName').trim(),
+                    email: formData.get('email').trim().toLowerCase(),
+                    phone: formData.get('phone').trim(),
+                    password: formData.get('password'),
+                    confirmPassword: formData.get('confirmPassword'),
+                    acceptsMarketing: formData.has('acceptsMarketing'),
+                    acceptsPrivacy: formData.has('acceptsPrivacy')
+                };
+                
+                // Enhanced validation
+                if (!data.firstName || !data.lastName || !data.email || !data.password) {
+                    throw new Error('Vul alle verplichte velden in');
+                }
+                
+                if (data.password !== data.confirmPassword) {
+                    throw new Error('Wachtwoorden komen niet overeen');
+                }
+                
+                if (data.password.length < 8) {
+                    throw new Error('Wachtwoord moet minimaal 8 karakters bevatten');
+                }
+                
+                // Check password strength
+                if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(data.password)) {
+                    throw new Error('Wachtwoord moet een hoofdletter, kleine letter en cijfer bevatten');
+                }
+                
+                if (!data.acceptsPrivacy) {
+                    throw new Error('Je moet akkoord gaan met de privacyverklaring');
+                }
+                
+                // Create Firebase user - gebruik globale auth
+                const userCredential = await auth.createUserWithEmailAndPassword(data.email, data.password);
+                const user = userCredential.user;
+                
+                // Update profile with display name
+                await user.updateProfile({
+                    displayName: `${data.firstName} ${data.lastName}`
+                });
+                
+                // Send email verification
+                await user.sendEmailVerification({
+                    url: window.location.origin + '/pages/account/login.html?verified=true',
+                    handleCodeInApp: false
+                });
+                
+                // Store additional user data in Firestore - gebruik globale db
+                await db.collection('users').doc(user.uid).set({
+                    firstName: data.firstName,
+                    lastName: data.lastName,
+                    email: data.email,
+                    phone: data.phone,
+                    acceptsMarketing: data.acceptsMarketing,
+                    acceptsPrivacy: data.acceptsPrivacy,
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    emailVerified: false,
+                    lastLogin: null
+                });
+                
+                // Success - gebruik globale showNotification
+                showNotification('🎉 Account succesvol aangemaakt! Controleer je email voor verificatie.', 'success');
+                
+                // Clear form
+                registerForm.reset();
+                
+                // Redirect after delay
+                setTimeout(() => {
+                    window.location.href = 'login.html?registered=true';
+                }, 2000);
+                
+            } catch (error) {
+                console.error('Registration error:', error);
+                
+                let errorMessage = 'Er is een fout opgetreden. Probeer het opnieuw.';
+                
+                // Firebase specific error messages in Dutch
+                switch (error.code) {
+                    case 'auth/email-already-in-use':
+                        errorMessage = 'Dit email adres is al in gebruik.';
+                        break;
+                    case 'auth/invalid-email':
+                        errorMessage = 'Ongeldig email adres.';
+                        break;
+                    case 'auth/weak-password':
+                        errorMessage = 'Wachtwoord is te zwak. Gebruik minimaal 6 karakters.';
+                        break;
+                    case 'auth/operation-not-allowed':
+                        errorMessage = 'Account aanmaken is momenteel niet mogelijk.';
+                        break;
+                    default:
+                        if (error.message) {
+                            errorMessage = error.message;
+                        }
+                }
+                
+                // Gebruik globale showNotification
+                showNotification(errorMessage, 'error');
+            }
+            
+            // Re-enable form
+            submitBtn.disabled = false;
+            btnText.style.display = 'inline-block';
+            btnLoader.style.display = 'none';
+        });
+    }
+</script>
+
+</body>
+</html>
