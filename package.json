@@ -1,0 +1,20 @@
+{
+  "name": "tech2wear-website",
+  "version": "1.0.0",
+  "description": "Tech2Wear e-commerce website with Firebase authentication",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 3000",
+    "dev:node": "npx serve -s . -l 3000",
+    "install-serve": "npm install -g serve",
+    "clean-port": "fuser -k 3000/tcp 2>/dev/null || true",
+    "start": "npm run clean-port && npm run dev:node"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "^14.0.0"
+  },
+  "keywords": ["e-commerce", "firebase", "authentication", "tech"],
+  "author": "Tech2Wear",
+  "license": "MIT"
+}
