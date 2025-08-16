@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - Tech2Wear</title>
+    <meta name="description" content="Login of maak een account aan bij Tech2Wear voor exclusieve aanbiedingen en sneller bestellen.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <style>
+        :root {
+            --color-primary-dark: #0a0a0a;
+            --color-secondary-dark: #1a1a1a;
+            --color-accent-blue: #00ffff;
+            --color-accent-secondary: #0099cc;
+            --color-text-light: #ffffff;
+            --color-text-muted: #cccccc;
+            --color-border: #333333;
+            --color-success: #00ff88;
+            --color-warning: #ff9500;
+            --color-error: #ff3860;
+            
+            --font-primary: 'Open Sans', sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+            --font-button: 'Montserrat', sans-serif;
+            
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-secondary-dark) 100%);
+            color: var(--color-text-light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-text-muted);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--color-accent-blue);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .auth-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .auth-subtitle {
+            color: var(--color-text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .auth-description {
+            color: var(--color-text-muted);
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .auth-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .auth-card {
+            background: var(--color-secondary-dark);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .auth-card:hover {
+            border-color: var(--color-accent-blue);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .auth-card-icon {
+            font-size: 3rem;
+            color: var(--color-accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .auth-card-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-text-light);
+        }
+
+        .auth-card-description {
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: var(--font-button);
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-secondary));
+            color: var(--color-primary-dark);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-accent-blue);
+            border: 2px solid var(--color-accent-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-accent-blue);
+            color: var(--color-primary-dark);
+        }
+
+        .features {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .features-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-text-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(0, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+        }
+
+        .feature-icon {
+            color: var(--color-accent-blue);
+            font-size: 1.5rem;
+        }
+
+        .feature-text {
+            color: var(--color-text-muted);
+            flex: 1;
+        }
+
+        /* Loading State */
+        .loading {
+            display: none;
+            text-align: center;
+            color: var(--color-text-muted);
+        }
+
+        .loading.show {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .auth-title {
+                font-size: 2rem;
+            }
+            
+            .auth-options {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .auth-card {
+                padding: 2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading State -->
+    <div id="loading" class="loading show">
+        <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+        <p>Controleren van inlogstatus...</p>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="auth-container" style="display: none;">
+        <a href="../../../index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i>
+            Terug naar home
+        </a>
+        
+        <div class="auth-header">
+            <h1 class="auth-title">Welkom bij Tech2Wear</h1>
+            <p class="auth-subtitle">Je account voor de nieuwste technologie</p>
+            <p class="auth-description">
+                Maak een account aan of log in om te genieten van exclusieve aanbiedingen, 
+                snellere checkout, ordergeschiedenis en gepersonaliseerde aanbevelingen.
+            </p>
+        </div>
+        
+        <div class="auth-options">
+            <!-- Login Card -->
+            <div class="auth-card" onclick="window.location.href='login-page.html'">
+                <div class="auth-card-icon">
+                    <i class="fas fa-sign-in-alt"></i>
+                </div>
+                <h2 class="auth-card-title">Inloggen</h2>
+                <p class="auth-card-description">
+                    Al een account? Log in om toegang te krijgen tot je persoonlijke dashboard.
+                </p>
+                <a href="login-page.html" class="btn btn-primary">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Inloggen
+                </a>
+            </div>
+            
+            <!-- Register Card -->
+            <div class="auth-card" onclick="window.location.href='registration.html'">
+                <div class="auth-card-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h2 class="auth-card-title">Account Aanmaken</h2>
+                <p class="auth-card-description">
+                    Nieuw hier? Maak een gratis account aan en ontdek alle voordelen.
+                </p>
+                <a href="registration.html" class="btn btn-secondary">
+                    <i class="fas fa-user-plus"></i>
+                    Registreren
+                </a>
+            </div>
+        </div>
+        
+        <!-- Features -->
+        <div class="features">
+            <h3 class="features-title">Voordelen van een Tech2Wear account</h3>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <div class="feature-text">Snellere checkout en ordergeschiedenis</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="feature-text">Exclusieve aanbiedingen en kortingen</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="feature-text">Wishlist en gepersonaliseerde aanbevelingen</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div class="feature-text">Meldingen over nieuwe producten</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Configuration -->
+    <script src="../assets/firebase-config.js"></script>
+
+    <script>
+        // Check authentication state on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const loading = document.getElementById('loading');
+            const mainContent = document.getElementById('main-content');
+            
+            // Show loading initially
+            loading.classList.add('show');
+            mainContent.style.display = 'none';
+            
+            // Listen for auth state changes
+            auth.onAuthStateChanged(function(user) {
+                if (user && user.emailVerified) {
+                    // User is logged in and verified, redirect to account page
+                    console.log('✅ User is logged in, redirecting to account page...');
+                    showNotification('✅ Je bent al ingelogd! Doorsturen naar je account...', 'success');
+                    setTimeout(() => {
+                        window.location.href = 'account.html';
+                    }, 1000);
+                } else {
+                    // User is not logged in, show login/register options
+                    console.log('❌ User not logged in, showing auth options');
+                    loading.classList.remove('show');
+                    mainContent.style.display = 'block';
+                }
+            });
+            
+            // Fallback: Hide loading after 3 seconds if no auth state detected
+            setTimeout(() => {
+                if (loading.classList.contains('show')) {
+                    loading.classList.remove('show');
+                    mainContent.style.display = 'block';
+                }
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

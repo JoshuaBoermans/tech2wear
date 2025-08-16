@@ -114,7 +114,12 @@ function getNotificationIcon(type) {
 function updateUIForLoggedInUser(user) {
     const accountLinks = document.querySelectorAll('a[href*="account.html"]');
     accountLinks.forEach(link => {
-        link.href = getCorrectPath('pages/account/account.html');
+        // Determine correct path - logged in users go to account.html
+        if (link.href.includes('tech_website/index.html/account/')) {
+            link.href = link.href.replace(/[^\/]*\.html$/, 'account.html');
+        } else {
+            link.href = getCorrectPath('tech_website/index.html/account/account.html');
+        }
         link.title = `Ingelogd als ${user.displayName || user.email}`;
     });
     
@@ -140,7 +145,12 @@ function updateUIForUnverifiedUser(user) {
 function updateUIForLoggedOutUser() {
     const accountLinks = document.querySelectorAll('a[href*="account.html"]');
     accountLinks.forEach(link => {
-        link.href = getCorrectPath('pages/account/login.html');
+        // Determine correct path - logged out users go to login-file.html
+        if (link.href.includes('tech_website/index.html/account/')) {
+            link.href = link.href.replace(/[^\/]*\.html$/, 'login-file.html');
+        } else {
+            link.href = getCorrectPath('tech_website/index.html/account/login-file.html');
+        }
         link.title = 'Inloggen of account aanmaken';
     });
     

@@ -397,7 +397,7 @@
                 
                 // Send email verification
                 await user.sendEmailVerification({
-                    url: window.location.origin + '/pages/account/login.html?verified=true',
+                    url: window.location.origin + '/tech_website/index.html/account/login-page.html?verified=true',
                     handleCodeInApp: false
                 });
                 
@@ -422,7 +422,7 @@
                 
                 // Redirect after delay
                 setTimeout(() => {
-                    window.location.href = 'login.html?registered=true';
+                    window.location.href = 'login-page.html?registered=true';
                 }, 2000);
                 
             } catch (error) {

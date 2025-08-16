@@ -1538,5 +1538,165 @@
         }
     </script>
 
+    <!-- User Authentication & Profile Management -->
+    <script>
+        // ===== USER AUTHENTICATION & DATA LOADING =====
+        
+        // Check authentication state and load user data
+        auth.onAuthStateChanged(async function(user) {
+            if (!user || !user.emailVerified) {
+                // User not logged in or not verified, redirect to login
+                console.log('❌ User not authenticated, redirecting to login-file.html');
+                showNotification('⚠️ Je moet ingelogd zijn om je account te bekijken', 'warning');
+                setTimeout(() => {
+                    window.location.href = 'login-file.html';
+                }, 1000);
+                return;
+            }
+            
+            console.log('✅ User authenticated:', user.email);
+            
+            // Load user profile data from Firestore
+            try {
+                const userDoc = await db.collection('users').doc(user.uid).get();
+                if (userDoc.exists) {
+                    const userData = userDoc.data();
+                    console.log('✅ User data loaded:', userData);
+                    
+                    // Populate profile form fields
+                    populateProfileForm(userData, user);
+                    
+                    // Update welcome message if exists
+                    updateWelcomeMessage(userData, user);
+                    
+                } else {
+                    console.log('⚠️ No user document found, creating basic profile');
+                    // Create basic user document if it doesn't exist
+                    await createUserDocument(user);
+                }
+                
+            } catch (error) {
+                console.error('❌ Error loading user data:', error);
+                showNotification('⚠️ Er was een probleem met het laden van je gegevens', 'warning');
+            }
+        });
+        
+        // Populate profile form with user data
+        function populateProfileForm(userData, user) {
+            const form = document.querySelector('#profile form');
+            if (!form) return;
+            
+            const inputs = form.querySelectorAll('.form-input');
+            if (inputs.length >= 4) {
+                inputs[0].value = userData.firstName || '';
+                inputs[1].value = userData.lastName || '';
+                inputs[2].value = userData.email || user.email || '';
+                inputs[3].value = userData.phone || '';
+            }
+            
+            // Make email read-only since it's the authentication key
+            const emailInput = inputs[2];
+            if (emailInput) {
+                emailInput.readOnly = true;
+                emailInput.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+                emailInput.style.cursor = 'not-allowed';
+            }
+        }
+        
+        // Update welcome message
+        function updateWelcomeMessage(userData, user) {
+            const welcomeElements = document.querySelectorAll('.account-welcome h1, .section-title');
+            const displayName = userData.firstName ? 
+                `${userData.firstName} ${userData.lastName}` : 
+                user.displayName || user.email;
+                
+            welcomeElements.forEach(element => {
+                if (element.textContent.includes('Account') || element.textContent.includes('Welcome')) {
+                    element.innerHTML = `Welkom terug, ${userData.firstName || 'User'}! <span style="color: var(--color-accent-blue);">🎉</span>`;
+                }
+            });
+        }
+        
+        // Create basic user document if missing
+        async function createUserDocument(user) {
+            try {
+                const basicUserData = {
+                    email: user.email,
+                    firstName: user.displayName ? user.displayName.split(' ')[0] : '',
+                    lastName: user.displayName ? user.displayName.split(' ').slice(1).join(' ') : '',
+                    phone: '',
+                    createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                    lastLogin: firebase.firestore.FieldValue.serverTimestamp(),
+                    emailVerified: user.emailVerified
+                };
+                
+                await db.collection('users').doc(user.uid).set(basicUserData);
+                console.log('✅ Basic user document created');
+                
+                // Populate form with basic data
+                populateProfileForm(basicUserData, user);
+                
+            } catch (error) {
+                console.error('❌ Error creating user document:', error);
+            }
+        }
+        
+        // Handle profile form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const profileForm = document.querySelector('#profile form');
+            if (profileForm) {
+                profileForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const user = auth.currentUser;
+                    if (!user) {
+                        showNotification('❌ Je moet ingelogd zijn om je profiel bij te werken', 'error');
+                        return;
+                    }
+                    
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.innerHTML;
+                    
+                    try {
+                        // Show loading state
+                        submitBtn.disabled = true;
+                        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Opslaan...';
+                        
+                        const inputs = this.querySelectorAll('.form-input');
+                        const updatedData = {
+                            firstName: inputs[0].value.trim(),
+                            lastName: inputs[1].value.trim(),
+                            email: inputs[2].value.trim(),
+                            phone: inputs[3].value.trim(),
+                            updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                        };
+                        
+                        // Update Firestore document
+                        await db.collection('users').doc(user.uid).update(updatedData);
+                        
+                        // Update Firebase Auth display name if changed
+                        const newDisplayName = `${updatedData.firstName} ${updatedData.lastName}`.trim();
+                        if (newDisplayName && newDisplayName !== user.displayName) {
+                            await user.updateProfile({ displayName: newDisplayName });
+                        }
+                        
+                        showNotification('✅ Profiel succesvol bijgewerkt!', 'success');
+                        
+                        // Update welcome message
+                        updateWelcomeMessage(updatedData, user);
+                        
+                    } catch (error) {
+                        console.error('❌ Error updating profile:', error);
+                        showNotification('❌ Er ging iets mis bij het bijwerken van je profiel', 'error');
+                    } finally {
+                        // Restore button state
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalText;
+                    }
+                });
+            }
+        });
+    </script>
+
 </body> 
 </html> 
