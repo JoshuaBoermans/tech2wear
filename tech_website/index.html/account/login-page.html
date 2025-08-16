@@ -340,10 +340,10 @@
                     // Check if email is verified
                     if (!user.emailVerified) {
                         // Send verification email again
-                        await user.sendEmailVerification();
+                        // Skip email verification for now
                         // Skip sign out - allow unverified users to stay logged in
                         
-                        showNotification('⚠️ Verifieer eerst je email. We hebben een nieuwe verificatie link gestuurd.', 'warning');
+                        // No notification needed - user can proceed normally
                         // Don't return - continue with login
                     }
                     

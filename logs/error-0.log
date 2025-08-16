@@ -166,3 +166,47 @@
 2025-08-16 19:21 +00:00: 10.12.156.14 - - [16/Aug/2025 19:21:19] "GET /tech_website/index.html/assets/firebase-config.js HTTP/1.1" 200 -
 2025-08-16 19:21 +00:00: 10.12.156.14 - - [16/Aug/2025 19:21:19] code 404, message File not found
 2025-08-16 19:21 +00:00: 10.12.156.14 - - [16/Aug/2025 19:21:19] "GET /tech_website/favicon.ico HTTP/1.1" 404 -
+2025-08-16 19:22 +00:00: 10.12.156.14 - - [16/Aug/2025 19:22:19] "HEAD / HTTP/1.1" 200 -
+2025-08-16 19:22 +00:00: 10.12.156.14 - - [16/Aug/2025 19:22:19] "GET / HTTP/1.1" 304 -
+2025-08-16 19:22 +00:00: 10.12.156.14 - - [16/Aug/2025 19:22:19] "GET /tech_website/Images/products/XREAL-glasses.jpg HTTP/1.1" 304 -
+2025-08-16 19:22 +00:00: 10.12.156.14 - - [16/Aug/2025 19:22:19] code 404, message File not found
+2025-08-16 19:22 +00:00: 10.12.156.14 - - [16/Aug/2025 19:22:19] "GET /images/products/smart-watch-pro.jpg HTTP/1.1" 404 -
+2025-08-16 19:22 +00:00: 10.12.156.14 - - [16/Aug/2025 19:22:19] code 404, message File not found
+2025-08-16 19:22 +00:00: 10.12.156.14 - - [16/Aug/2025 19:22:19] "GET /images/products/wireless-earbuds.jpg HTTP/1.1" 404 -
+2025-08-16 19:22 +00:00: 10.12.156.14 - - [16/Aug/2025 19:22:19] code 404, message File not found
+2025-08-16 19:22 +00:00: 10.12.156.14 - - [16/Aug/2025 19:22:19] "GET /images/products/smart-home-hub.jpg HTTP/1.1" 404 -
+2025-08-16 19:22 +00:00: 10.12.156.14 - - [16/Aug/2025 19:22:19] "GET /tech_website/index.html/assets/cart-module.js HTTP/1.1" 304 -
+2025-08-16 19:22 +00:00: 10.12.156.14 - - [16/Aug/2025 19:22:19] code 404, message File not found
+2025-08-16 19:22 +00:00: 10.12.156.14 - - [16/Aug/2025 19:22:19] "GET /images/products/drone-pro.jpg HTTP/1.1" 404 -
+2025-08-16 19:22 +00:00: 10.12.156.14 - - [16/Aug/2025 19:22:19] code 404, message File not found
+2025-08-16 19:22 +00:00: 10.12.156.14 - - [16/Aug/2025 19:22:19] "GET /images/payments/ideal.jpg HTTP/1.1" 404 -
+2025-08-16 19:28 +00:00: 10.12.156.14 - - [16/Aug/2025 19:28:57] "GET / HTTP/1.1" 304 -
+2025-08-16 19:28 +00:00: 10.12.156.14 - - [16/Aug/2025 19:28:57] "GET /tech_website/Images/products/XREAL-glasses.jpg HTTP/1.1" 304 -
+2025-08-16 19:28 +00:00: 10.12.156.14 - - [16/Aug/2025 19:28:57] code 404, message File not found
+2025-08-16 19:28 +00:00: 10.12.156.14 - - [16/Aug/2025 19:28:57] "GET /images/payments/ideal.jpg HTTP/1.1" 404 -
+2025-08-16 19:28 +00:00: 10.12.156.14 - - [16/Aug/2025 19:28:57] "GET /tech_website/index.html/assets/cart-module.js HTTP/1.1" 304 -
+2025-08-16 19:28 +00:00: 10.12.156.14 - - [16/Aug/2025 19:28:57] code 404, message File not found
+2025-08-16 19:28 +00:00: 10.12.156.14 - - [16/Aug/2025 19:28:57] "GET /favicon.ico HTTP/1.1" 404 -
+2025-08-16 19:28 +00:00: 10.12.156.14 - - [16/Aug/2025 19:28:59] "GET /tech_website/index.html/contact.html HTTP/1.1" 304 -
+2025-08-16 19:29 +00:00: 10.12.156.14 - - [16/Aug/2025 19:29:00] "GET /tech_website/index.html/assets/firebase-config.js HTTP/1.1" 200 -
+2025-08-16 19:29 +00:00: 10.12.156.14 - - [16/Aug/2025 19:29:00] code 404, message File not found
+2025-08-16 19:29 +00:00: 10.12.156.14 - - [16/Aug/2025 19:29:00] "GET /tech_website/images/payments/ideal.jpg HTTP/1.1" 404 -
+2025-08-16 19:29 +00:00: 10.12.156.14 - - [16/Aug/2025 19:29:01] "GET /tech_website/index.html/account/login-file.html HTTP/1.1" 200 -
+2025-08-16 19:29 +00:00: 10.12.156.14 - - [16/Aug/2025 19:29:02] code 404, message File not found
+2025-08-16 19:29 +00:00: 10.12.156.14 - - [16/Aug/2025 19:29:02] "GET /tech_website/favicon.ico HTTP/1.1" 404 -
+2025-08-16 19:29 +00:00: 10.12.156.14 - - [16/Aug/2025 19:29:18] "GET /tech_website/index.html/account/login-page.html HTTP/1.1" 200 -
+2025-08-16 19:29 +00:00: 10.12.156.14 - - [16/Aug/2025 19:29:24] "GET /tech_website/index.html/account/registration.html HTTP/1.1" 200 -
+2025-08-16 19:30 +00:00: 10.12.156.14 - - [16/Aug/2025 19:30:13] "GET /tech_website/index.html/account/login-page.html HTTP/1.1" 304 -
+2025-08-16 19:30 +00:00: 10.12.156.14 - - [16/Aug/2025 19:30:14] "GET /tech_website/index.html/assets/firebase-config.js HTTP/1.1" 304 -
+2025-08-16 19:30 +00:00: 10.12.156.14 - - [16/Aug/2025 19:30:22] "GET /tech_website/index.html/account/login-page.html HTTP/1.1" 200 -
+2025-08-16 19:30 +00:00: 10.12.156.14 - - [16/Aug/2025 19:30:23] "GET /tech_website/index.html/assets/firebase-config.js HTTP/1.1" 200 -
+2025-08-16 19:30 +00:00: 10.12.156.14 - - [16/Aug/2025 19:30:26] code 404, message File not found
+2025-08-16 19:30 +00:00: 10.12.156.14 - - [16/Aug/2025 19:30:26] "GET /tech_website/favicon.ico HTTP/1.1" 404 -
+2025-08-16 19:31 +00:00: 10.12.156.14 - - [16/Aug/2025 19:31:47] "GET /tech_website/index.html/account/account.html HTTP/1.1" 200 -
+2025-08-16 19:31 +00:00: 10.12.156.14 - - [16/Aug/2025 19:31:47] "GET /tech_website/index.html/assets/firebase-config.js HTTP/1.1" 304 -
+2025-08-16 19:37 +00:00: 10.12.156.14 - - [16/Aug/2025 19:37:45] "GET /tech_website/index.html/account/account.html HTTP/1.1" 200 -
+2025-08-16 19:37 +00:00: 10.12.156.14 - - [16/Aug/2025 19:37:45] "GET /tech_website/index.html/assets/firebase-config.js HTTP/1.1" 200 -
+2025-08-16 19:37 +00:00: 10.12.156.14 - - [16/Aug/2025 19:37:45] "GET /tech_website/index.html/assets/cart-module.js HTTP/1.1" 200 -
+2025-08-16 19:37 +00:00: 10.12.156.14 - - [16/Aug/2025 19:37:45] code 404, message File not found
+2025-08-16 19:37 +00:00: 10.12.156.14 - - [16/Aug/2025 19:37:45] "GET /tech_website/favicon.ico HTTP/1.1" 404 -
+2025-08-16 19:37 +00:00: 10.12.156.14 - - [16/Aug/2025 19:37:46] "GET /tech_website/index.html/account/login-file.html HTTP/1.1" 200 -

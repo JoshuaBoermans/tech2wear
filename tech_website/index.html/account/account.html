@@ -1082,8 +1082,8 @@
                     <div class="account-avatar">
                         <i class="fas fa-user"></i>
                     </div>
-                    <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-text-light);">John Doe</div>
-                    <div style="color: var(--color-text-muted); font-size: 0.9rem;">john.doe@example.com</div>
+                    <div id="user-display-name" style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--color-text-light);">Laden...</div>
+                    <div id="user-display-email" style="color: var(--color-text-muted); font-size: 0.9rem;">Laden...</div>
                 </div>
                 
                 <nav>
@@ -1217,7 +1217,7 @@
                     <div class="order-card">
                         <h4 style="color: var(--color-text-light); margin-bottom: 1rem;">Default Address</h4>
                         <p style="color: var(--color-text-muted); margin: 0; line-height: 1.6;">
-                            John Doe<br>
+                            <span id="user-address-name">Je naam</span><br>
                             123 Tech Street<br>
                             San Francisco, CA 94105<br>
                             United States
@@ -1558,10 +1558,12 @@
             
             // Load user profile data from Firestore
             try {
+                console.log('🔍 Attempting to load user data for UID:', user.uid);
                 const userDoc = await db.collection('users').doc(user.uid).get();
+                
                 if (userDoc.exists) {
                     const userData = userDoc.data();
-                    console.log('✅ User data loaded:', userData);
+                    console.log('✅ User data loaded from Firestore:', userData);
                     
                     // Populate profile form fields
                     populateProfileForm(userData, user);
@@ -1570,14 +1572,28 @@
                     updateWelcomeMessage(userData, user);
                     
                 } else {
-                    console.log('⚠️ No user document found, creating basic profile');
+                    console.log('⚠️ No user document found in Firestore, creating basic profile');
+                    console.log('🔍 User object from auth:', { 
+                        uid: user.uid, 
+                        email: user.email, 
+                        displayName: user.displayName 
+                    });
                     // Create basic user document if it doesn't exist
                     await createUserDocument(user);
                 }
                 
             } catch (error) {
                 console.error('❌ Error loading user data:', error);
+                console.error('❌ Error details:', error.message, error.code);
                 showNotification('⚠️ Er was een probleem met het laden van je gegevens', 'warning');
+                
+                // Fallback: try to create basic document with auth data
+                try {
+                    console.log('🔄 Attempting fallback user creation...');
+                    await createUserDocument(user);
+                } catch (fallbackError) {
+                    console.error('❌ Fallback creation also failed:', fallbackError);
+                }
             }
         });
         
@@ -1601,6 +1617,35 @@
                 emailInput.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
                 emailInput.style.cursor = 'not-allowed';
             }
+            
+            // Update display elements with real user data
+            updateUserDisplayElements(userData, user);
+        }
+        
+        // Update all user display elements throughout the page
+        function updateUserDisplayElements(userData, user) {
+            const displayName = userData.firstName && userData.lastName ? 
+                `${userData.firstName} ${userData.lastName}` : 
+                (user.displayName || userData.firstName || 'Gebruiker');
+                
+            const displayEmail = userData.email || user.email || 'Geen email';
+            
+            // Update sidebar user info
+            const userDisplayName = document.getElementById('user-display-name');
+            const userDisplayEmail = document.getElementById('user-display-email');
+            const userAddressName = document.getElementById('user-address-name');
+            
+            if (userDisplayName) {
+                userDisplayName.textContent = displayName;
+            }
+            if (userDisplayEmail) {
+                userDisplayEmail.textContent = displayEmail;
+            }
+            if (userAddressName) {
+                userAddressName.textContent = displayName;
+            }
+            
+            console.log('✅ User display elements updated:', { displayName, displayEmail });
         }
         
         // Update welcome message
@@ -1635,6 +1680,9 @@
                 
                 // Populate form with basic data
                 populateProfileForm(basicUserData, user);
+                
+                // Also update display elements
+                updateUserDisplayElements(basicUserData, user);
                 
             } catch (error) {
                 console.error('❌ Error creating user document:', error);
