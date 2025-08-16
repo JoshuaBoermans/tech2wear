@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech2Wear - Garantie Informatie</title>
+    <meta name="description" content="Uitgebreide garantie dekking voor alle Tech2Wear producten. Leer meer over garantievoorwaarden, wat wel en niet gedekt is, en hoe u garantieclaims indient.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Variables */
+        :root {
+            --color-primary-dark: #0a0a0a;
+            --color-secondary-dark: #1a1a1a;
+            --color-accent-blue: #00ffff;
+            --color-accent-secondary: #0099cc;
+            --color-text-light: #ffffff;
+            --color-text-muted: #cccccc;
+            --color-border: #333333;
+            --color-success: #00ff88;
+            --color-warning: #ff9500;
+            --color-error: #ff3860;
+            
+            --font-primary: 'Open Sans', sans-serif;
+            --font-heading: 'Poppins', sans-serif;
+            --font-button: 'Montserrat', sans-serif;
+            
+            --container-max-width: 1200px;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --shadow-hover: 0 15px 40px rgba(0, 255, 255, 0.2);
+            --header-height: 80px;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-primary-dark);
+            color: var(--color-text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.8rem; }
+        h4 { font-size: 1.4rem; }
+        h5 { font-size: 1.2rem; }
+        h6 { font-size: 1rem; }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--color-text-muted);
+        }
+
+        a {
+            color: var(--color-accent-blue);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--color-accent-secondary);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-family: var(--font-button);
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-secondary));
+            color: var(--color-primary-dark);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-accent-blue);
+            border: 2px solid var(--color-accent-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-accent-blue);
+            color: var(--color-primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Header */
+        .site-header {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-border);
+            height: var(--header-height);
+        }
+
+        .header-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+            height: 100%;
+        }
+
+        .site-logo a {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-accent-blue);
+            line-height: 1;
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Navigation */
+        .site-nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--color-text-light);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--color-accent-blue);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent-blue);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Dropdown Menu */
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-secondary-dark);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            min-width: 500px;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            margin-top: 1rem;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            margin-top: 0.5rem;
+        }
+
+        .dropdown-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            border-radius: 8px;
+            color: var(--color-text-light);
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(0, 255, 255, 0.1);
+            color: var(--color-accent-blue);
+        }
+
+        .dropdown-item i {
+            font-size: 1.2rem;
+            width: 20px;
+        }
+
+        /* Header Actions */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .header-action,
+        .search-toggle {
+            color: var(--color-text-light);
+            font-size: 1.2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .header-action:hover,
+        .search-toggle:hover {
+            color: var(--color-accent-blue);
+        }
+
+        .cart-icon {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--color-accent-blue);
+            color: var(--color-primary-dark);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            background: var(--color-secondary-dark);
+            border-top: 1px solid var(--color-border);
+            padding: 1rem 0;
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .search-bar.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .search-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--color-border);
+            border-right: none;
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+            background: var(--color-primary-dark);
+            color: var(--color-text-light);
+            font-size: 1rem;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--color-accent-blue);
+        }
+
+        .search-submit {
+            padding: 0.75rem 1rem;
+            background: var(--color-accent-blue);
+            color: var(--color-primary-dark);
+            border: none;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-submit:hover {
+            background: var(--color-accent-secondary);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-text-light);
+            transition: var(--transition);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--color-primary-dark);
+            z-index: 1001;
+            transform: translateX(-100%);
+            transition: var(--transition);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .mobile-menu-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-accent-blue);
+        }
+
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            color: var(--color-text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu-nav {
+            padding: 2rem;
+        }
+
+        .mobile-nav-link {
+            display: block;
+            color: var(--color-text-light);
+            font-size: 1.2rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .mobile-nav-dropdown {
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .mobile-nav-toggle {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            color: var(--color-text-light);
+            font-size: 1.2rem;
+            padding: 1rem 0;
+            cursor: pointer;
+        }
+
+        .mobile-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .mobile-dropdown-content.active {
+            max-height: 500px;
+        }
+
+        .mobile-dropdown-content a {
+            display: block;
+            color: var(--color-text-muted);
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-secondary-dark) 100%);
+            padding: 60px 0;
+            margin-top: var(--header-height);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(0, 153, 204, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .page-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--color-accent-blue), var(--color-accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: var(--color-secondary-dark);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--color-text-muted);
+            transition: var(--transition);
+        }
+
+        .breadcrumb-nav a:hover {
+            color: var(--color-accent-blue);
+        }
+
+        .breadcrumb-nav .current {
+            color: var(--color-accent-blue);
+        }
+
+        .breadcrumb-separator {
+            color: var(--color-text-muted);
+        }
+
+        /* Warranty Content */
+        .warranty-content {
+            padding: 60px 0;
+        }
+
+        .warranty-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Legal Disclaimer */
+        .legal-disclaimer {
+            background: linear-gradient(135deg, rgba(255, 152, 0, 0.1) 0%, rgba(255, 56, 96, 0.1) 100%);
+            border: 2px solid var(--color-warning);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .legal-disclaimer h2 {
+            color: var(--color-warning);
+            margin-bottom: 1.5rem;
+        }
+
+        .legal-disclaimer p {
+            color: var(--color-text-light);
+            font-weight: 500;
+        }
+
+        /* Warranty Overview */
+        .warranty-overview {
+            background: linear-gradient(135deg, var(--color-secondary-dark) 0%, rgba(0, 255, 255, 0.05) 100%);
+            border: 1px solid var(--color-accent-blue);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .warranty-overview h2 {
+            color: var(--color-accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .warranty-overview p {
+            font-size: 1.1rem;
+            color: var(--color-text-light);
+        }
+
+        /* Troubleshooting Widget */
+        .troubleshooting-widget {
+            background: var(--color-secondary-dark);
+            border: 2px solid var(--color-success);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .troubleshooting-widget h3 {
+            color: var(--color-success);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .diagnostic-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .diagnostic-steps label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--color-text-light);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .diagnostic-steps label:hover {
+            background: rgba(0, 255, 136, 0.1);
+        }
+
+        .diagnostic-steps input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--color-success);
+        }
+
+        .troubleshooting-note {
+            text-align: center;
+            color: var(--color-warning);
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        /* Warranty Categories */
+        .warranty-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .warranty-category {
+            background: var(--color-secondary-dark);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .warranty-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--color-accent-blue);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            color: var(--color-accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .category-title {
+            color: var(--color-text-light);
+            margin-bottom: 1rem;
+        }
+
+        .warranty-period {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid var(--color-accent-blue);
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--color-accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .category-description {
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .warranty-features {
+            list-style: none;
+            text-align: left;
+        }
+
+        .warranty-features li {
+            margin-bottom: 0.5rem;
+            color: var(--color-text-muted);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .warranty-features li::before {
+            content: '✓';
+            color: var(--color-success);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .warranty-features li.exclusion::before {
+            content: '✗';
+            color: var(--color-error);
+        }
+
+        /* Warranty Process */
+        .warranty-process {
+            margin-bottom: 4rem;
+        }
+
+        .process-title {
+            text-align: center;
+            color: var(--color-accent-blue);
+            margin-bottom: 3rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .process-step {
+            background: var(--color-secondary-dark);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background: var(--color-accent-blue);
+            color: var(--color-primary-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .step-icon {
+            font-size: 2rem;
+            color: var(--color-accent-blue);
+            margin: 1rem 0;
+        }
+
+        .step-title {
+            color: var(--color-text-light);
+            margin-bottom: 1rem;
+        }
+
+        .step-description {
+            color: var(--color-text-muted);
+        }
+
+        /* Warranty Section */
+        .warranty-section {
+            margin-bottom: 3rem;
+            background: var(--color-secondary-dark);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+        }
+
+        .warranty-section h2 {
+            color: var(--color-accent-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--color-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .warranty-section h3 {
+            color: var(--color-text-light);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .warranty-section p {
+            margin-bottom: 1rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+        }
+
+        .warranty-section ul {
+            list-style: none;
+            margin-left: 0;
+            margin-bottom: 1rem;
+        }
+
+        .warranty-section ul li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 1.5rem;
+            color: var(--color-text-muted);
+        }
+
+        .warranty-section ul li::before {
+            content: '•';
+            color: var(--color-accent-blue);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .warranty-section ul.exclusion-list li::before {
+            content: '✗';
+            color: var(--color-error);
+        }
+
+        .warranty-section strong {
+            color: var(--color-text-light);
+        }
+
+        /* Contact Information */
+        .warranty-contact {
+            background: var(--color-secondary-dark);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .warranty-contact h2 {
+            color: var(--color-accent-blue);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--color-accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .contact-title {
+            color: var(--color-text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details {
+            color: var(--color-text-muted);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--color-secondary-dark);
+            border-top: 1px solid var(--color-border);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+            margin-bottom: 1rem;
+        }
+
+        .footer-description {
+            color: var(--color-text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--color-primary-dark);
+            color: var(--color-text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--color-accent-blue);
+            color: var(--color-primary-dark);
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-text-light);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--color-text-muted);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-accent-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--color-border);
+            padding-top: 2rem;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .copyright {
+            color: var(--color-text-muted);
+            margin: 0;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .payment-methods .payment-icon {
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .payment-methods .payment-icon:hover {
+            opacity: 1;
+        }
+
+        .payment-methods img.payment-icon {
+            height: 30px;
+            width: auto;
+        }
+
+        .payment-methods i.payment-icon {
+            font-size: 2.5rem;
+            color: var(--color-text-muted);
+            line-height: 1;
+        }
+
+        .payment-methods i.payment-icon:hover {
+            color: var(--color-accent-blue);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--color-accent-blue);
+            color: var(--color-primary-dark);
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--color-accent-secondary);
+            transform: translateY(-3px);
+        }
+
+        /* Cart Count Bounce Animation */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .page-title {
+                font-size: 3rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-nav {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .dropdown-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-title {
+                font-size: 2.5rem;
+            }
+            
+            .page-header {
+                padding: 40px 0;
+            }
+            
+            .warranty-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .diagnostic-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container, .warranty-container {
+                padding: 0 15px;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .warranty-section {
+                padding: 1.5rem;
+            }
+            
+            .warranty-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-wrapper">
+                <!-- Logo -->
+                <div class="site-logo">
+                    <a href="../../index.html">
+                        <span class="logo-text">Tech2Wear</span>
+                        <span class="logo-tagline">Future Tech</span>
+                    </a>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="site-nav">
+                    <a href="../../index.html" class="nav-link">Home</a>
+                    <div class="nav-dropdown">
+                        <a href="shop/shop.html" class="nav-link">Shop <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-grid">
+                                <div class="dropdown-column">
+                                    <a href="shop/shop.html" class="dropdown-item">
+                                        <i class="fas fa-home"></i>
+                                        <span>AI Smart Home</span>
+                                    </a>
+                                    <a href="shop/shop.html" class="dropdown-item">
+                                        <i class="fas fa-watch"></i>
+                                        <span>Draagbare Tech</span>
+                                    </a>
+                                    <a href="shop/shop.html" class="dropdown-item">
+                                        <i class="fas fa-headphones"></i>
+                                        <span>Draadloze Audio</span>
+                                    </a>
+                                </div>
+                                <div class="dropdown-column">
+                                    <a href="shop/shop.html" class="dropdown-item">
+                                        <i class="fas fa-helicopter"></i>
+                                        <span>Drones & Accessoires</span>
+                                    </a>
+                                    <a href="shop/shop.html" class="dropdown-item">
+                                        <i class="fas fa-video"></i>
+                                        <span>Draagbare Projectoren</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="deals.html" class="nav-link">Aanbiedingen</a>
+                    <a href="about.html" class="nav-link">Over Ons</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <button class="search-toggle" aria-label="Zoeken">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <a href="account/account.html" class="header-action" aria-label="Account">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <a href="account/cart.html" class="header-action cart-icon" aria-label="Winkelwagen">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <div class="container">
+                <form class="search-form">
+                    <input type="text" placeholder="Zoek producten..." class="search-input">
+                    <button type="submit" class="search-submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <span class="mobile-menu-title">Menu</span>
+            <button class="mobile-menu-close" aria-label="Sluit menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-menu-nav">
+            <a href="../../index.html" class="mobile-nav-link">Home</a>
+            <div class="mobile-nav-dropdown">
+                <button class="mobile-nav-toggle">
+                    Shop <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown-content">
+                    <a href="shop/shop.html">AI Smart Home</a>
+                    <a href="shop/shop.html">Draagbare Tech</a>
+                    <a href="shop/shop.html">Draadloze Audio</a>
+                    <a href="shop/shop.html">Drones & Accessoires</a>
+                    <a href="shop/shop.html">Draagbare Projectoren</a>
+                </div>
+            </div>
+            <a href="deals.html" class="mobile-nav-link">Aanbiedingen</a>
+            <a href="about.html" class="mobile-nav-link">Over Ons</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+        </nav>
+    </div>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Garantie Informatie</h1>
+            <p class="page-subtitle">
+                Duidelijke garantievoorwaarden en bescherming tegen onnodige retouren. Weet precies waar u aan toe bent.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="../../index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="current">Garantie</span>
+            </nav>
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <main class="warranty-content">
+        <div class="warranty-container">
+            <!-- Legal Disclaimer -->
+            <div class="warranty-section legal-disclaimer">
+                <h2>Belangrijke Juridische Disclaimer</h2>
+                <p><strong>Wettelijke Rechten:</strong> Naast deze commerciële garantie heeft u als consument wettelijke rechten op basis van conformiteit (art. 7:17 BW en EU-richtlijn 2019/771). Deze commerciële garantie doet geen afbreuk aan die rechten. Voor retourneren binnen het 14-dagen herroepingsrecht, zie onze <a href="returns.html">Retourbeleid pagina</a>.</p>
+                <p><strong>Bindende Voorwaarden:</strong> Door uw bestelling te plaatsen, gaat u akkoord met alle hieronder vermelde garantievoorwaarden en beperkingen.</p>
+            </div>
+
+            <!-- Troubleshooting Widget -->
+            <div class="troubleshooting-widget">
+                <h3><i class="fas fa-tools"></i> Verplichte Stappen Voordat U Contact Opneemt</h3>
+                <div class="diagnostic-steps">
+                    <label><input type="checkbox"> Apparaat volledig gereset/herstart</label>
+                    <label><input type="checkbox"> Nieuwste firmware/software geïnstalleerd</label>
+                    <label><input type="checkbox"> Alternatieve kabel/adapter geprobeerd</label>
+                    <label><input type="checkbox"> Getest op ander apparaat/netwerk</label>
+                    <label><input type="checkbox"> Handleiding geraadpleegd</label>
+                    <label><input type="checkbox"> Online FAQ bekeken</label>
+                </div>
+                <p class="troubleshooting-note"><strong>BELANGRIJK:</strong> Alle relevante stappen doorlopen? Dan kunt u contact opnemen. Producten ingediend zonder deze basisstappen kunnen worden teruggestuurd op uw kosten.</p>
+            </div>
+
+            <!-- Warranty Overview -->
+            <section class="warranty-overview">
+                <h2>Uw Tech2Wear Garantie Belofte</h2>
+                <p>Wij staan achter elk product met transparante garantiedekking. Van smart home apparaten tot draagbare technologie - uw investering is beschermd binnen de hieronder vermelde voorwaarden.</p>
+            </section>
+
+            <!-- Warranty Categories -->
+            <section class="warranty-categories">
+                <div class="warranty-category">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="category-title">Smart Home Apparaten</h3>
+                    <div class="warranty-period">2 Jaar Commerciële Garantie</div>
+                    <p class="category-description">Uitgebreide dekking voor AI-gestuurde smart home producten inclusief hubs, thermostaten en beveiligingsapparaten.</p>
+                    <ul class="warranty-features">
+                        <li>Hardware defecten en storingen bij normaal gebruik</li>
+                        <li>Software updates en ondersteuning</li>
+                        <li>Vervangende onderdelen indien nodig</li>
+                        <li>Probleemoplossing op afstand</li>
+                        <li class="exclusion">Connectiviteitsproblemen door netwerk uitgesloten</li>
+                        <li class="exclusion">Schade door stroompieken zonder beveiliging uitgesloten</li>
+                    </ul>
+                </div>
+
+                <div class="warranty-category">
+                    <div class="category-icon">
+                        <i class="fas fa-watch"></i>
+                    </div>
+                    <h3 class="category-title">Draagbare Technologie</h3>
+                    <div class="warranty-period">1 Jaar Commerciële Garantie</div>
+                    <p class="category-description">Bescherming voor smartwatches, fitness trackers en alle draagbare apparaten.</p>
+                    <ul class="warranty-features">
+                        <li>Batterijgarantie: ≥80% capaciteit binnen 12 maanden</li>
+                        <li>Waterschade bescherming binnen IP-specificaties</li>
+                        <li>Scherm- en sensor dekking bij fabricagefouten</li>
+                        <li>Productiedefect bescherming</li>
+                        <li class="exclusion">Bandjes/riempjes zijn verbruiksdelen (uitgesloten)</li>
+                        <li class="exclusion">Waterschade buiten IP-rating uitgesloten</li>
+                    </ul>
+                </div>
+
+                <div class="warranty-category">
+                    <div class="category-icon">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3 class="category-title">Audio Apparaten</h3>
+                    <div class="warranty-period">2 Jaar Commerciële Garantie</div>
+                    <p class="category-description">Premium garantiedekking voor draadloze oordopjes, hoofdtelefoons en audio accessoires.</p>
+                    <ul class="warranty-features">
+                        <li>Objectieve geluidskwaliteit garantie (kanaaluitval, ruis)</li>
+                        <li>Oplaadcase bescherming</li>
+                        <li>Connectiviteitsproblemen dekking</li>
+                        <li>Driver en component bescherming</li>
+                        <li class="exclusion">Subjectieve geluidskwaliteit is geen defect</li>
+                        <li class="exclusion">Oorkussens zijn verbruiksdelen</li>
+                    </ul>
+                </div>
+
+                <div class="warranty-category">
+                    <div class="category-icon">
+                        <i class="fas fa-helicopter"></i>
+                    </div>
+                    <h3 class="category-title">Drones & Camera's</h3>
+                    <div class="warranty-period">1 Jaar Commerciële Garantie</div>
+                    <p class="category-description">Gespecialiseerde dekking voor drones, camera's en luchtfotografie-apparatuur.</p>
+                    <ul class="warranty-features">
+                        <li>Vluchtsysteem bescherming bij fabricagefouten</li>
+                        <li>Camera en gimbal dekking</li>
+                        <li>Productiedefect dekking</li>
+                        <li>Technische ondersteuning inbegrepen</li>
+                        <li class="exclusion">Crashschade uitgesloten - vluchtlogs vereist</li>
+                        <li class="exclusion">Propellers/landingsgestel zijn verbruiksdelen</li>
+                    </ul>
+                </div>
+
+                <div class="warranty-category">
+                    <div class="category-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="category-title">Projectoren</h3>
+                    <div class="warranty-period">2 Jaar Commerciële Garantie</div>
+                    <p class="category-description">Uitgebreide garantie voor draagbare projectoren en display technologie.</p>
+                    <ul class="warranty-features">
+                        <li>LED/Lamp levensduur binnen specificaties</li>
+                        <li>Lens en optiek bescherming</li>
+                        <li>Connectiviteitspoort dekking</li>
+                        <li>Beeldkwaliteit garantie</li>
+                        <li class="exclusion">Stof in optiek door onjuiste omgeving uitgesloten</li>
+                    </ul>
+                </div>
+
+                <div class="warranty-category">
+                    <div class="category-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="category-title">Accessoires</h3>
+                    <div class="warranty-period">1 Jaar Commerciële Garantie</div>
+                    <p class="category-description">Kwaliteitsgarantie voor opladers, kabels, hoesjes en andere tech accessoires.</p>
+                    <ul class="warranty-features">
+                        <li>Productiedefect dekking</li>
+                        <li>Oplaadprestatie garantie volgens specificatie</li>
+                        <li>Materiaal duurzaamheid bescherming</li>
+                        <li>Compatibiliteitsgarantie</li>
+                        <li class="exclusion">Normale slijtage connectoren uitgesloten</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Warranty Process -->
+            <section class="warranty-process">
+                <h2 class="process-title">Hoe u uw Garantie Claimt</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">
+                            <i class="fas fa-list-check"></i>
+                        </div>
+                        <h4 class="step-title">Troubleshooting Doorlopen</h4>
+                        <p class="step-description">Voltooi eerst alle troubleshooting stappen hierboven. Verzamel serienummer, aankoopbewijs en foto's/video's van het probleem.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h4 class="step-title">Contact & RMA Aanvragen</h4>
+                        <p class="step-description">Neem contact op met ons supportteam. Bij goedkeuring ontvangt u een verplicht RMA-nummer en verzendinstructies.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">
+                            <i class="fas fa-box-open"></i>
+                        </div>
+                        <h4 class="step-title">Veilig Verzenden</h4>
+                        <p class="step-description">Verpak het product veilig met RMA-nummer op het label. Producten zonder RMA worden geweigerd en teruggestuurd op uw kosten.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4 class="step-title">Beoordeling & Oplossing</h4>
+                        <p class="step-description">Wij beoordelen het product. Bij geldige garantie: reparatie, vervanging of winkelkrediet (onze keuze), binnen redelijke termijn.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Warranty Terms -->
+            <div class="warranty-section">
+                <h2>Garantievoorwaarden en Bepalingen</h2>
+                
+                <h3>Wat is Gedekt</h3>
+                <p>Onze commerciële garantie dekt fabricagefouten, hardwarestoringen en componentdefecten bij normaal gebruik. Dit omvat:</p>
+                <ul>
+                    <li>Elektronische componentfouten niet veroorzaakt door gebruikersschade</li>
+                    <li>Fabricagefouten in materialen en vakmanschap</li>
+                    <li>Software-gerelateerde problemen die basisfunctionaliteit aantoonbaar beperken</li>
+                    <li>Batterijprestaties onder gespecificeerde normen (voor toepasselijke apparaten)</li>
+                    <li>Connectiviteits- en sensorstoringen door fabricage</li>
+                </ul>
+
+                <h3>Wat is NIET Gedekt</h3>
+                <p>De volgende situaties vallen NIET onder onze standaard garantie:</p>
+                <ul class="exclusion-list">
+                    <li><strong>Gebruikersschade:</strong> Vallen, stoten, vloeistofschade, extreme temperaturen buiten specificaties</li>
+                    <li><strong>Misbruik/Onjuiste installatie:</strong> Gebruik buiten handleiding, ondeskundige montage, niet-originele onderdelen</li>
+                    <li><strong>Modificaties:</strong> Openen van product, reparaties door derden, gewijzigde/verwijderde serienummers</li>
+                    <li><strong>Normale slijtage:</strong> Cosmetische krassen, verbruiksdelen (propellers, bandjes, pads), normale kabelslijtage</li>
+                    <li><strong>Electriciteit/Omgeving:</strong> Stroompieken, vocht/condens, extreme temperaturen buiten specificatie</li>
+                    <li><strong>Software van derden/Malware:</strong> Defecten door niet-goedgekeurde apps/firmware</li>
+                    <li><strong>Waterschade:</strong> Buiten opgegeven IP-rating; IP-classificatie is geen garantie tegen alle waterschade</li>
+                    <li><strong>Ongeautoriseerde aankopen:</strong> Producten van niet-geautoriseerde verkopers of tweedehands</li>
+                </ul>
+
+                <h3>Kosten bij Ongeldige Claims</h3>
+                <p>Om onnodige retouren te voorkomen en efficiëntie te waarborgen:</p>
+                <ul class="exclusion-list">
+                    <li><strong>Retourzending bij niet-garantieproblemen:</strong> Indien schade niet onder garantie valt, zijn retourzendkosten (€15-25) voor uw rekening</li>
+                    <li><strong>Diagnostiekkosten:</strong> Bij producten zonder fabricagedefect kunnen diagnostiekkosten van €25 worden gerekend (alleen na voorafgaande instemming)</li>
+                    <li><strong>Verpakkingsschade:</strong> Schade door onvoldoende verpakking tijdens retour valt niet onder garantie</li>
+                </ul>
+
+                <h3>Verplicht Retourproces (RMA)</h3>
+                <p>Alle retouren voor garantieservice vereisen een vooraf verstrekt RMA-nummer. Zendingen zonder geldig RMA worden geweigerd en op uw kosten teruggestuurd.</p>
+
+                <h3>Gegevensverantwoordelijkheid</h3>
+                <p><strong>BELANGRIJKE WAARSCHUWING:</strong> Het is uw exclusieve verantwoordelijkheid om alle persoonlijke gegevens te back-uppen en te wissen voordat u het product opstuurt. Tech2Wear is NIET verantwoordelijk voor gegevensverlies tijdens service.</p>
+
+                <h3>Reparatie of Vervanging</h3>
+                <p>Bij geldige claims bieden wij kosteloos reparatie, vervanging of winkelkrediet <strong>naar onze keuze</strong>. Wij kiezen de doelmatigste oplossing binnen redelijke termijn. Vervangingen kunnen gereviseerde units van gelijkwaardige kwaliteit zijn.</p>
+
+                <h3>Garantieperiode</h3>
+                <p>Garantie begint vanaf aankoopdatum en varieert per productcategorie zoals hierboven vermeld. Alle periodes staan op uw aankoopbewijs.</p>
+
+                <h3>Bewijs van Aankoop</h3>
+                <p>Voor garantieclaims MOET u geldig bewijs overleggen:</p>
+                <ul>
+                    <li>Originele aankoopbon of factuur</li>
+                    <li>Bestelbevestiging email</li>
+                    <li>Product serienummer (ongewijzigd en leesbaar)</li>
+                    <li>Accountinformatie (indien online gekocht)</li>
+                </ul>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="warranty-section">
+                <h2>Aanvullende Belangrijke Informatie</h2>
+                
+                <h3>Beperking van Aansprakelijkheid</h3>
+                <p><strong>VOOR ZOVER WETTELIJK TOEGESTAAN:</strong> Tech2Wear's totale aansprakelijkheid voor garantieclaims is beperkt tot de aankoopprijs. Wij zijn NIET aansprakelijk voor indirecte, speciale of gevolgschade inclusief verlies van gegevens, winst, bedrijfsonderbreking of reputatieschade.</p>
+
+                <h3>Geografische Beperking</h3>
+                <p>Deze commerciële garantie geldt binnen de EU/EEA. Voor service buiten dit gebied kunnen extra kosten gelden. Klant draagt alle verzend-, invoer-, belasting- en administratiekosten voor internationale claims buiten EU/EEA.</p>
+
+                <h3>Niet-Overdraagbare Garantie</h3>
+                <p>Deze commerciële garantie is uitsluitend geldig voor de <strong>oorspronkelijke koper</strong> en NIET overdraagbaar. Wettelijke rechten van tweede eigenaren blijven onverlet maar vallen buiten deze commerciële garantie.</p>
+
+                <h3>Geschillenregeling</h3>
+                <p>Op deze garantie is Nederlands recht van toepassing, met behoud van bescherming door dwingende bepalingen van uw woonlandrecht. Voor klachten kunt u eerst contact opnemen via onze officiële kanalen. U kunt ook gebruikmaken van het Europese ODR-platform: <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>.</p>
+
+                <h3>Wijzigingen Voorbehouden</h3>
+                <p>Tech2Wear behoudt zich het recht voor deze voorwaarden te wijzigen. Wijzigingen gelden alleen voor aankopen na wijzigingsdatum. Voor uw aankoop geldende voorwaarden blijven van kracht gedurende de garantieperiode.</p>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="warranty-contact">
+                <h2>Garantie Support Contact</h2>
+                <p style="text-align: center; color: var(--color-warning); margin-bottom: 2rem;"><strong>LET OP:</strong> Neem alleen contact op NADAT u alle troubleshooting stappen heeft doorlopen. Claims zonder deze stappen kunnen worden afgewezen.</p>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4 class="contact-title">E-mail Support</h4>
+                        <div class="contact-details">
+                            <p><a href="mailto:warranty@tech2wear.com">warranty@tech2wear.com</a></p>
+                            <p>Reactie binnen 24-48 uur</p>
+                            <p>Voeg altijd toe: bestelnummer, serienummer, foto's/video's</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4 class="contact-title">Telefoon Support</h4>
+                        <div class="contact-details">
+                            <p>1-800-TECH-2WEAR</p>
+                            <p>Maandag-Vrijdag: 9:00 - 18:00 CET</p>
+                            <p>Weekend support beperkt beschikbaar</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h4 class="contact-title">Live Chat</h4>
+                        <div class="contact-details">
+                            <p>Beschikbaar op onze website</p>
+                            <p>Maandag-Vrijdag: 9:00 - 18:00 CET</p>
+                            <p>Directe ondersteuning voor urgente problemen</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4 class="contact-title">Contact Pagina</h4>
+                        <div class="contact-details">
+                            <p><a href="contact.html">Bezoek onze Contact Pagina</a></p>
+                            <p>Dien gedetailleerde garantieclaims in</p>
+                            <p>Upload foto's en documentatie</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-text">Tech2Wear</span>
+                        <span class="logo-tagline">Future Tech</span>
+                    </div>
+                    <p class="footer-description">
+                        Uw vertrouwde bestemming voor premium elektronica en geavanceerde technologie. 
+                        Ontdek de toekomst vandaag.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop/shop.html">Smart Home</a></li>
+                        <li><a href="shop/shop.html">Draagbare Tech</a></li>
+                        <li><a href="shop/shop.html">Draadloze Audio</a></li>
+                        <li><a href="shop/shop.html">Drones</a></li>
+                        <li><a href="shop/shop.html">Draagbare Projectoren</a></li>
+                        <li><a href="deals.html">Aanbiedingen</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contacteer Ons</a></li>
+                        <li><a href="warranty.html" style="color: var(--color-accent-blue);">Garantie</a></li>
+                        <li><a href="returns.html">Retourneren</a></li>
+                        <li><a href="faq.html">Veelgestelde Vragen</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Bedrijf</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">Over Ons</a></li>
+                        <li><a href="privacy.html">Privacybeleid</a></li>
+                        <li><a href="terms.html">Algemene Voorwaarden</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        © <span id="current-year"></span> Tech2Wear. Alle rechten voorbehouden.
+                    </p>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa payment-icon" aria-label="Visa"></i>
+                        <i class="fab fa-cc-mastercard payment-icon" aria-label="Mastercard"></i>
+                        <i class="fab fa-cc-paypal payment-icon" aria-label="PayPal"></i>
+                        <i class="fab fa-cc-apple-pay payment-icon" aria-label="Apple Pay"></i>
+                        <i class="fab fa-google-pay payment-icon" aria-label="Google Pay"></i>
+                        <img src="images/payments/ideal.jpg" alt="iDEAL" class="payment-icon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Terug naar boven">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- CART MODULE LADEN - EERST! -->
+    <script src="assets/cart-module.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // CART FUNCTIONALITEIT - GEBRUIKT TECHCART MODULE
+            if (window.TechCart) {
+                TechCart.updateCartCount();
+                
+                window.addEventListener('cartUpdated', function() {
+                    TechCart.updateCartCount();
+                    
+                    const cartCount = document.querySelector('.cart-count');
+                    if (cartCount) {
+                        cartCount.style.animation = 'none';
+                        void cartCount.offsetHeight;
+                        cartCount.style.animation = 'bounce 0.6s ease';
+                    }
+                });
+                
+                window.addEventListener('storage', function(e) {
+                    if (e.key === 'tech2wear_cart') {
+                        TechCart.updateCartCount();
+                    }
+                });
+                
+                document.addEventListener('visibilitychange', function() {
+                    if (!document.hidden && window.TechCart) {
+                        TechCart.updateCartCount();
+                    }
+                });
+                
+            } else {
+                console.warn('TechCart module niet geladen - winkelwagen functionaliteit beperkt');
+            }
+
+            // Set current year
+            const currentYear = new Date().getFullYear();
+            const currentYearElement = document.getElementById('current-year');
+            if (currentYearElement) {
+                currentYearElement.textContent = currentYear;
+            }
+            
+            // Mobile Menu Toggle
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const mobileMenuClose = document.querySelector('.mobile-menu-close');
+            
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    mobileMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+            
+            if (mobileMenuClose && mobileMenu) {
+                mobileMenuClose.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            }
+            
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function(e) {
+                    if (e.target === mobileMenu) {
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+            
+            // Mobile Dropdown Toggle
+            const mobileNavToggles = document.querySelectorAll('.mobile-nav-toggle');
+            mobileNavToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const dropdownContent = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    if (dropdownContent && icon) {
+                        dropdownContent.classList.toggle('active');
+                        icon.style.transform = dropdownContent.classList.contains('active') 
+                            ? 'rotate(180deg)' 
+                            : 'rotate(0deg)';
+                    }
+                });
+            });
+            
+            // Search Toggle
+            const searchToggle = document.querySelector('.search-toggle');
+            const searchBar = document.querySelector('.search-bar');
+            
+            if (searchToggle && searchBar) {
+                searchToggle.addEventListener('click', function() {
+                    searchBar.classList.toggle('active');
+                    if (searchBar.classList.contains('active')) {
+                        const searchInput = searchBar.querySelector('.search-input');
+                        setTimeout(() => searchInput && searchInput.focus(), 300);
+                    }
+                });
+            }
+            
+            document.addEventListener('click', function(e) {
+                if (searchBar && searchToggle && 
+                    !searchBar.contains(e.target) && 
+                    !searchToggle.contains(e.target)) {
+                    searchBar.classList.remove('active');
+                }
+            });
+            
+            // Back to Top Button
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            if (backToTopButton) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.classList.add('visible');
+                    } else {
+                        backToTopButton.classList.remove('visible');
+                    }
+                });
+                
+                backToTopButton.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // Search functionality
+            const searchForm = document.querySelector('.search-form');
+            if (searchForm) {
+                searchForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const searchInput = this.querySelector('.search-input');
+                    const searchTerm = searchInput ? searchInput.value.trim() : '';
+                    
+                    if (searchTerm) {
+                        window.location.href = `/search?q=${encodeURIComponent(searchTerm)}`;
+                    }
+                });
+            }
+
+            // Warranty category hover effects
+            const warrantyCategories = document.querySelectorAll('.warranty-category');
+            warrantyCategories.forEach(category => {
+                category.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                
+                category.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                });
+                
+                category.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            const animatedElements = document.querySelectorAll('.warranty-category, .process-step');
+            animatedElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(element);
+            });
+            
+            // Troubleshooting checklist functionality
+            const checkboxes = document.querySelectorAll('.diagnostic-steps input[type="checkbox"]');
+            const warningText = document.querySelector('.troubleshooting-note');
+            
+            if (checkboxes.length > 0 && warningText) {
+                checkboxes.forEach(checkbox => {
+                    checkbox.addEventListener('change', function() {
+                        const checkedCount = document.querySelectorAll('.diagnostic-steps input[type="checkbox"]:checked').length;
+                        const totalCount = checkboxes.length;
+                        
+                        if (checkedCount === totalCount) {
+                            warningText.style.color = 'var(--color-success)';
+                            warningText.innerHTML = '<strong>✓ Alle stappen doorlopen! U kunt nu contact opnemen voor verdere hulp.</strong>';
+                        } else {
+                            warningText.style.color = 'var(--color-warning)';
+                            warningText.innerHTML = '<strong>BELANGRIJK:</strong> Alle relevante stappen doorlopen? Dan kunt u contact opnemen. Producten ingediend zonder deze basisstappen kunnen worden teruggestuurd op uw kosten.';
+                        }
+                    });
+                });
+            }
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    if (mobileMenu && mobileMenu.classList.contains('active')) {
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                    if (searchBar && searchBar.classList.contains('active')) {
+                        searchBar.classList.remove('active');
+                    }
+                }
+            });
+            
+            // Performance: Debounce scroll events
+            let scrollTimeout;
+            window.addEventListener('scroll', function() {
+                if (scrollTimeout) {
+                    clearTimeout(scrollTimeout);
+                }
+                scrollTimeout = setTimeout(function() {
+                    // Additional scroll-based functionality can be added here
+                }, 10);
+            });
+
+            // Visual feedback for important sections
+            const importantSections = document.querySelectorAll('.legal-disclaimer, .troubleshooting-widget');
+            importantSections.forEach(section => {
+                section.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.01)';
+                });
+                
+                section.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
