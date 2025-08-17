@@ -191,8 +191,36 @@
             transform: none;
         }
 
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-accent-blue);
+            border: 2px solid var(--color-accent-blue);
+        }
+
+        .btn-secondary:hover:not(:disabled) {
+            background: var(--color-accent-blue);
+            color: var(--color-primary-dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-text-light);
+            border: 2px solid var(--color-border);
+        }
+
+        .btn-outline:hover:not(:disabled) {
+            border-color: var(--color-accent-blue);
+            color: var(--color-accent-blue);
+        }
+
         .btn-full {
             width: 100%;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            text-transform: none;
         }
 
         .auth-links {
@@ -229,6 +257,60 @@
             color: var(--color-accent-blue);
         }
 
+        /* NIEUW: Styling voor meldingen en verificatie */
+        .message {
+            padding: 0.75rem;
+            border-radius: var(--border-radius);
+            margin: 1rem 0;
+            text-align: center;
+            font-weight: 500;
+            display: none;
+        }
+
+        .message.success { 
+            background: rgba(0, 255, 136, 0.1); 
+            color: var(--color-success); 
+            border: 1px solid var(--color-success); 
+        }
+        
+        .message.error { 
+            background: rgba(255, 56, 96, 0.1); 
+            color: var(--color-error); 
+            border: 1px solid var(--color-error); 
+        }
+        
+        .message.warning { 
+            background: rgba(255, 149, 0, 0.1); 
+            color: var(--color-warning); 
+            border: 1px solid var(--color-warning); 
+        }
+
+        .verification-options {
+            background: var(--color-primary-dark);
+            border: 1px solid var(--color-border);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .verification-options p {
+            margin-bottom: 1rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        .verification-options strong {
+            color: var(--color-accent-blue);
+        }
+
+        .verification-actions {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             body {
@@ -237,6 +319,10 @@
             
             .auth-card {
                 padding: 2rem;
+            }
+
+            .verification-actions {
+                flex-direction: column;
             }
         }
     </style>
@@ -278,6 +364,9 @@
                     <i class="fas fa-spinner fa-spin btn-loader" style="display: none;"></i>
                 </button>
             </form>
+
+            <!-- Melding gebied -->
+            <div id="login-message" class="message"></div>
             
             <div class="auth-links">
                 <p>Nog geen account? <a href="registration.html">Registreren</a></p>
@@ -285,8 +374,9 @@
         </div>
     </div>
 
-    <!-- Firebase Configuration -->
+    <!-- Firebase Configuration & Auth Module -->
     <script src="../assets/firebase-config.js"></script>
+    <script src="../assets/auth-module.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -295,126 +385,92 @@
             const btnText = submitBtn.querySelector('.btn-text');
             const btnLoader = submitBtn.querySelector('.btn-loader');
             const forgotPasswordLink = document.getElementById('forgot-password-link');
+            const loginMessage = document.getElementById('login-message');
 
             // Check for URL parameters
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('registered') === 'true') {
-                showNotification('✅ Account succesvol aangemaakt! Controleer je email voor verificatie.', 'success');
+                showMessage('✅ Account succesvol aangemaakt! Controleer je email voor verificatie.', 'success');
             }
             if (urlParams.get('verified') === 'true') {
-                showNotification('✅ Email geverifieerd! Je kunt nu inloggen.', 'success');
+                showMessage('✅ Email geverifieerd! Je kunt nu inloggen.', 'success');
             }
 
-            // Login form submission
+            // NIEUW: Login form submission met e-mail verificatie
             loginForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 
-                // Disable form during submission
-                submitBtn.disabled = true;
-                btnText.style.display = 'none';
-                btnLoader.style.display = 'inline-block';
+                setButtonLoading(submitBtn, true, 'Inloggen...');
                 
                 try {
-                    // Get form data
                     const formData = new FormData(this);
                     const email = formData.get('email').trim().toLowerCase();
                     const password = formData.get('password');
                     const rememberMe = formData.has('rememberMe');
                     
-                    // Validation
                     if (!email || !password) {
                         throw new Error('Vul alle velden in');
                     }
                     
-                    // Set persistence based on remember me
-                    if (rememberMe) {
-                        await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-                    } else {
-                        await auth.setPersistence(firebase.auth.Auth.Persistence.SESSION);
+                    // Set persistence
+                    const persistence = rememberMe ? 
+                        firebase.auth.Auth.Persistence.LOCAL : 
+                        firebase.auth.Auth.Persistence.SESSION;
+                    await firebase.auth().setPersistence(persistence);
+                    
+                    // NIEUW: Gebruik TechAuth.login voor verificatie check
+                    if (!window.TechAuth) {
+                        throw new Error('Authenticatie module niet beschikbaar');
                     }
+
+                    const result = await TechAuth.login(email, password);
                     
-                    // Sign in with Firebase
-                    const userCredential = await auth.signInWithEmailAndPassword(email, password);
-                    const user = userCredential.user;
-                    
-                    // Check if email is verified
-                    if (!user.emailVerified) {
-                        // Send verification email again
-                        // Skip email verification for now
-                        // Skip sign out - allow unverified users to stay logged in
-                        
-                        // No notification needed - user can proceed normally
-                        // Don't return - continue with login
-                    }
-                    
-                    // Update last login in Firestore
-                    try {
-                        await db.collection('users').doc(user.uid).update({
-                            lastLogin: firebase.firestore.FieldValue.serverTimestamp(),
-                            emailVerified: true
-                        });
-                    } catch (firestoreError) {
-                        console.warn('Could not update last login:', firestoreError);
-                        // Don't fail login for this
-                    }
-                    
-                    // Success
-                    showNotification('✅ Succesvol ingelogd!', 'success');
-                    
-                    // Clear form
-                    loginForm.reset();
-                    
-                    // Redirect after delay
-                    setTimeout(() => {
-                        // Check if there's a redirect URL in session storage
-                        const redirectUrl = sessionStorage.getItem('redirectAfterLogin');
-                        if (redirectUrl) {
-                            sessionStorage.removeItem('redirectAfterLogin');
-                            window.location.href = redirectUrl;
+                    if (result.success) {
+                        if (result.emailVerified) {
+                            // Volledig geverifieerd - doorsturen
+                            showMessage('✅ Succesvol ingelogd!', 'success');
+                            loginForm.reset();
+                            
+                            setTimeout(() => {
+                                const redirectUrl = sessionStorage.getItem('redirectAfterLogin');
+                                if (redirectUrl) {
+                                    sessionStorage.removeItem('redirectAfterLogin');
+                                    window.location.href = redirectUrl;
+                                } else {
+                                    window.location.href = 'account.html';
+                                }
+                            }, 1000);
                         } else {
-                            // Default redirect to account dashboard
-                            window.location.href = 'account.html';
+                            // NIEUW: E-mail niet geverifieerd
+                            showMessage('⚠️ Je e-mail is nog niet geverifieerd.', 'warning');
+                            showEmailVerificationOptions(email);
                         }
-                    }, 1000);
+                    } else {
+                        showMessage(result.message, 'error');
+                    }
                     
                 } catch (error) {
                     console.error('Login error:', error);
-                    
                     let errorMessage = 'Er is een fout opgetreden. Probeer het opnieuw.';
                     
-                    // Firebase specific error messages in Dutch
-                    switch (error.code) {
-                        case 'auth/user-not-found':
-                            errorMessage = 'Geen account gevonden met dit email adres.';
-                            break;
-                        case 'auth/wrong-password':
-                            errorMessage = 'Onjuist wachtwoord.';
-                            break;
-                        case 'auth/invalid-email':
-                            errorMessage = 'Ongeldig email adres.';
-                            break;
-                        case 'auth/user-disabled':
-                            errorMessage = 'Dit account is uitgeschakeld.';
-                            break;
-                        case 'auth/too-many-requests':
-                            errorMessage = 'Te veel mislukte inlogpogingen. Probeer het later opnieuw.';
-                            break;
-                        case 'auth/network-request-failed':
-                            errorMessage = 'Netwerkfout. Controleer je internetverbinding.';
-                            break;
-                        default:
-                            if (error.message) {
-                                errorMessage = error.message;
-                            }
+                    if (error.code) {
+                        const errorMessages = {
+                            'auth/user-not-found': 'Geen account gevonden met dit email adres.',
+                            'auth/wrong-password': 'Onjuist wachtwoord.',
+                            'auth/invalid-email': 'Ongeldig email adres.',
+                            'auth/user-disabled': 'Dit account is uitgeschakeld.',
+                            'auth/too-many-requests': 'Te veel mislukte inlogpogingen. Probeer het later opnieuw.',
+                            'auth/network-request-failed': 'Netwerkfout. Controleer je internetverbinding.'
+                        };
+                        errorMessage = errorMessages[error.code] || errorMessage;
+                    } else if (error.message) {
+                        errorMessage = error.message;
                     }
                     
-                    showNotification(errorMessage, 'error');
+                    showMessage(errorMessage, 'error');
                 }
                 
-                // Re-enable form
-                submitBtn.disabled = false;
-                btnText.style.display = 'inline-block';
-                btnLoader.style.display = 'none';
+                setButtonLoading(submitBtn, false, 'Inloggen');
             });
 
             // Forgot password functionality
@@ -424,14 +480,14 @@
                 const email = document.getElementById('email').value.trim();
                 
                 if (!email) {
-                    showNotification('⚠️ Vul eerst je email adres in', 'warning');
+                    showMessage('⚠️ Vul eerst je email adres in', 'warning');
                     document.getElementById('email').focus();
                     return;
                 }
                 
                 try {
-                    await auth.sendPasswordResetEmail(email);
-                    showNotification('✅ Wachtwoord reset email verzonden! Controleer je inbox.', 'success');
+                    await firebase.auth().sendPasswordResetEmail(email);
+                    showMessage('✅ Wachtwoord reset email verzonden! Controleer je inbox.', 'success');
                 } catch (error) {
                     console.error('Password reset error:', error);
                     
@@ -449,9 +505,105 @@
                             break;
                     }
                     
-                    showNotification(errorMessage, 'error');
+                    showMessage(errorMessage, 'error');
                 }
             });
+
+            // NIEUW: Helper functies voor e-mail verificatie
+            function showEmailVerificationOptions(email) {
+                // Verwijder bestaande verificatie opties
+                const existingOptions = loginMessage.querySelector('.verification-options');
+                if (existingOptions) {
+                    existingOptions.remove();
+                }
+
+                const verificationDiv = document.createElement('div');
+                verificationDiv.className = 'verification-options';
+                verificationDiv.innerHTML = `
+                    <p>Je e-mail <strong>${email}</strong> is nog niet geverifieerd.</p>
+                    <p>Controleer je inbox en klik op de verificatielink.</p>
+                    <div class="verification-actions">
+                        <button type="button" class="btn btn-secondary btn-small resend-btn">
+                            E-mail Opnieuw Versturen
+                        </button>
+                        <button type="button" class="btn btn-outline btn-small check-btn">
+                            Verificatie Controleren
+                        </button>
+                    </div>
+                    <p style="font-size: 0.8em; margin-top: 1rem; opacity: 0.7;">
+                        Niet ontvangen? Controleer ook je spam/ongewenste e-mail map.
+                    </p>
+                `;
+
+                loginMessage.appendChild(verificationDiv);
+
+                // Event listeners voor knoppen
+                const resendBtn = verificationDiv.querySelector('.resend-btn');
+                const checkBtn = verificationDiv.querySelector('.check-btn');
+
+                resendBtn.addEventListener('click', async function() {
+                    setButtonLoading(this, true, 'Versturen...');
+                    
+                    const result = await TechAuth.sendEmailVerification();
+                    showMessage(result.message, result.success ? 'success' : 'error');
+                    
+                    setButtonLoading(this, false, 'E-mail Opnieuw Versturen');
+                });
+
+                checkBtn.addEventListener('click', async function() {
+                    setButtonLoading(this, true, 'Controleren...');
+                    
+                    const result = await TechAuth.checkEmailVerification();
+                    
+                    if (result.isVerified) {
+                        showMessage('✅ E-mail succesvol geverifieerd! Je wordt doorgestuurd...', 'success');
+                        verificationDiv.remove();
+                        setTimeout(() => {
+                            window.location.href = 'account.html';
+                        }, 2000);
+                    } else {
+                        showMessage('⚠️ E-mail nog niet geverifieerd. Controleer je inbox en klik op de verificatielink.', 'warning');
+                    }
+                    
+                    setButtonLoading(this, false, 'Verificatie Controleren');
+                });
+            }
+
+            function showMessage(message, type) {
+                // Verwijder verificatie opties bij nieuwe berichten (behalve warning)
+                if (type !== 'warning') {
+                    const verificationOptions = loginMessage.querySelector('.verification-options');
+                    if (verificationOptions) {
+                        verificationOptions.remove();
+                    }
+                }
+
+                loginMessage.textContent = message;
+                loginMessage.className = `message ${type}`;
+                loginMessage.style.display = 'block';
+                
+                // Auto-hide voor success berichten
+                if (type === 'success') {
+                    setTimeout(() => {
+                        loginMessage.style.display = 'none';
+                    }, 5000);
+                }
+            }
+
+            function setButtonLoading(button, loading, text) {
+                button.disabled = loading;
+                
+                const btnText = button.querySelector('.btn-text') || button.querySelector('span');
+                const btnLoader = button.querySelector('.btn-loader');
+                
+                if (btnText && btnLoader) {
+                    btnText.style.display = loading ? 'none' : 'inline';
+                    btnLoader.style.display = loading ? 'inline-block' : 'none';
+                    btnText.textContent = text;
+                } else {
+                    button.textContent = text;
+                }
+            }
         });
     </script>
 </body>
