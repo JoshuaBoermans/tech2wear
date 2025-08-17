@@ -19,7 +19,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Stel Nederlandse taal in voor e-mails
-firebase.auth().useDeviceLanguage(); // Gebruikt browser taal
+firebase.auth().languageCode = 'nl'; // Forceer Nederlands voor betere email deliverability
 // Of forceer Nederlands: firebase.auth().languageCode = 'nl';
 
 // Initialize services

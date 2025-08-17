@@ -255,3 +255,80 @@
 2025-08-17 11:58 +00:00: 10.12.87.144 - - [17/Aug/2025 11:58:56] "GET /tech_website/index.html/assets/firebase-config.js HTTP/1.1" 200 -
 2025-08-17 11:58 +00:00: 10.12.87.144 - - [17/Aug/2025 11:58:56] code 404, message File not found
 2025-08-17 11:58 +00:00: 10.12.87.144 - - [17/Aug/2025 11:58:56] "GET /tech_website/favicon.ico HTTP/1.1" 404 -
+2025-08-17 12:02 +00:00: 10.12.87.144 - - [17/Aug/2025 12:02:16] "HEAD / HTTP/1.1" 200 -
+2025-08-17 12:02 +00:00: 10.12.87.144 - - [17/Aug/2025 12:02:16] "GET / HTTP/1.1" 304 -
+2025-08-17 12:02 +00:00: 10.12.87.144 - - [17/Aug/2025 12:02:17] "GET /tech_website/Images/products/XREAL-glasses.jpg HTTP/1.1" 304 -
+2025-08-17 12:02 +00:00: 10.12.87.144 - - [17/Aug/2025 12:02:17] code 404, message File not found
+2025-08-17 12:02 +00:00: 10.12.87.144 - - [17/Aug/2025 12:02:17] "GET /images/payments/ideal.jpg HTTP/1.1" 404 -
+2025-08-17 12:02 +00:00: 10.12.87.144 - - [17/Aug/2025 12:02:17] "GET /tech_website/index.html/assets/cart-module.js HTTP/1.1" 304 -
+2025-08-17 12:05 +00:00: 10.12.87.144 - - [17/Aug/2025 12:05:46] "GET /tech_website/index.html/account/registration.html HTTP/1.1" 200 -
+2025-08-17 12:05 +00:00: 10.12.87.144 - - [17/Aug/2025 12:05:46] "GET /tech_website/index.html/assets/firebase-config.js HTTP/1.1" 200 -
+2025-08-17 12:05 +00:00: 10.12.87.144 - - [17/Aug/2025 12:05:46] "GET /tech_website/index.html/assets/auth-module.js HTTP/1.1" 200 -
+2025-08-17 12:05 +00:00: 10.12.87.144 - - [17/Aug/2025 12:05:47] code 404, message File not found
+2025-08-17 12:05 +00:00: 10.12.87.144 - - [17/Aug/2025 12:05:47] "GET /tech_website/favicon.ico HTTP/1.1" 404 -
+2025-08-17 12:14 +00:00: 10.12.87.144 - - [17/Aug/2025 12:14:25] "GET /tech_website/index.html/account/registration.html HTTP/1.1" 304 -
+2025-08-17 12:14 +00:00: 10.12.87.144 - - [17/Aug/2025 12:14:25] "GET /tech_website/index.html/assets/firebase-config.js HTTP/1.1" 304 -
+2025-08-17 12:14 +00:00: 10.12.87.144 - - [17/Aug/2025 12:14:25] "GET /tech_website/index.html/assets/auth-module.js HTTP/1.1" 304 -
+2025-08-17 12:14 +00:00: 10.12.87.144 - - [17/Aug/2025 12:14:49] "GET /tech_website/index.html/account/login-page.html HTTP/1.1" 200 -
+2025-08-17 12:14 +00:00: 10.12.87.144 - - [17/Aug/2025 12:14:50] code 404, message File not found
+2025-08-17 12:14 +00:00: 10.12.87.144 - - [17/Aug/2025 12:14:50] "GET /tech_website/index.html/assets/verification-banner.js HTTP/1.1" 404 -
+2025-08-17 12:15 +00:00: 10.12.87.144 - - [17/Aug/2025 12:15:08] "GET /tech_website/index.html/account/login-page.html?verified=true HTTP/1.1" 200 -
+2025-08-17 12:15 +00:00: 10.12.87.144 - - [17/Aug/2025 12:15:08] code 404, message File not found
+2025-08-17 12:15 +00:00: 10.12.87.144 - - [17/Aug/2025 12:15:08] "GET /tech_website/index.html/assets/verification-banner.js HTTP/1.1" 404 -
+2025-08-17 12:15 +00:00: 10.12.87.144 - - [17/Aug/2025 12:15:14] "GET /tech_website/index.html/account/account.html HTTP/1.1" 200 -
+2025-08-17 12:15 +00:00: 10.12.87.144 - - [17/Aug/2025 12:15:15] code 404, message File not found
+2025-08-17 12:15 +00:00: 10.12.87.144 - - [17/Aug/2025 12:15:15] "GET /tech_website/index.html/assets/verification-banner.js HTTP/1.1" 404 -
+2025-08-17 12:15 +00:00: 10.12.87.144 - - [17/Aug/2025 12:15:15] "GET /tech_website/index.html/assets/cart-module.js HTTP/1.1" 304 -
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] "GET /tech_website/index.html/shop/shop.html HTTP/1.1" 200 -
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] "GET /tech_website/index.html/assets/firebase-config.js HTTP/1.1" 304 -
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] code 404, message File not found
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] "GET /tech_website/index.html/shop/images/products/smart-thermostat.jpg HTTP/1.1" 404 -
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] code 404, message File not found
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] "GET /tech_website/index.html/shop/images/products/smart-home-hub.jpg HTTP/1.1" 404 -
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] code 404, message File not found
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] "GET /tech_website/index.html/shop/images/products/smart-doorbell.jpg HTTP/1.1" 404 -
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] code 404, message File not found
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] "GET /tech_website/index.html/shop/images/products/smart-watch-pro.jpg HTTP/1.1" 404 -
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] code 404, message File not found
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] "GET /tech_website/index.html/shop/images/products/fitness-tracker.jpg HTTP/1.1" 404 -
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] code 404, message File not found
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] "GET /tech_website/index.html/shop/images/products/wireless-earbuds.jpg HTTP/1.1" 404 -
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] code 404, message File not found
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] "GET /tech_website/index.html/shop/images/products/drone-4k.jpg HTTP/1.1" 404 -
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] code 404, message File not found
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:12] "GET /tech_website/index.html/shop/images/products/wireless-headphones.jpg HTTP/1.1" 404 -
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:13] code 404, message File not found
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:13] "GET /tech_website/index.html/shop/images/products/mini-projector.jpg HTTP/1.1" 404 -
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:13] code 404, message File not found
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:13] "GET /tech_website/index.html/shop/images/products/pocket-projector.jpg HTTP/1.1" 404 -
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:13] code 404, message File not found
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:13] "GET /tech_website/index.html/shop/images/products/hd-portable-projector.jpg HTTP/1.1" 404 -
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:13] code 404, message File not found
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:13] "GET /tech_website/index.html/shop/images/products/4k-projector.jpg HTTP/1.1" 404 -
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:13] code 404, message File not found
+2025-08-17 12:18 +00:00: 10.12.87.144 - - [17/Aug/2025 12:18:13] "GET /tech_website/index.html/images/payments/ideal.jpg HTTP/1.1" 404 -
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:07] "GET /tech_website/index.html/deals.html HTTP/1.1" 304 -
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] "GET /tech_website/index.html/assets/firebase-config.js HTTP/1.1" 304 -
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] code 404, message File not found
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] "GET /tech_website/images/payments/ideal.jpg HTTP/1.1" 404 -
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] code 404, message File not found
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] "GET /tech_website/index.html/images/products/smart-watch-pro.jpg HTTP/1.1" 404 -
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] code 404, message File not found
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] "GET /tech_website/index.html/images/products/wireless-earbuds.jpg HTTP/1.1" 404 -
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] code 404, message File not found
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] "GET /tech_website/index.html/images/products/drone-pro.jpg HTTP/1.1" 404 -
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] code 404, message File not found
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] "GET /tech_website/index.html/images/products/wireless-headphones.jpg HTTP/1.1" 404 -
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] code 404, message File not found
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] "GET /tech_website/index.html/images/products/smart-thermostat.jpg HTTP/1.1" 404 -
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] code 404, message File not found
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] "GET /tech_website/index.html/images/products/smart-home-hub.jpg HTTP/1.1" 404 -
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] code 404, message File not found
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:08] "GET /favicon.ico HTTP/1.1" 404 -
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:13] "GET /tech_website/index.html/account/cart.html HTTP/1.1" 200 -
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:14] code 404, message File not found
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:14] "GET /tech_website/index.html/assets/verification-banner.js HTTP/1.1" 404 -
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:14] code 404, message File not found
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:14] "GET /tech_website/index.html/images/payments/ideal.jpg HTTP/1.1" 404 -
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:14] code 404, message File not found
+2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:14] "GET /tech_website/index.html/account/images/products/drone-pro.jpg HTTP/1.1" 404 -

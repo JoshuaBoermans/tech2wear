@@ -391,7 +391,7 @@
             // Check for URL parameters
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('registered') === 'true') {
-                showMessage('✅ Account succesvol aangemaakt! Controleer je email voor verificatie.', 'success');
+                showMessage('✅ Account aangemaakt! Controleer je email (ook spam folder) voor verificatie. Je kunt alvast inloggen.', 'info');
             }
             if (urlParams.get('verified') === 'true') {
                 showMessage('✅ Email geverifieerd! Je kunt nu inloggen.', 'success');
