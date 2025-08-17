@@ -17,12 +17,24 @@ window.LanguageSystem = {
             'Search': 'Zoeken',
             'Search for products...': 'Zoek naar producten...',
             
+            // Homepage hero section
+            'Discover Tomorrow\'s': 'Ontdek Morgen\'s',
+            'Technology': 'Technologie',
+            'Today': 'Vandaag',
+            'Premium electronics, smart devices, and cutting-edge gadgets delivered worldwide.': 'Premium elektronica, slimme apparaten en geavanceerde gadgets wereldwijd geleverd.',
+            'Experience the future of technology with our curated collection of innovative products.': 'Ervaar de toekomst van technologie met onze selectie van innovatieve producten.',
+            'Shop Now': 'Shop Nu',
+            'View Deals': 'Bekijk Aanbiedingen', 
+            
+            // Hero stats
+            'Products': 'Producten',
+            'Happy Customers': 'Tevreden Klanten',
+            'Countries': 'Landen',
+            'Years Experience': 'Jaar Ervaring',
+            
             // Homepage sections
             'Future Tech Today': 'Toekomstige Technologie Vandaag',
             'Discover Tomorrow\'s Technology Today': 'Ontdek De Technologie Van Morgen Vandaag',
-            'From AI-powered smart homes to cutting-edge wearables, we bring you the latest innovations that transform how we live, work, and play.': 'Van AI-aangedreven slimme huizen tot geavanceerde wearables, brengen wij je de nieuwste innovaties die transformeren hoe we leven, werken en spelen.',
-            'Shop Now': 'Shop Nu',
-            'Explore Products': 'Ontdek Producten',
             'Explore Our Categories': 'Ontdek Onze Categorieën',
             'Discover cutting-edge technology across all categories': 'Ontdek geavanceerde technologie in alle categorieën',
             
@@ -47,6 +59,10 @@ window.LanguageSystem = {
             'Professional and recreational drone technology': 'Professionele en recreatieve drone technologie',
             'Cinema-quality projection in portable formats': 'Bioscoopkwaliteit projectie in draagbare formaten',
             'Next-generation gaming and virtual reality': 'Next-generation gaming en virtual reality',
+            
+            // Featured products section
+            'Featured Products': 'Uitgelichte Producten',
+            'Hand-picked premium devices for the modern lifestyle': 'Handmatig geselecteerde premium apparaten voor de moderne levensstijl',
             
             // Buttons
             'Explore': 'Ontdek',
@@ -84,33 +100,9 @@ window.LanguageSystem = {
             'Add New Address': 'Nieuw Adres Toevoegen',
             'Save Preferences': 'Voorkeuren Opslaan',
             
-            // Cart & Checkout
-            'Shopping Cart': 'Winkelwagen',
-            'Your cart is empty': 'Je winkelwagen is leeg',
-            'No orders yet': 'Nog geen bestellingen',
-            'You haven\'t placed any orders yet. Start shopping to see your order history here.': 'Je hebt nog geen bestellingen geplaatst. Begin met winkelen om je bestelgeschiedenis hier te zien.',
-            'No addresses saved': 'Geen adressen opgeslagen',
-            'Add your first shipping address to make checkout faster.': 'Voeg je eerste verzendadres toe om het afrekenen sneller te maken.',
-            
-            // About page
-            'About Tech2Wear': 'Over Tech2Wear',
-            'Your Premium Electronics Destination': 'Jouw Premium Elektronica Bestemming',
-            'Since 2020, Tech2Wear has been at the forefront of bringing cutting-edge technology to consumers worldwide.': 'Sinds 2020 staat Tech2Wear voorop in het brengen van geavanceerde technologie naar consumenten wereldwijd.',
-            'Our Mission': 'Onze Missie',
-            'To democratize access to premium technology': 'Premium technologie toegankelijk maken voor iedereen',
-            'Why Choose Tech2Wear?': 'Waarom Tech2Wear?',
-            
-            // Contact page  
-            'Get in Touch': 'Neem Contact Op',
-            'Have questions? We\'re here to help!': 'Heb je vragen? Wij helpen je graag!',
-            'Send us a Message': 'Stuur ons een Bericht',
-            'Name': 'Naam',
-            'Message': 'Bericht',
-            'Send Message': 'Verstuur Bericht',
-            
             // Footer
             'Newsletter': 'Nieuwsbrief',
-            'Subscribe to our newsletter for the latest updates': 'Abonneer je op onze nieuwsbrief voor de laatste updates',
+            'Subscribe to our newsletter for the latest updates and exclusive deals.': 'Abonneer je op onze nieuwsbrief voor de laatste updates en exclusieve aanbiedingen.',
             'Enter your email': 'Voer je e-mail in',
             'Subscribe': 'Abonneren',
             'Quick Links': 'Snelle Links',
@@ -123,18 +115,15 @@ window.LanguageSystem = {
             'Help Center': 'Helpcentrum',
             'Follow Us': 'Volg Ons',
             
-            // Product details
-            'Features': 'Kenmerken',
-            'Specifications': 'Specificaties', 
-            'Reviews': 'Beoordelingen',
-            'Rating': 'Beoordeling',
-            'In Stock': 'Op Voorraad',
-            'Out of Stock': 'Niet Op Voorraad',
-            'Free Shipping': 'Gratis Verzending',
-            'Fast Delivery': 'Snelle Levering',
-            '30-day return policy': '30 dagen retourbeleid',
-            'Secure SSL Encryption': 'Veilige SSL Encryptie',
-            'Free shipping over €50': 'Gratis verzending vanaf €50',
+            // Trust indicators
+            'Free Worldwide Shipping': 'Gratis Wereldwijde Verzending',
+            'Secure Payment': 'Veilige Betaling',
+            '30-Day Returns': '30 Dagen Retourrecht',
+            '24/7 Support': '24/7 Ondersteuning',
+            'Free shipping on orders over €50': 'Gratis verzending bij bestellingen vanaf €50',
+            'All transactions are secured with SSL encryption': 'Alle transacties zijn beveiligd met SSL-encryptie',
+            'Easy returns within 30 days of purchase': 'Eenvoudig retourneren binnen 30 dagen na aankoop',
+            'Round-the-clock customer support': '24/7 klantenondersteuning',
             
             // Error messages and notifications
             'Login successful': 'Succesvol ingelogd',
@@ -149,7 +138,7 @@ window.LanguageSystem = {
         },
         
         'en': {
-            // Navigation & Header - English (keep original)
+            // Navigation & Header - English (original)
             'Home': 'Home',
             'Shop': 'Shop', 
             'Deals': 'Deals',
@@ -160,12 +149,24 @@ window.LanguageSystem = {
             'Search': 'Search',
             'Search for products...': 'Search for products...',
             
+            // Homepage hero section
+            'Discover Tomorrow\'s': 'Discover Tomorrow\'s',
+            'Technology': 'Technology',
+            'Today': 'Today',
+            'Premium electronics, smart devices, and cutting-edge gadgets delivered worldwide.': 'Premium electronics, smart devices, and cutting-edge gadgets delivered worldwide.',
+            'Experience the future of technology with our curated collection of innovative products.': 'Experience the future of technology with our curated collection of innovative products.',
+            'Shop Now': 'Shop Now',
+            'View Deals': 'View Deals',
+            
+            // Hero stats
+            'Products': 'Products',
+            'Happy Customers': 'Happy Customers',
+            'Countries': 'Countries',
+            'Years Experience': 'Years Experience',
+            
             // Homepage sections
             'Future Tech Today': 'Future Tech Today',
             'Discover Tomorrow\'s Technology Today': 'Discover Tomorrow\'s Technology Today',
-            'From AI-powered smart homes to cutting-edge wearables, we bring you the latest innovations that transform how we live, work, and play.': 'From AI-powered smart homes to cutting-edge wearables, we bring you the latest innovations that transform how we live, work, and play.',
-            'Shop Now': 'Shop Now',
-            'Explore Products': 'Explore Products',
             'Explore Our Categories': 'Explore Our Categories',
             'Discover cutting-edge technology across all categories': 'Discover cutting-edge technology across all categories',
             
@@ -190,6 +191,10 @@ window.LanguageSystem = {
             'Professional and recreational drone technology': 'Professional and recreational drone technology',
             'Cinema-quality projection in portable formats': 'Cinema-quality projection in portable formats',
             'Next-generation gaming and virtual reality': 'Next-generation gaming and virtual reality',
+            
+            // Featured products section
+            'Featured Products': 'Featured Products',
+            'Hand-picked premium devices for the modern lifestyle': 'Hand-picked premium devices for the modern lifestyle',
             
             // Buttons
             'Explore': 'Explore',
@@ -227,33 +232,9 @@ window.LanguageSystem = {
             'Add New Address': 'Add New Address',
             'Save Preferences': 'Save Preferences',
             
-            // Cart & Checkout
-            'Shopping Cart': 'Shopping Cart',
-            'Your cart is empty': 'Your cart is empty',
-            'No orders yet': 'No orders yet',
-            'You haven\'t placed any orders yet. Start shopping to see your order history here.': 'You haven\'t placed any orders yet. Start shopping to see your order history here.',
-            'No addresses saved': 'No addresses saved',
-            'Add your first shipping address to make checkout faster.': 'Add your first shipping address to make checkout faster.',
-            
-            // About page
-            'About Tech2Wear': 'About Tech2Wear',
-            'Your Premium Electronics Destination': 'Your Premium Electronics Destination',
-            'Since 2020, Tech2Wear has been at the forefront of bringing cutting-edge technology to consumers worldwide.': 'Since 2020, Tech2Wear has been at the forefront of bringing cutting-edge technology to consumers worldwide.',
-            'Our Mission': 'Our Mission',
-            'To democratize access to premium technology': 'To democratize access to premium technology',
-            'Why Choose Tech2Wear?': 'Why Choose Tech2Wear?',
-            
-            // Contact page
-            'Get in Touch': 'Get in Touch',
-            'Have questions? We\'re here to help!': 'Have questions? We\'re here to help!',
-            'Send us a Message': 'Send us a Message',
-            'Name': 'Name',
-            'Message': 'Message',
-            'Send Message': 'Send Message',
-            
             // Footer
             'Newsletter': 'Newsletter',
-            'Subscribe to our newsletter for the latest updates': 'Subscribe to our newsletter for the latest updates',
+            'Subscribe to our newsletter for the latest updates and exclusive deals.': 'Subscribe to our newsletter for the latest updates and exclusive deals.',
             'Enter your email': 'Enter your email',
             'Subscribe': 'Subscribe',
             'Quick Links': 'Quick Links',
@@ -266,18 +247,15 @@ window.LanguageSystem = {
             'Help Center': 'Help Center',
             'Follow Us': 'Follow Us',
             
-            // Product details
-            'Features': 'Features',
-            'Specifications': 'Specifications',
-            'Reviews': 'Reviews',
-            'Rating': 'Rating',
-            'In Stock': 'In Stock',
-            'Out of Stock': 'Out of Stock',
-            'Free Shipping': 'Free Shipping',
-            'Fast Delivery': 'Fast Delivery',
-            '30-day return policy': '30-day return policy',
-            'Secure SSL Encryption': 'Secure SSL Encryption',
-            'Free shipping over €50': 'Free shipping over €50',
+            // Trust indicators
+            'Free Worldwide Shipping': 'Free Worldwide Shipping',
+            'Secure Payment': 'Secure Payment',
+            '30-Day Returns': '30-Day Returns',
+            '24/7 Support': '24/7 Support',
+            'Free shipping on orders over €50': 'Free shipping on orders over €50',
+            'All transactions are secured with SSL encryption': 'All transactions are secured with SSL encryption',
+            'Easy returns within 30 days of purchase': 'Easy returns within 30 days of purchase',
+            'Round-the-clock customer support': 'Round-the-clock customer support',
             
             // Error messages and notifications
             'Login successful': 'Login successful',
@@ -294,16 +272,20 @@ window.LanguageSystem = {
 
     // Initialize language system
     init: function() {
+        console.log('🌐 Language System: Initializing...');
         this.addLanguageToggle();
         const savedLang = localStorage.getItem('selectedLanguage') || 'nl';
+        console.log('🌐 Language System: Applying saved language:', savedLang);
         this.applyLanguage(savedLang);
         this.updateLanguageButtons(savedLang);
+        console.log('✅ Language System: Initialized successfully');
     },
 
     // Add language toggle to page if not exists
     addLanguageToggle: function() {
         // Check if language toggle already exists
         if (document.querySelector('.language-toggle')) {
+            console.log('🌐 Language toggle already exists');
             return;
         }
 
@@ -323,7 +305,10 @@ window.LanguageSystem = {
             let header = null;
             for (const selector of headerSelectors) {
                 header = document.querySelector(selector);
-                if (header) break;
+                if (header) {
+                    console.log('🌐 Found header with selector:', selector);
+                    break;
+                }
             }
             
             if (header) {
@@ -331,12 +316,14 @@ window.LanguageSystem = {
                 headerActions.className = 'header-actions';
                 headerActions.style.cssText = 'display: flex; align-items: center; gap: 1rem; margin-left: auto;';
                 header.appendChild(headerActions);
+                console.log('✅ Created header actions container');
             } else {
                 // Fallback: add to body
                 headerActions = document.createElement('div');
                 headerActions.className = 'header-actions';
                 headerActions.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 9999; display: flex; align-items: center; gap: 1rem; background: rgba(0,0,0,0.8); padding: 0.5rem; border-radius: 8px;';
                 document.body.appendChild(headerActions);
+                console.log('✅ Created fallback header actions container');
             }
         }
 
@@ -358,13 +345,18 @@ window.LanguageSystem = {
         headerActions.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const lang = e.target.dataset.lang;
+                console.log('🌐 Language button clicked:', lang);
                 this.switchLanguage(lang);
             });
         });
+
+        console.log('✅ Language toggle buttons added');
     },
 
     // Switch language function
     switchLanguage: function(lang) {
+        console.log('🌐 Switching language to:', lang);
+        
         // Save to localStorage
         localStorage.setItem('selectedLanguage', lang);
         
@@ -379,6 +371,8 @@ window.LanguageSystem = {
             const message = lang === 'nl' ? '✅ Taal gewijzigd naar Nederlands' : '✅ Language changed to English';
             showNotification(message, 'success');
         }
+        
+        console.log('✅ Language switched to:', lang);
     },
 
     // Update language button states
@@ -401,119 +395,176 @@ window.LanguageSystem = {
 
     // Apply language translations to current page
     applyLanguage: function(lang) {
+        console.log('🌐 Applying language:', lang);
         const currentTranslations = this.translations[lang];
-        if (!currentTranslations) return;
+        if (!currentTranslations) {
+            console.error('❌ No translations found for language:', lang);
+            return;
+        }
 
         // Update page title
+        this.updatePageTitle(lang, currentTranslations);
+
+        // Comprehensive text translation with better targeting
+        this.translateAllElements(currentTranslations);
+        
+        console.log('✅ Language applied:', lang);
+    },
+
+    // Update page title based on language
+    updatePageTitle: function(lang, translations) {
+        const originalTitle = document.title;
+        
+        if (lang === 'nl' && originalTitle.includes('Discover Tomorrow\'s Technology Today')) {
+            document.title = originalTitle.replace('Discover Tomorrow\'s Technology Today', 'Ontdek De Technologie Van Morgen Vandaag');
+        } else if (lang === 'en' && originalTitle.includes('Ontdek De Technologie Van Morgen Vandaag')) {
+            document.title = originalTitle.replace('Ontdek De Technologie Van Morgen Vandaag', 'Discover Tomorrow\'s Technology Today');
+        }
+        
+        // Handle other page titles
         const pageTitleMap = {
-            'Tech2wear - Discover Tomorrow\'s Technology Today': lang === 'nl' ? 'Tech2wear - Ontdek De Technologie Van Morgen Vandaag' : 'Tech2wear - Discover Tomorrow\'s Technology Today',
-            'My Account': currentTranslations['My Account'],
-            'Shopping Cart': currentTranslations['Shopping Cart'],
-            'Checkout': currentTranslations['Checkout'],
-            'Shop': currentTranslations['Shop'],
-            'About Us': currentTranslations['About Us'],
-            'Contact': currentTranslations['Contact'],
-            'Deals': currentTranslations['Deals']
+            'My Account': translations['My Account'],
+            'Shopping Cart': translations['Cart'],
+            'Checkout': translations['Checkout'],
+            'Shop': translations['Shop'],
+            'About Us': translations['About Us'],
+            'Contact': translations['Contact'],
+            'Deals': translations['Deals']
         };
         
         Object.keys(pageTitleMap).forEach(key => {
-            if (document.title.includes(key)) {
+            if (document.title.includes(key) && pageTitleMap[key]) {
                 document.title = document.title.replace(key, pageTitleMap[key]);
             }
         });
-
-        // Comprehensive text translation
-        this.translatePage(currentTranslations);
     },
 
-    // More comprehensive page translation
-    translatePage: function(translations) {
-        // Handle all text elements with specific selectors
-        const textSelectors = [
-            'h1, h2, h3, h4, h5, h6',
-            'p',
-            'span',
-            'a',
-            'button',
-            'label',
-            '.category-title',
-            '.category-description',
-            '.section-title',
-            '.section-subtitle',
-            '.page-title',
-            '.page-subtitle',
-            '.nav-link',
-            '.btn',
-            '.form-label',
-            '.footer-title',
-            '.badge'
+    // More comprehensive and reliable translation function
+    translateAllElements: function(translations) {
+        console.log('🔄 Starting comprehensive translation...');
+        
+        // Track translation count for debugging
+        let translationCount = 0;
+        
+        // Define elements to translate with specific selectors
+        const translatableSelectors = [
+            'h1', 'h2', 'h3', 'h4', 'h5', 'h6',  // All headings
+            'p',                                   // Paragraphs
+            'span:not(.logo-text)',               // Spans but not logo
+            'a',                                  // Links
+            'button',                             // Buttons
+            'label',                              // Labels
+            '.nav-link',                          // Navigation links
+            '.btn span',                          // Button text
+            '.category-title',                    // Category titles
+            '.category-description',              // Category descriptions
+            '.section-title',                     // Section titles
+            '.section-subtitle',                  // Section subtitles
+            '.hero-subtitle',                     // Hero subtitle
+            '.trust-title',                       // Trust indicator titles
+            '.trust-description',                 // Trust descriptions
+            '.footer-title',                      // Footer titles
+            '.badge'                              // Badges
         ];
 
-        textSelectors.forEach(selector => {
-            document.querySelectorAll(selector).forEach(element => {
-                this.translateElement(element, translations);
+        // Process each selector
+        translatableSelectors.forEach(selector => {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(element => {
+                const originalText = this.getCleanText(element);
+                if (originalText && translations[originalText]) {
+                    this.updateElementText(element, translations[originalText]);
+                    translationCount++;
+                    console.log(`✅ Translated "${originalText}" → "${translations[originalText]}"`);
+                }
             });
         });
-
-        // Special handling for placeholders
+        
+        // Handle special cases - elements that might have partial matches
+        this.handleSpecialTranslations(translations);
+        
+        // Handle form placeholders
         document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(element => {
             const placeholder = element.getAttribute('placeholder');
             if (translations[placeholder]) {
                 element.setAttribute('placeholder', translations[placeholder]);
+                translationCount++;
             }
         });
-
-        // Special handling for alt text
-        document.querySelectorAll('img[alt]').forEach(element => {
-            const alt = element.getAttribute('alt');
-            if (translations[alt]) {
-                element.setAttribute('alt', translations[alt]);
-            }
-        });
+        
+        console.log(`✅ Translation complete. ${translationCount} elements translated.`);
     },
 
-    // Translate individual element
-    translateElement: function(element, translations) {
-        // Skip if element contains only child elements (no direct text)
-        if (element.children.length > 0 && !element.childNodes.length) return;
+    // Get clean text from element (without extra whitespace)
+    getCleanText: function(element) {
+        // Skip if element has child elements (composite content)
+        if (element.children.length > 0) {
+            // For elements with icons, get text without icon
+            const icon = element.querySelector('i.fas, i.far, i.fab');
+            if (icon) {
+                const cloned = element.cloneNode(true);
+                const clonedIcon = cloned.querySelector('i.fas, i.far, i.fab');
+                if (clonedIcon) {
+                    clonedIcon.remove();
+                }
+                return cloned.textContent.trim();
+            }
+            return '';
+        }
         
-        // Get the text content, handling elements with icons
-        let textContent = '';
-        let hasIcon = false;
-        
-        // Check if element has icon
+        return element.textContent.trim();
+    },
+
+    // Update element text while preserving icons
+    updateElementText: function(element, newText) {
         const icon = element.querySelector('i.fas, i.far, i.fab');
         if (icon) {
-            hasIcon = true;
-            // Get text without icon
-            const clonedElement = element.cloneNode(true);
-            const clonedIcon = clonedElement.querySelector('i.fas, i.far, i.fab');
-            if (clonedIcon) clonedIcon.remove();
-            textContent = clonedElement.textContent.trim();
+            // Preserve icon
+            element.innerHTML = icon.outerHTML + ' ' + newText;
         } else {
-            textContent = element.textContent.trim();
+            element.textContent = newText;
         }
+    },
 
-        // Check for exact matches first
-        if (translations[textContent]) {
-            if (hasIcon && icon) {
-                element.innerHTML = icon.outerHTML + ' ' + translations[textContent];
-            } else {
-                element.textContent = translations[textContent];
+    // Handle special translation cases
+    handleSpecialTranslations: function(translations) {
+        // Handle hero title specifically (it's split across elements)
+        const heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) {
+            const spans = heroTitle.querySelectorAll('span');
+            const textNodes = [];
+            
+            // Get all text nodes
+            for (let node of heroTitle.childNodes) {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    textNodes.push(node);
+                }
             }
-        } else {
-            // Check for partial matches
-            Object.keys(translations).forEach(key => {
-                if (textContent.includes(key) && key.length > 3) { // Avoid matching short words
-                    const newText = textContent.replace(key, translations[key]);
-                    if (hasIcon && icon) {
-                        element.innerHTML = icon.outerHTML + ' ' + newText;
-                    } else {
-                        element.textContent = newText;
-                    }
+            
+            // Translate individual parts
+            textNodes.forEach(node => {
+                const text = node.textContent.trim();
+                if (translations[text]) {
+                    node.textContent = node.textContent.replace(text, translations[text]);
+                }
+            });
+            
+            // Translate spans
+            spans.forEach(span => {
+                const text = span.textContent.trim();
+                if (translations[text]) {
+                    span.textContent = translations[text];
                 }
             });
         }
+        
+        // Handle navigation menu items specifically
+        document.querySelectorAll('.nav-link').forEach(link => {
+            const text = link.textContent.trim();
+            if (translations[text]) {
+                link.textContent = translations[text];
+            }
+        });
     },
 
     // Translate function for other scripts to use
@@ -524,21 +575,19 @@ window.LanguageSystem = {
     }
 };
 
-// Auto-initialize when page loads
+// Auto-initialize when DOM loads
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 DOM loaded, initializing Language System...');
     if (window.LanguageSystem) {
         LanguageSystem.init();
+    } else {
+        console.error('❌ LanguageSystem not found');
     }
 });
 
-// Also initialize immediately if DOM is already loaded
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-        if (window.LanguageSystem) {
-            LanguageSystem.init();
-        }
-    });
-} else {
+// Also try immediate initialization if DOM is already loaded
+if (document.readyState !== 'loading') {
+    console.log('🚀 DOM already loaded, initializing Language System immediately...');
     if (window.LanguageSystem) {
         LanguageSystem.init();
     }

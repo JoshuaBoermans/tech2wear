@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Toggle Test - Tech2Wear</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            padding: 2rem;
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .language-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #00ffff;
+            background: transparent;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .lang-btn.active {
+            background: #00ffff;
+            color: #0a0a0a;
+        }
+        .lang-btn:hover {
+            background: rgba(0, 255, 255, 0.1);
+        }
+        h1, h2, h3 {
+            color: #00ffff;
+        }
+        .btn {
+            background: #00ffff;
+            color: #0a0a0a;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+        }
+        .status {
+            background: #1a3a1a;
+            border: 1px solid #4a7c59;
+            color: #7fb069;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+    </style>
+    <script src="tech_website/index.html/assets/language-toggle.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Language Toggle System Test</h1>
+        
+        <div class="status">
+            <strong>Status:</strong> Language system initialized. Default language should be Dutch (NL). 
+            Try clicking the language buttons below to switch between Dutch and English!
+        </div>
+
+        <div class="language-buttons">
+            <button class="lang-btn" data-lang="nl" onclick="LanguageSystem.switchLanguage('nl')">🇳🇱 Nederlands</button>
+            <button class="lang-btn" data-lang="en" onclick="LanguageSystem.switchLanguage('en')">🇬🇧 English</button>
+        </div>
+
+        <div class="test-section">
+            <h2>Product Categories</h2>
+            <p>Here are some product categories that should translate:</p>
+            <ul>
+                <li>AI-Powered Smart Home</li>
+                <li>Wearable Tech & Fitness</li>
+                <li>Wireless Audio</li>
+                <li>Drones & Accessories</li>
+                <li>Portable Projectors</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>Common Buttons and Actions</h2>
+            <button class="btn">Shop Now</button>
+            <button class="btn">Add to Cart</button>
+            <button class="btn">Explore</button>
+            <button class="btn">View Details</button>
+            <button class="btn">Proceed to Checkout</button>
+        </div>
+
+        <div class="test-section">
+            <h2>Page Content</h2>
+            <h3>Explore Our Categories</h3>
+            <p>Discover cutting-edge technology across all categories</p>
+            <p>Premium sound quality without the wires</p>
+            <p>Smart devices that go wherever you do</p>
+        </div>
+
+        <div class="test-section">
+            <h2>Account Related</h2>
+            <ul>
+                <li>Dashboard</li>
+                <li>Profile</li> 
+                <li>Orders</li>
+                <li>Addresses</li>
+                <li>Settings</li>
+            </ul>
+        </div>
+
+        <div class="status">
+            <strong>Instructions:</strong><br>
+            1. The page should load in Dutch by default<br>
+            2. Click "🇬🇧 English" to see all text translate to English<br>
+            3. Click "🇳🇱 Nederlands" to see all text translate back to Dutch<br>
+            4. Notice how buttons, headings, and descriptions all change language
+        </div>
+    </div>
+
+    <script>
+        // Initialize language system when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.LanguageSystem) {
+                LanguageSystem.init();
+                
+                // Update button states
+                const savedLang = localStorage.getItem('selectedLanguage') || 'nl';
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    if (btn.dataset.lang === savedLang) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
