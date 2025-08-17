@@ -183,6 +183,63 @@ window.TechAuth = {
         }
     },
     
+    // Wijzig wachtwoord functionaliteit
+    changePassword: async function(currentPassword, newPassword) {
+        try {
+            const user = firebase.auth().currentUser;
+            
+            if (!user) {
+                return {
+                    success: false,
+                    message: 'Geen gebruiker ingelogd'
+                };
+            }
+            
+            // Re-authenticate gebruiker met huidige wachtwoord
+            const credential = firebase.auth.EmailAuthProvider.credential(
+                user.email,
+                currentPassword
+            );
+            
+            await user.reauthenticateWithCredential(credential);
+            
+            // Update naar nieuw wachtwoord
+            await user.updatePassword(newPassword);
+            
+            console.log('Wachtwoord succesvol gewijzigd');
+            
+            return {
+                success: true,
+                message: 'Wachtwoord succesvol gewijzigd!'
+            };
+            
+        } catch (error) {
+            console.error('Fout bij wijzigen wachtwoord:', error);
+            
+            // Specifieke foutmeldingen voor wachtwoord wijzigen
+            let errorMessage;
+            switch (error.code) {
+                case 'auth/wrong-password':
+                    errorMessage = 'Huidig wachtwoord is onjuist.';
+                    break;
+                case 'auth/weak-password':
+                    errorMessage = 'Nieuw wachtwoord moet minimaal 6 karakters bevatten.';
+                    break;
+                case 'auth/requires-recent-login':
+                    errorMessage = 'Voor uw veiligheid moet u opnieuw inloggen voordat u uw wachtwoord kunt wijzigen.';
+                    break;
+                default:
+                    errorMessage = this.getErrorMessage(error.code);
+            }
+            
+            return {
+                success: false,
+                message: errorMessage,
+                error: error
+            };
+        }
+    },
+    
     // Logout functionaliteit
     logout: async function() {
         try {

@@ -9,6 +9,10 @@
 
 <!-- Firebase Configuration - pas pad aan per locatie -->
 <script src="../assets/firebase-config.js"></script>
+<!-- TechAuth Module -->
+<script src="../assets/auth-module.js"></script>
+<!-- Account Functionality -->
+<script src="../assets/account-functionality.js"></script>
   <script src="../assets/verification-banner.js"></script>
 
     <meta charset="UTF-8">
@@ -946,6 +950,87 @@
             padding: 1rem;
           }
         }
+        /* Modal Styles */
+        .modal {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.8);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          visibility: hidden;
+          transition: var(--transition);
+          z-index: 2000;
+        }
+
+        .modal.active {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .modal-content {
+          background: var(--color-secondary-dark);
+          border: 1px solid var(--color-border);
+          border-radius: var(--border-radius);
+          padding: 2rem;
+          width: 90%;
+          max-width: 500px;
+          max-height: 80vh;
+          overflow-y: auto;
+          position: relative;
+        }
+
+        .modal-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 1.5rem;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid var(--color-border);
+        }
+
+        .modal-title {
+          color: var(--color-accent-blue);
+          margin: 0;
+        }
+
+        .modal-close {
+          background: none;
+          border: none;
+          color: var(--color-text-light);
+          font-size: 1.5rem;
+          cursor: pointer;
+          transition: var(--transition);
+        }
+
+        .modal-close:hover {
+          color: var(--color-accent-blue);
+        }
+
+        .modal-body {
+          margin-bottom: 2rem;
+        }
+
+        .modal-footer {
+          display: flex;
+          gap: 1rem;
+          justify-content: flex-end;
+        }
+
+        .btn-secondary {
+          background: transparent;
+          color: var(--color-text-light);
+          border: 1px solid var(--color-border);
+        }
+
+        .btn-secondary:hover {
+          border-color: var(--color-accent-blue);
+          color: var(--color-accent-blue);
+        }
     </style>
 </head>
 <body>
@@ -1002,6 +1087,10 @@
                 
                 <!-- Header Actions -->
                 <div class="header-actions">
+                    <div class="language-toggle" style="display: flex; align-items: center; gap: 0.5rem; margin-right: 1rem;">
+                        <button class="lang-btn active" data-lang="nl" style="padding: 0.5rem; border: 1px solid var(--color-border); background: var(--color-accent-blue); color: var(--color-primary-dark); border-radius: 4px; cursor: pointer; font-size: 0.8rem;">NL</button>
+                        <button class="lang-btn" data-lang="en" style="padding: 0.5rem; border: 1px solid var(--color-border); background: transparent; color: var(--color-text-light); border-radius: 4px; cursor: pointer; font-size: 0.8rem;">EN</button>
+                    </div>
                     <button class="search-toggle" aria-label="Search">
                         <i class="fas fa-search"></i>
                     </button>
@@ -1150,19 +1239,19 @@
                     <form id="profile-form">
                         <div class="form-group">
                             <label class="form-label" for="firstName">First Name</label>
-                            <input type="text" class="form-input" value="">
+                            <input type="text" id="firstName" class="form-input" value="">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="lastName">Last Name</label>
-                            <input type="text" class="form-input" value="">
+                            <input type="text" id="lastName" class="form-input" value="">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="email">Email</label>
-                            <input type="email" class="form-input" value="">
+                            <input type="email" id="email" class="form-input" value="" readonly style="background-color: rgba(255, 255, 255, 0.05); cursor: not-allowed;">
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="phone">Phone</label>
-                            <input type="tel" class="form-input" value="">
+                            <input type="tel" id="phone" class="form-input" value="">
                         </div>
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-save"></i> Save Changes
@@ -1178,29 +1267,13 @@
                     <div class="order-card">
                         <div class="order-header">
                             <div>
-                                <h4 style="color: var(--color-text-light); margin-bottom: 0.25rem;">Order #TW-2024-001</h4>
-                                <p style="color: var(--color-text-muted); margin: 0; font-size: 0.9rem;">January 15, 2024</p>
-                            </div>
-                            <div style="text-align: right;">
-                                <p style="font-size: 1.2rem; font-weight: 600; color: var(--color-accent-blue); margin: 0 0 0.5rem 0;">€299,99</p> <!-- GECORRIGEERD -->
-                                <span class="order-status status-delivered">Delivered</span>
-                            </div>
+                    <div id="orders-container">
+                        <!-- Orders will be loaded dynamically from Firestore -->
+                        <div style="text-align: center; padding: 3rem; color: var(--color-text-muted);">
+                            <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                            <p>Loading your orders...</p>
                         </div>
-                        <p style="color: var(--color-text-muted); margin: 0;">SmartWatch Pro X1, Wireless Earbuds</p>
                     </div>
-
-                    <div class="order-card">
-                        <div class="order-header">
-                            <div>
-                                <h4 style="color: var(--color-text-light); margin-bottom: 0.25rem;">Order #TW-2024-002</h4>
-                                <p style="color: var(--color-text-muted); margin: 0; font-size: 0.9rem;">January 28, 2024</p>
-                            </div>
-                            <div style="text-align: right;">
-                                <p style="font-size: 1.2rem; font-weight: 600; color: var(--color-accent-blue); margin: 0 0 0.5rem 0;">€149,99</p> <!-- GECORRIGEERD -->
-                                <span class="order-status status-shipped">Shipped</span>
-                            </div>
-                        </div>
-                        <p style="color: var(--color-text-muted); margin: 0;">Smart Thermostat Pro</p>
                     </div>
 
                     <div style="text-align: center; margin-top: 2rem;">
@@ -1216,17 +1289,17 @@
                     <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Manage your delivery addresses.</p>
                     
                     <div class="order-card">
-                        <h4 style="color: var(--color-text-light); margin-bottom: 1rem;">Default Address</h4>
-                        <p style="color: var(--color-text-muted); margin: 0; line-height: 1.6;">
-                            <span id="user-address-name">Je naam</span><br>
-                            123 Tech Street<br>
-                            San Francisco, CA 94105<br>
-                            United States
-                        </p>
+                    <div id="addresses-container">
+                        <!-- Addresses will be loaded dynamically -->
+                        <div style="text-align: center; padding: 3rem; color: var(--color-text-muted);">
+                            <i class="fas fa-map-marker-alt" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                            <h3>No addresses saved</h3>
+                            <p>Add your first shipping address to make checkout faster.</p>
+                        </div>
                     </div>
                     
                     <div style="margin-top: 1.5rem;">
-                        <button class="btn btn-primary">
+                        <button class="btn btn-primary" onclick="showAddAddressModal()">
                             <i class="fas fa-plus"></i> Add New Address
                         </button>
                     </div>
@@ -1600,24 +1673,24 @@
         
         // Populate profile form with user data
         function populateProfileForm(userData, user) {
-            const form = document.querySelector('#profile form');
-            if (!form) return;
+            #profile form
             
-            const inputs = form.querySelectorAll('.form-input');
-            if (inputs.length >= 4) {
-                inputs[0].value = userData.firstName || '';
-                inputs[1].value = userData.lastName || '';
-                inputs[2].value = userData.email || user.email || '';
-                inputs[3].value = userData.phone || '';
-            }
+            
+            .form-input
+            
+                const firstNameInput = document.getElementById("firstName"); if (firstNameInput) firstNameInput.value = userData.firstName || '';
+                const lastNameInput = document.getElementById("lastName"); if (lastNameInput) lastNameInput.value = userData.lastName || '';
+                const emailInput = document.getElementById("email"); if (emailInput) emailInput.value = userData.email || user.email || '';
+                const phoneInput = document.getElementById("phone"); if (phoneInput) phoneInput.value = userData.phone || '';
+            
             
             // Make email read-only since it's the authentication key
-            const emailInput = inputs[2];
-            if (emailInput) {
-                emailInput.readOnly = true;
-                emailInput.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-                emailInput.style.cursor = 'not-allowed';
-            }
+            
+            
+                
+                
+                
+            
             
             // Update display elements with real user data
             updateUserDisplayElements(userData, user);
@@ -1711,12 +1784,12 @@
                         submitBtn.disabled = true;
                         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Opslaan...';
                         
-                        const inputs = this.querySelectorAll('.form-input');
+                        .form-input
                         const updatedData = {
-                            firstName: inputs[0].value.trim(),
-                            lastName: inputs[1].value.trim(),
-                            email: inputs[2].value.trim(),
-                            phone: inputs[3].value.trim(),
+                            firstName: document.getElementById("firstName").value.trim(),
+                            lastName: document.getElementById("lastName").value.trim(),
+                            email: document.getElementById("email").value.trim(),
+                            phone: document.getElementById("phone").value.trim(),
                             updatedAt: firebase.firestore.FieldValue.serverTimestamp()
                         };
                         
@@ -1746,6 +1819,88 @@
             }
         });
     </script>
+
+    <!-- Change Password Modal -->
+    <div class="modal" id="changePasswordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Change Password</h3>
+                <button type="button" class="modal-close" onclick="closeModal('changePasswordModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="changePasswordForm">
+                    <div class="form-group">
+                        <label class="form-label" for="currentPassword">Current Password</label>
+                        <input type="password" id="currentPassword" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="newPassword">New Password</label>
+                        <input type="password" id="newPassword" class="form-input" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="confirmPassword">Confirm New Password</label>
+                        <input type="password" id="confirmPassword" class="form-input" required minlength="6">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeModal('changePasswordModal')">
+                    Cancel
+                </button>
+                <button type="submit" form="changePasswordForm" class="btn btn-primary">
+                    <i class="fas fa-key"></i> Change Password
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Settings Modal -->
+    <div class="modal" id="notificationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Notification Settings</h3>
+                <button type="button" class="modal-close" onclick="closeModal('notificationModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="notificationSettingsForm">
+                    <div class="form-group">
+                        <label class="form-label">Email Notifications</label>
+                        <select id="emailNotifications" class="form-input">
+                            <option value="all">All notifications</option>
+                            <option value="orders">Order updates only</option>
+                            <option value="none">No notifications</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Order Status Updates</label>
+                        <select id="orderNotifications" class="form-input">
+                            <option value="true">Enabled</option>
+                            <option value="false">Disabled</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Marketing Emails</label>
+                        <select id="marketingEmails" class="form-input">
+                            <option value="true">Enabled</option>
+                            <option value="false">Disabled</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeModal('notificationModal')">
+                    Cancel
+                </button>
+                <button type="submit" form="notificationSettingsForm" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Save Settings
+                </button>
+            </div>
+        </div>
+    </div>
 
 </body> 
 </html> 
