@@ -2097,6 +2097,14 @@ a:hover {
         <i class="fas fa-chevron-up"></i>
     </button>
     
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Firebase Configuration -->
+    <script src="tech_website/index.html/assets/firebase-config.js"></script>
+    
     <!-- CART MODULE LADEN - EERST! -->
     <script src="tech_website/index.html/assets/cart-module.js"></script>
     
@@ -2502,6 +2510,20 @@ a:hover {
             }
             
             preloadCriticalResources();
+            
+            // Check for email verification notice after registration
+            if (sessionStorage.getItem('showEmailVerificationNotice') === 'true') {
+                sessionStorage.removeItem('showEmailVerificationNotice');
+                setTimeout(() => {
+                    // Use same notification system as other pages
+                    if (window.showNotification) {
+                        showNotification('📧 Controleer je email (ook spam folder) voor verificatie. Je kunt alvast alle functies gebruiken!', 'info', 8000);
+                    } else {
+                        // Fallback alert if notification system not available
+                        alert('📧 Controleer je email (ook spam folder) voor verificatie!');
+                    }
+                }, 1000);
+            }
         });
     </script>
 </body>

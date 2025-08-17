@@ -332,3 +332,6 @@
 2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:14] "GET /tech_website/index.html/images/payments/ideal.jpg HTTP/1.1" 404 -
 2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:14] code 404, message File not found
 2025-08-17 12:20 +00:00: 10.12.87.144 - - [17/Aug/2025 12:20:14] "GET /tech_website/index.html/account/images/products/drone-pro.jpg HTTP/1.1" 404 -
+2025-08-17 12:23 +00:00: 10.12.87.144 - - [17/Aug/2025 12:23:24] "HEAD / HTTP/1.1" 200 -
+2025-08-17 12:23 +00:00: 10.12.87.144 - - [17/Aug/2025 12:23:24] code 404, message File not found
+2025-08-17 12:23 +00:00: 10.12.87.144 - - [17/Aug/2025 12:23:24] "GET /images/payments/ideal.jpg HTTP/1.1" 404 -

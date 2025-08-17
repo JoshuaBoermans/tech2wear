@@ -416,6 +416,13 @@
                 });
                 
                 // Store additional user data in Firestore - gebruik globale db
+                console.log('💾 Saving user data to Firestore:', {
+                    firstName: data.firstName,
+                    lastName: data.lastName,
+                    email: data.email,
+                    phone: data.phone
+                });
+                
                 await db.collection('users').doc(user.uid).set({
                     firstName: data.firstName,
                     lastName: data.lastName,
@@ -429,7 +436,7 @@
                 });
                 
                 // Success - gebruik globale showNotification
-                showNotification('🎉 Account aangemaakt! Controleer je email (ook spam folder) voor verificatie.', 'success');
+                showNotification('🎉 Account succesvol aangemaakt! Je bent nu ingelogd.', 'success');
                 
                 // Clear form
                 registerForm.reset();
@@ -437,7 +444,9 @@
                 // Redirect after delay
                 setTimeout(() => {
                     // Redirect to homepage - user is already logged in
-                    window.location.href = 'login-page.html?registered=true';
+                    // Redirect to homepage (user is logged in) with verification notice
+                    sessionStorage.setItem('showEmailVerificationNotice', 'true');
+                    window.location.href = '../../../index.html';
                 }, 2000);
                 
             } catch (error) {
