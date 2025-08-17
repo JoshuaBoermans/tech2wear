@@ -26,6 +26,9 @@
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Language Toggle System -->
+    <script src="../assets/language-toggle.js"></script>
 
     <style>
         /* CSS Variables */
@@ -1575,12 +1578,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (checkoutBtn) {
         checkoutBtn.addEventListener('click', function() {
             if (cart.length === 0) {
-                showNotification('Je winkelwagen is leeg. Voeg items toe voordat je naar de kassa gaat.', 'warning');
+                const msg = LanguageSystem ? LanguageSystem.translate('Your cart is empty') : 'Je winkelwagen is leeg. Voeg items toe voordat je naar de kassa gaat.'; showNotification(msg, 'warning');
                 return;
             }
             
             const total = document.getElementById('total').textContent;
-            showNotification(`Kassa functionaliteit zou hier geïmplementeerd worden. Totaal: ${total}`, 'info');
+            // Redirect to checkout page
+            window.location.href = '../checkout/checkout.html';
         });
     }
     

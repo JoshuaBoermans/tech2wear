@@ -26,6 +26,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Language Toggle System -->
+    <script src="../assets/language-toggle.js"></script>
+    
     <!-- Updated Structured Data -->
     <script type="application/ld+json">
     {
@@ -2157,6 +2160,32 @@
                 element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(element);
             });
+            
+            // Handle URL parameters for auto-opening categories
+            function handleCategoryParameter() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const categoryParam = urlParams.get('category');
+                
+                if (categoryParam) {
+                    // Scroll to the category section
+                    const categorySection = document.querySelector(`[onclick="toggleCategory('${categoryParam}')"]`);
+                    if (categorySection) {
+                        // Auto-open the category
+                        toggleCategory(categoryParam);
+                        
+                        // Scroll to the category with a slight delay to ensure it's opened
+                        setTimeout(() => {
+                            categorySection.scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'start' 
+                            });
+                        }, 300);
+                    }
+                }
+            }
+            
+            // Call the function after page load
+            handleCategoryParameter();
             
             // Dynamic year in footer
             const currentYear = new Date().getFullYear();

@@ -157,8 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     ordersContainer.innerHTML = `
                         <div style="text-align: center; padding: 3rem; color: var(--color-text-muted);">
                             <i class="fas fa-shopping-bag" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
-                            <h3>No orders yet</h3>
-                            <p>You haven't placed any orders yet. Start shopping to see your order history here.</p>
+                            <h3>${LanguageSystem ? LanguageSystem.translate('No orders yet') : 'Nog geen bestellingen'}</h3>
+                            <p>${LanguageSystem ? LanguageSystem.translate('You haven\'t placed any orders yet. Start shopping to see your order history here.') : 'Je hebt nog geen bestellingen geplaatst. Begin met winkelen om je bestelgeschiedenis hier te zien.'}</p>
                         </div>
                     `;
                     return;
@@ -294,8 +294,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 await createUserDocument(user);
             }
             
-            // Load orders after user authentication
+            // Load orders and addresses after user authentication
             loadOrderHistory();
+            loadUserAddresses();
             
         } catch (error) {
             console.error('❌ Error loading user data:', error);
@@ -650,4 +651,198 @@ window.showNotification = function(message, type = 'info') {
             }
         }, 300);
     }, 5000);
+};
+
+// ===== ADDRESS MANAGEMENT FUNCTIONS =====
+
+// Show Add Address Modal
+window.showAddAddressModal = function() {
+    const modal = document.getElementById('addAddressModal');
+    if (modal) {
+        // Clear form
+        document.getElementById('addAddressForm').reset();
+        // Show modal
+        modal.classList.add('active');
+    }
+};
+
+// Close Modal Function (Global)
+window.closeModal = function(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.remove('active');
+    }
+};
+
+// Handle Add Address Form Submission
+document.addEventListener('DOMContentLoaded', function() {
+    const addAddressForm = document.getElementById('addAddressForm');
+    if (addAddressForm) {
+        addAddressForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const user = firebase.auth().currentUser;
+            if (!user) {
+                showNotification('❌ Please login first', 'error');
+                return;
+            }
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('addressName').value.trim(),
+                fullName: document.getElementById('fullName').value.trim(),
+                streetAddress: document.getElementById('streetAddress').value.trim(),
+                houseNumber: document.getElementById('houseNumber').value.trim(),
+                city: document.getElementById('city').value.trim(),
+                postalCode: document.getElementById('postalCode').value.trim(),
+                country: document.getElementById('country').value,
+                phoneNumber: document.getElementById('phoneNumber').value.trim(),
+                isDefault: document.getElementById('isDefault').checked,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+                userId: user.uid
+            };
+            
+            // Validate required fields
+            if (!formData.name || !formData.fullName || !formData.streetAddress || 
+                !formData.houseNumber || !formData.city || !formData.postalCode || !formData.country) {
+                showNotification('❌ Please fill in all required fields', 'error');
+                return;
+            }
+            
+            try {
+                // Disable submit button
+                const submitBtn = document.querySelector('#addAddressForm button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
+                
+                // If this is set as default, first remove default from other addresses
+                if (formData.isDefault) {
+                    const addressesRef = firebase.firestore().collection('addresses');
+                    const existingDefaults = await addressesRef.where('userId', '==', user.uid).where('isDefault', '==', true).get();
+                    
+                    const batch = firebase.firestore().batch();
+                    existingDefaults.forEach(doc => {
+                        batch.update(doc.ref, { isDefault: false });
+                    });
+                    await batch.commit();
+                }
+                
+                // Add new address to Firestore
+                await firebase.firestore().collection('addresses').add(formData);
+                
+                showNotification('✅ Address saved successfully!', 'success');
+                
+                // Close modal and refresh addresses
+                closeModal('addAddressModal');
+                loadUserAddresses();
+                
+                // Restore button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+                
+            } catch (error) {
+                console.error('❌ Error saving address:', error);
+                showNotification('❌ Failed to save address', 'error');
+                
+                // Restore button
+                const submitBtn = document.querySelector('#addAddressForm button[type="submit"]');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-save"></i> Save Address';
+            }
+        });
+    }
+});
+
+// Load User Addresses
+function loadUserAddresses() {
+    const user = firebase.auth().currentUser;
+    if (!user) return;
+    
+    const addressesContainer = document.getElementById('addresses-container');
+    if (!addressesContainer) return;
+    
+    // Show loading
+    addressesContainer.innerHTML = `
+        <div style="text-align: center; padding: 3rem; color: var(--color-text-muted);">
+            <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+            <p>Loading addresses...</p>
+        </div>
+    `;
+    
+    // Load addresses from Firestore
+    firebase.firestore()
+        .collection('addresses')
+        .where('userId', '==', user.uid)
+        .orderBy('createdAt', 'desc')
+        .get()
+        .then(querySnapshot => {
+            if (querySnapshot.empty) {
+                addressesContainer.innerHTML = `
+                    <div style="text-align: center; padding: 3rem; color: var(--color-text-muted);">
+                        <i class="fas fa-map-marker-alt" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                        <h3>${LanguageSystem ? LanguageSystem.translate('No addresses saved') : 'Geen adressen opgeslagen'}</h3>
+                        <p>${LanguageSystem ? LanguageSystem.translate('Add your first shipping address to make checkout faster.') : 'Voeg je eerste verzendadres toe om het afrekenen sneller te maken.'}</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            let addressesHtml = '';
+            querySnapshot.forEach(doc => {
+                const address = doc.data();
+                const isDefault = address.isDefault ? `<span style="color: var(--color-accent-blue); font-size: 0.9rem; margin-left: 0.5rem;">(Default)</span>` : '';
+                
+                addressesHtml += `
+                    <div class="order-card" style="margin-bottom: 1rem;">
+                        <div class="order-header">
+                            <div>
+                                <h4 style="color: var(--color-text-light); margin-bottom: 0.25rem;">${address.name}${isDefault}</h4>
+                                <p style="color: var(--color-text-muted); margin: 0; font-size: 0.9rem;">${address.fullName}</p>
+                            </div>
+                            <div style="text-align: right;">
+                                <button class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.5rem 1rem;" onclick="deleteAddress('${doc.id}')">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="margin-top: 1rem; color: var(--color-text-muted); line-height: 1.4;">
+                            <p style="margin: 0;">${address.streetAddress} ${address.houseNumber}</p>
+                            <p style="margin: 0;">${address.postalCode} ${address.city}</p>
+                            <p style="margin: 0;">${address.country}</p>
+                            ${address.phoneNumber ? `<p style="margin: 0; margin-top: 0.5rem;"><i class="fas fa-phone" style="margin-right: 0.5rem;"></i>${address.phoneNumber}</p>` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            addressesContainer.innerHTML = addressesHtml;
+            
+        })
+        .catch(error => {
+            console.error('❌ Error loading addresses:', error);
+            addressesContainer.innerHTML = `
+                <div style="text-align: center; padding: 3rem; color: var(--color-text-muted);">
+                    <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                    <h3>Error loading addresses</h3>
+                    <p>Please try again later.</p>
+                </div>
+            `;
+        });
+}
+
+// Delete Address
+window.deleteAddress = async function(addressId) {
+    if (!confirm('Are you sure you want to delete this address?')) {
+        return;
+    }
+    
+    try {
+        await firebase.firestore().collection('addresses').doc(addressId).delete();
+        showNotification('✅ Address deleted successfully', 'success');
+        loadUserAddresses();
+    } catch (error) {
+        console.error('❌ Error deleting address:', error);
+        showNotification('❌ Failed to delete address', 'error');
+    }
 };
