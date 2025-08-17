@@ -210,3 +210,48 @@
 2025-08-16 19:37 +00:00: 10.12.156.14 - - [16/Aug/2025 19:37:45] code 404, message File not found
 2025-08-16 19:37 +00:00: 10.12.156.14 - - [16/Aug/2025 19:37:45] "GET /tech_website/favicon.ico HTTP/1.1" 404 -
 2025-08-16 19:37 +00:00: 10.12.156.14 - - [16/Aug/2025 19:37:46] "GET /tech_website/index.html/account/login-file.html HTTP/1.1" 200 -
+2025-08-16 19:39 +00:00: 10.12.156.14 - - [16/Aug/2025 19:39:03] "HEAD / HTTP/1.1" 200 -
+2025-08-16 19:39 +00:00: 10.12.156.14 - - [16/Aug/2025 19:39:03] "GET / HTTP/1.1" 304 -
+2025-08-16 19:39 +00:00: 10.12.156.14 - - [16/Aug/2025 19:39:03] code 404, message File not found
+2025-08-16 19:39 +00:00: 10.12.156.14 - - [16/Aug/2025 19:39:03] "GET /images/products/smart-watch-pro.jpg HTTP/1.1" 404 -
+2025-08-16 19:39 +00:00: 10.12.156.14 - - [16/Aug/2025 19:39:03] "GET /tech_website/Images/products/XREAL-glasses.jpg HTTP/1.1" 304 -
+2025-08-16 19:39 +00:00: 10.12.156.14 - - [16/Aug/2025 19:39:03] "GET /tech_website/index.html/assets/cart-module.js HTTP/1.1" 304 -
+2025-08-16 19:39 +00:00: 10.12.156.14 - - [16/Aug/2025 19:39:03] code 404, message File not found
+2025-08-16 19:39 +00:00: 10.12.156.14 - - [16/Aug/2025 19:39:03] "GET /images/products/wireless-earbuds.jpg HTTP/1.1" 404 -
+2025-08-16 19:39 +00:00: 10.12.156.14 - - [16/Aug/2025 19:39:03] code 404, message File not found
+2025-08-16 19:39 +00:00: 10.12.156.14 - - [16/Aug/2025 19:39:03] "GET /images/products/smart-home-hub.jpg HTTP/1.1" 404 -
+2025-08-16 19:39 +00:00: 10.12.156.14 - - [16/Aug/2025 19:39:03] code 404, message File not found
+2025-08-16 19:39 +00:00: 10.12.156.14 - - [16/Aug/2025 19:39:03] "GET /images/products/drone-pro.jpg HTTP/1.1" 404 -
+2025-08-16 19:39 +00:00: 10.12.156.14 - - [16/Aug/2025 19:39:03] code 404, message File not found
+2025-08-16 19:39 +00:00: 10.12.156.14 - - [16/Aug/2025 19:39:03] "GET /images/payments/ideal.jpg HTTP/1.1" 404 -
+2025-08-16 19:42 +00:00: 10.12.156.14 - - [16/Aug/2025 19:42:02] "GET / HTTP/1.1" 304 -
+2025-08-16 19:42 +00:00: 10.12.156.14 - - [16/Aug/2025 19:42:02] "GET /tech_website/Images/products/XREAL-glasses.jpg HTTP/1.1" 304 -
+2025-08-16 19:42 +00:00: 10.12.156.14 - - [16/Aug/2025 19:42:02] code 404, message File not found
+2025-08-16 19:42 +00:00: 10.12.156.14 - - [16/Aug/2025 19:42:02] "GET /images/payments/ideal.jpg HTTP/1.1" 404 -
+2025-08-16 19:42 +00:00: 10.12.156.14 - - [16/Aug/2025 19:42:02] "GET /tech_website/index.html/assets/cart-module.js HTTP/1.1" 304 -
+2025-08-16 19:42 +00:00: 10.12.156.14 - - [16/Aug/2025 19:42:02] code 404, message File not found
+2025-08-16 19:42 +00:00: 10.12.156.14 - - [16/Aug/2025 19:42:02] "GET /favicon.ico HTTP/1.1" 404 -
+2025-08-16 19:42 +00:00: 10.12.156.14 - - [16/Aug/2025 19:42:06] "GET /tech_website/index.html/account/login-file.html HTTP/1.1" 304 -
+2025-08-16 19:42 +00:00: 10.12.156.14 - - [16/Aug/2025 19:42:06] "GET /tech_website/index.html/assets/firebase-config.js HTTP/1.1" 304 -
+2025-08-16 19:42 +00:00: 10.12.156.14 - - [16/Aug/2025 19:42:07] code 404, message File not found
+2025-08-16 19:42 +00:00: 10.12.156.14 - - [16/Aug/2025 19:42:07] "GET /tech_website/favicon.ico HTTP/1.1" 404 -
+2025-08-16 19:42 +00:00: 10.12.156.14 - - [16/Aug/2025 19:42:11] "GET /tech_website/index.html/account/login-page.html HTTP/1.1" 200 -
+2025-08-16 19:42 +00:00: 10.12.156.14 - - [16/Aug/2025 19:42:13] "GET /tech_website/index.html/account/registration.html HTTP/1.1" 304 -
+2025-08-16 19:57 +00:00: 10.12.18.212 - - [16/Aug/2025 19:57:21] "HEAD / HTTP/1.1" 200 -
+2025-08-16 19:57 +00:00: 10.12.18.212 - - [16/Aug/2025 19:57:21] "GET / HTTP/1.1" 304 -
+2025-08-16 19:57 +00:00: 10.12.18.212 - - [16/Aug/2025 19:57:21] code 404, message File not found
+2025-08-16 19:57 +00:00: 10.12.18.212 - - [16/Aug/2025 19:57:21] "GET /images/products/smart-watch-pro.jpg HTTP/1.1" 404 -
+2025-08-16 19:57 +00:00: 10.12.18.212 - - [16/Aug/2025 19:57:21] "GET /tech_website/Images/products/XREAL-glasses.jpg HTTP/1.1" 304 -
+2025-08-16 19:57 +00:00: 10.12.18.212 - - [16/Aug/2025 19:57:22] "GET /tech_website/index.html/assets/cart-module.js HTTP/1.1" 304 -
+2025-08-16 19:57 +00:00: 10.12.18.212 - - [16/Aug/2025 19:57:22] code 404, message File not found
+2025-08-16 19:57 +00:00: 10.12.18.212 - - [16/Aug/2025 19:57:22] "GET /images/products/wireless-earbuds.jpg HTTP/1.1" 404 -
+2025-08-16 19:57 +00:00: 10.12.18.212 - - [16/Aug/2025 19:57:22] code 404, message File not found
+2025-08-16 19:57 +00:00: 10.12.18.212 - - [16/Aug/2025 19:57:22] "GET /images/products/smart-home-hub.jpg HTTP/1.1" 404 -
+2025-08-16 19:57 +00:00: 10.12.18.212 - - [16/Aug/2025 19:57:22] code 404, message File not found
+2025-08-16 19:57 +00:00: 10.12.18.212 - - [16/Aug/2025 19:57:22] "GET /images/products/drone-pro.jpg HTTP/1.1" 404 -
+2025-08-16 19:57 +00:00: 10.12.18.212 - - [16/Aug/2025 19:57:22] code 404, message File not found
+2025-08-16 19:57 +00:00: 10.12.18.212 - - [16/Aug/2025 19:57:22] "GET /images/payments/ideal.jpg HTTP/1.1" 404 -
+2025-08-17 11:58 +00:00: 10.12.87.144 - - [17/Aug/2025 11:58:56] "GET /tech_website/index.html/account/registration.html HTTP/1.1" 200 -
+2025-08-17 11:58 +00:00: 10.12.87.144 - - [17/Aug/2025 11:58:56] "GET /tech_website/index.html/assets/firebase-config.js HTTP/1.1" 200 -
+2025-08-17 11:58 +00:00: 10.12.87.144 - - [17/Aug/2025 11:58:56] code 404, message File not found
+2025-08-17 11:58 +00:00: 10.12.87.144 - - [17/Aug/2025 11:58:56] "GET /tech_website/favicon.ico HTTP/1.1" 404 -

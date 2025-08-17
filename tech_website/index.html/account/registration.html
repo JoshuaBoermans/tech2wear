@@ -318,6 +318,8 @@
 
     <!-- Firebase Configuration -->
     <script src="../assets/firebase-config.js"></script>
+    <!-- Authentication Module -->
+    <script src="../assets/auth-module.js"></script>
 
    <script>
     // Wacht tot Firebase volledig geladen is
@@ -387,7 +389,19 @@
                 }
                 
                 // Create Firebase user - gebruik globale auth
-                const userCredential = await auth.createUserWithEmailAndPassword(data.email, data.password);
+                // Use TechAuth module for registration with email verification
+                if (!window.TechAuth) {
+                    throw new Error('Authentication module niet beschikbaar');
+                }
+                
+                const displayName = `${data.firstName} ${data.lastName}`;
+                const result = await TechAuth.register(data.email, data.password, displayName);
+                
+                if (!result.success) {
+                    throw new Error(result.message);
+                }
+                
+                const userCredential = { user: result.user };
                 const user = userCredential.user;
                 
                 // Update profile with display name
@@ -395,9 +409,9 @@
                     displayName: `${data.firstName} ${data.lastName}`
                 });
                 
-                // Send email verification
+                // TechAuth already sent email verification
                 await user.sendEmailVerification({
-                    url: window.location.origin + '/tech_website/index.html/account/login-page.html?verified=true',
+                    // Removed - TechAuth handles this
                     handleCodeInApp: false
                 });
                 
@@ -415,7 +429,7 @@
                 });
                 
                 // Success - gebruik globale showNotification
-                showNotification('🎉 Account succesvol aangemaakt! Je wordt ingelogd...', 'success');
+                showNotification('🎉 Account succesvol aangemaakt! Controleer je email voor verificatie.', 'success');
                 
                 // Clear form
                 registerForm.reset();
@@ -423,7 +437,7 @@
                 // Redirect after delay
                 setTimeout(() => {
                     // Redirect to homepage - user is already logged in
-                    window.location.href = '../../../index.html';
+                    window.location.href = 'login-page.html?registered=true';
                 }, 2000);
                 
             } catch (error) {

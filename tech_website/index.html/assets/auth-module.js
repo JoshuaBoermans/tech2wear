@@ -17,7 +17,7 @@ window.TechAuth = {
             
             // Verstuur verificatie e-mail
             await user.sendEmailVerification({
-                url: window.location.origin + '/account/verified.html',
+                url: window.location.origin + '/tech_website/index.html/account/login-page.html?verified=true',
                 handleCodeInApp: false // Firebase handelt verificatie af
             });
             
@@ -90,7 +90,7 @@ window.TechAuth = {
             }
             
             await user.sendEmailVerification({
-                url: window.location.origin + '/account/verified.html',
+                url: window.location.origin + '/tech_website/index.html/account/login-page.html?verified=true',
                 handleCodeInApp: false
             });
             
