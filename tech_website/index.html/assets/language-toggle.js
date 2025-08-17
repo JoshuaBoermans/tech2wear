@@ -19,21 +19,28 @@ window.LanguageSystem = {
             
             // Homepage sections
             'Future Tech Today': 'Toekomstige Technologie Vandaag',
-            'Discover Tomorrow\'s Technology': 'Ontdek De Technologie Van Morgen',
-            'From AI-powered smart homes to cutting-edge wearables': 'Van AI-aangedreven slimme huizen tot geavanceerde wearables',
-            'we bring you the latest innovations': 'brengen wij je de nieuwste innovaties',
+            'Discover Tomorrow\'s Technology Today': 'Ontdek De Technologie Van Morgen Vandaag',
+            'From AI-powered smart homes to cutting-edge wearables, we bring you the latest innovations that transform how we live, work, and play.': 'Van AI-aangedreven slimme huizen tot geavanceerde wearables, brengen wij je de nieuwste innovaties die transformeren hoe we leven, werken en spelen.',
             'Shop Now': 'Shop Nu',
             'Explore Products': 'Ontdek Producten',
+            'Explore Our Categories': 'Ontdek Onze Categorieën',
+            'Discover cutting-edge technology across all categories': 'Ontdek geavanceerde technologie in alle categorieën',
             
             // Product categories
             'AI-Powered Smart Home': 'AI-Aangedreven Smart Home',
             'Wearable Tech & Fitness': 'Draagbare Tech & Fitness',
+            'Wireless Audio': 'Draadloze Audio',
             'Wireless Earbuds & Headphones': 'Draadloze Oordopjes & Koptelefoons',
             'Drones & Accessories': 'Drones & Accessoires',
             'Portable Projectors': 'Draagbare Projectoren',
             'Gaming & VR': 'Gaming & VR',
             
             // Product category descriptions
+            'Intelligent devices that learn and adapt to your lifestyle': 'Intelligente apparaten die leren en aanpassen aan jouw levensstijl',
+            'Smart devices that go wherever you do': 'Slimme apparaten die overal met je meegaan',
+            'Premium sound quality without the wires': 'Premium geluidskwaliteit zonder kabels',
+            'Capture the world from new perspectives': 'Leg de wereld vast vanuit nieuwe perspectieven',
+            'Big screen entertainment anywhere you go': 'Groot scherm entertainment waar je ook gaat',
             'Transform your home with intelligent automation': 'Transformeer je huis met intelligente automatisering',
             'Advanced fitness tracking and health monitoring': 'Geavanceerde fitness tracking en gezondheidsmonitoring',
             'Premium audio experience with noise cancellation': 'Premium audio-ervaring met ruisonderdrukking',
@@ -49,16 +56,19 @@ window.LanguageSystem = {
             'Continue Shopping': 'Verder Winkelen',
             'Proceed to Checkout': 'Ga naar Afrekenen',
             'View Cart': 'Bekijk Winkelwagen',
+            'New': 'Nieuw',
+            'Hot': 'Populair',
+            'View Products': 'Bekijk Producten',
             
             // Account pages
             'Dashboard': 'Dashboard',
             'Profile': 'Profiel',
-            'Orders': 'Bestellingen',
+            'Orders': 'Bestellingen', 
             'Addresses': 'Adressen',
             'Settings': 'Instellingen',
             'Order History': 'Bestelgeschiedenis',
-            'Profile Information': 'Profielinformatie',
-            'Account Settings': 'Accountinstellingen',
+            'Profile Information': 'Profiel Informatie',
+            'Account Settings': 'Account Instellingen',
             'Shipping Addresses': 'Verzendadressen',
             'First Name': 'Voornaam',
             'Last Name': 'Achternaam',
@@ -66,10 +76,10 @@ window.LanguageSystem = {
             'Phone': 'Telefoon',
             'Save Changes': 'Wijzigingen Opslaan',
             'Change Password': 'Wachtwoord Wijzigen',
-            'Notification Settings': 'Meldingsinstellingen',
-            'Email Notifications': 'E-mail Meldingen',
+            'Notification Settings': 'Notificatie Instellingen',
+            'Email Notifications': 'E-mail Notificaties',
             'Currency': 'Valuta',
-            'Shop More Products': 'Meer Producten Winkelen',
+            'Shop More Products': 'Shop Meer Producten',
             'Checkout': 'Afrekenen',
             'Add New Address': 'Nieuw Adres Toevoegen',
             'Save Preferences': 'Voorkeuren Opslaan',
@@ -77,60 +87,71 @@ window.LanguageSystem = {
             // Cart & Checkout
             'Shopping Cart': 'Winkelwagen',
             'Your cart is empty': 'Je winkelwagen is leeg',
-            'Subtotal': 'Subtotaal',
-            'Shipping': 'Verzendkosten',
-            'Tax': 'BTW',
-            'Total': 'Totaal',
-            'Remove': 'Verwijderen',
-            'Update': 'Bijwerken',
-            'Quantity': 'Aantal',
-            
-            // Checkout page
-            'Contact Information': 'Contactgegevens',
-            'Shipping Address': 'Verzendadres',
-            'Payment Method': 'Betaalmethode',
-            'Street Address': 'Straat en Huisnummer',
-            'City': 'Stad',
-            'Postal Code': 'Postcode',
-            'Country': 'Land',
-            'Place Order': 'Bestelling Plaatsen',
-            'Order Summary': 'Bestellingsoverzicht',
-            
-            // Messages and notifications
             'No orders yet': 'Nog geen bestellingen',
+            'You haven\'t placed any orders yet. Start shopping to see your order history here.': 'Je hebt nog geen bestellingen geplaatst. Begin met winkelen om je bestelgeschiedenis hier te zien.',
             'No addresses saved': 'Geen adressen opgeslagen',
-            'Loading...': 'Laden...',
-            'Error loading data': 'Fout bij laden van gegevens',
-            'Success!': 'Gelukt!',
-            'Error': 'Fout',
+            'Add your first shipping address to make checkout faster.': 'Voeg je eerste verzendadres toe om het afrekenen sneller te maken.',
+            
+            // About page
+            'About Tech2Wear': 'Over Tech2Wear',
+            'Your Premium Electronics Destination': 'Jouw Premium Elektronica Bestemming',
+            'Since 2020, Tech2Wear has been at the forefront of bringing cutting-edge technology to consumers worldwide.': 'Sinds 2020 staat Tech2Wear voorop in het brengen van geavanceerde technologie naar consumenten wereldwijd.',
+            'Our Mission': 'Onze Missie',
+            'To democratize access to premium technology': 'Premium technologie toegankelijk maken voor iedereen',
+            'Why Choose Tech2Wear?': 'Waarom Tech2Wear?',
+            
+            // Contact page  
+            'Get in Touch': 'Neem Contact Op',
+            'Have questions? We\'re here to help!': 'Heb je vragen? Wij helpen je graag!',
+            'Send us a Message': 'Stuur ons een Bericht',
+            'Name': 'Naam',
+            'Message': 'Bericht',
+            'Send Message': 'Verstuur Bericht',
             
             // Footer
-            'Support': 'Ondersteuning',
-            'Company': 'Bedrijf',
+            'Newsletter': 'Nieuwsbrief',
+            'Subscribe to our newsletter for the latest updates': 'Abonneer je op onze nieuwsbrief voor de laatste updates',
+            'Enter your email': 'Voer je e-mail in',
+            'Subscribe': 'Abonneren',
+            'Quick Links': 'Snelle Links',
+            'Customer Service': 'Klantenservice',
             'Privacy Policy': 'Privacybeleid',
-            'Terms of Service': 'Algemene Voorwaarden',
-            'FAQ': 'Veelgestelde Vragen',
+            'Terms of Service': 'Servicevoorwaarden',
             'Warranty': 'Garantie',
+            'Returns': 'Retouren',
+            'FAQ': 'Veelgestelde Vragen',
+            'Help Center': 'Helpcentrum',
+            'Follow Us': 'Volg Ons',
             
-            // Other common terms
-            'Price': 'Prijs',
-            'Description': 'Beschrijving',
-            'Features': 'Functies',
-            'Specifications': 'Specificaties',
-            'Reviews': 'Reviews',
+            // Product details
+            'Features': 'Kenmerken',
+            'Specifications': 'Specificaties', 
+            'Reviews': 'Beoordelingen',
             'Rating': 'Beoordeling',
             'In Stock': 'Op Voorraad',
-            'Out of Stock': 'Niet op Voorraad',
+            'Out of Stock': 'Niet Op Voorraad',
             'Free Shipping': 'Gratis Verzending',
             'Fast Delivery': 'Snelle Levering',
             '30-day return policy': '30 dagen retourbeleid',
-            'Secure SSL Encryption': 'Veilige SSL Versleuteling',
-            'Free shipping over €50': 'Gratis verzending vanaf €50'
+            'Secure SSL Encryption': 'Veilige SSL Encryptie',
+            'Free shipping over €50': 'Gratis verzending vanaf €50',
+            
+            // Error messages and notifications
+            'Login successful': 'Succesvol ingelogd',
+            'Please fill in all fields': 'Vul alle velden in',
+            'Invalid email or password': 'Ongeldig e-mail of wachtwoord',
+            'Registration successful': 'Registratie succesvol',
+            'Profile updated successfully': 'Profiel succesvol bijgewerkt',
+            'Address saved successfully': 'Adres succesvol opgeslagen',
+            'Order placed successfully': 'Bestelling succesvol geplaatst',
+            'Product added to cart': 'Product toegevoegd aan winkelwagen',
+            'Language changed to Dutch': 'Taal gewijzigd naar Nederlands'
         },
+        
         'en': {
-            // Navigation & Header
+            // Navigation & Header - English (keep original)
             'Home': 'Home',
-            'Shop': 'Shop',
+            'Shop': 'Shop', 
             'Deals': 'Deals',
             'About Us': 'About Us',
             'Contact': 'Contact',
@@ -141,21 +162,28 @@ window.LanguageSystem = {
             
             // Homepage sections
             'Future Tech Today': 'Future Tech Today',
-            'Discover Tomorrow\'s Technology': 'Discover Tomorrow\'s Technology',
-            'From AI-powered smart homes to cutting-edge wearables': 'From AI-powered smart homes to cutting-edge wearables',
-            'we bring you the latest innovations': 'we bring you the latest innovations',
+            'Discover Tomorrow\'s Technology Today': 'Discover Tomorrow\'s Technology Today',
+            'From AI-powered smart homes to cutting-edge wearables, we bring you the latest innovations that transform how we live, work, and play.': 'From AI-powered smart homes to cutting-edge wearables, we bring you the latest innovations that transform how we live, work, and play.',
             'Shop Now': 'Shop Now',
             'Explore Products': 'Explore Products',
+            'Explore Our Categories': 'Explore Our Categories',
+            'Discover cutting-edge technology across all categories': 'Discover cutting-edge technology across all categories',
             
             // Product categories
             'AI-Powered Smart Home': 'AI-Powered Smart Home',
             'Wearable Tech & Fitness': 'Wearable Tech & Fitness',
+            'Wireless Audio': 'Wireless Audio',
             'Wireless Earbuds & Headphones': 'Wireless Earbuds & Headphones',
             'Drones & Accessories': 'Drones & Accessories',
             'Portable Projectors': 'Portable Projectors',
             'Gaming & VR': 'Gaming & VR',
             
             // Product category descriptions
+            'Intelligent devices that learn and adapt to your lifestyle': 'Intelligent devices that learn and adapt to your lifestyle',
+            'Smart devices that go wherever you do': 'Smart devices that go wherever you do',
+            'Premium sound quality without the wires': 'Premium sound quality without the wires',
+            'Capture the world from new perspectives': 'Capture the world from new perspectives',
+            'Big screen entertainment anywhere you go': 'Big screen entertainment anywhere you go',
             'Transform your home with intelligent automation': 'Transform your home with intelligent automation',
             'Advanced fitness tracking and health monitoring': 'Advanced fitness tracking and health monitoring',
             'Premium audio experience with noise cancellation': 'Premium audio experience with noise cancellation',
@@ -171,6 +199,9 @@ window.LanguageSystem = {
             'Continue Shopping': 'Continue Shopping',
             'Proceed to Checkout': 'Proceed to Checkout',
             'View Cart': 'View Cart',
+            'New': 'New',
+            'Hot': 'Hot',
+            'View Products': 'View Products',
             
             // Account pages
             'Dashboard': 'Dashboard',
@@ -199,44 +230,43 @@ window.LanguageSystem = {
             // Cart & Checkout
             'Shopping Cart': 'Shopping Cart',
             'Your cart is empty': 'Your cart is empty',
-            'Subtotal': 'Subtotal',
-            'Shipping': 'Shipping',
-            'Tax': 'Tax',
-            'Total': 'Total',
-            'Remove': 'Remove',
-            'Update': 'Update',
-            'Quantity': 'Quantity',
-            
-            // Checkout page
-            'Contact Information': 'Contact Information',
-            'Shipping Address': 'Shipping Address',
-            'Payment Method': 'Payment Method',
-            'Street Address': 'Street Address',
-            'City': 'City',
-            'Postal Code': 'Postal Code',
-            'Country': 'Country',
-            'Place Order': 'Place Order',
-            'Order Summary': 'Order Summary',
-            
-            // Messages and notifications
             'No orders yet': 'No orders yet',
+            'You haven\'t placed any orders yet. Start shopping to see your order history here.': 'You haven\'t placed any orders yet. Start shopping to see your order history here.',
             'No addresses saved': 'No addresses saved',
-            'Loading...': 'Loading...',
-            'Error loading data': 'Error loading data',
-            'Success!': 'Success!',
-            'Error': 'Error',
+            'Add your first shipping address to make checkout faster.': 'Add your first shipping address to make checkout faster.',
+            
+            // About page
+            'About Tech2Wear': 'About Tech2Wear',
+            'Your Premium Electronics Destination': 'Your Premium Electronics Destination',
+            'Since 2020, Tech2Wear has been at the forefront of bringing cutting-edge technology to consumers worldwide.': 'Since 2020, Tech2Wear has been at the forefront of bringing cutting-edge technology to consumers worldwide.',
+            'Our Mission': 'Our Mission',
+            'To democratize access to premium technology': 'To democratize access to premium technology',
+            'Why Choose Tech2Wear?': 'Why Choose Tech2Wear?',
+            
+            // Contact page
+            'Get in Touch': 'Get in Touch',
+            'Have questions? We\'re here to help!': 'Have questions? We\'re here to help!',
+            'Send us a Message': 'Send us a Message',
+            'Name': 'Name',
+            'Message': 'Message',
+            'Send Message': 'Send Message',
             
             // Footer
-            'Support': 'Support',
-            'Company': 'Company',
+            'Newsletter': 'Newsletter',
+            'Subscribe to our newsletter for the latest updates': 'Subscribe to our newsletter for the latest updates',
+            'Enter your email': 'Enter your email',
+            'Subscribe': 'Subscribe',
+            'Quick Links': 'Quick Links',
+            'Customer Service': 'Customer Service',
             'Privacy Policy': 'Privacy Policy',
             'Terms of Service': 'Terms of Service',
-            'FAQ': 'FAQ',
             'Warranty': 'Warranty',
+            'Returns': 'Returns',
+            'FAQ': 'FAQ',
+            'Help Center': 'Help Center',
+            'Follow Us': 'Follow Us',
             
-            // Other common terms
-            'Price': 'Price',
-            'Description': 'Description',
+            // Product details
             'Features': 'Features',
             'Specifications': 'Specifications',
             'Reviews': 'Reviews',
@@ -247,7 +277,18 @@ window.LanguageSystem = {
             'Fast Delivery': 'Fast Delivery',
             '30-day return policy': '30-day return policy',
             'Secure SSL Encryption': 'Secure SSL Encryption',
-            'Free shipping over €50': 'Free shipping over €50'
+            'Free shipping over €50': 'Free shipping over €50',
+            
+            // Error messages and notifications
+            'Login successful': 'Login successful',
+            'Please fill in all fields': 'Please fill in all fields',
+            'Invalid email or password': 'Invalid email or password',
+            'Registration successful': 'Registration successful',
+            'Profile updated successfully': 'Profile updated successfully',
+            'Address saved successfully': 'Address saved successfully',
+            'Order placed successfully': 'Order placed successfully',
+            'Product added to cart': 'Product added to cart',
+            'Language changed to English': 'Language changed to English'
         }
     },
 
@@ -269,52 +310,62 @@ window.LanguageSystem = {
         // Find header actions or create one
         let headerActions = document.querySelector('.header-actions');
         if (!headerActions) {
-            // If no header actions, try to find header and add it
-            const header = document.querySelector('.site-header .container .header-wrapper, .header-wrapper, header .container');
+            // Try different header selectors
+            const headerSelectors = [
+                '.site-header .container .header-wrapper',
+                '.site-header .container',
+                '.header-wrapper', 
+                'header .container',
+                '.site-header',
+                'header'
+            ];
+            
+            let header = null;
+            for (const selector of headerSelectors) {
+                header = document.querySelector(selector);
+                if (header) break;
+            }
+            
             if (header) {
                 headerActions = document.createElement('div');
                 headerActions.className = 'header-actions';
-                headerActions.style.cssText = 'display: flex; align-items: center; gap: 1rem;';
+                headerActions.style.cssText = 'display: flex; align-items: center; gap: 1rem; margin-left: auto;';
                 header.appendChild(headerActions);
             } else {
                 // Fallback: add to body
                 headerActions = document.createElement('div');
                 headerActions.className = 'header-actions';
-                headerActions.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 9999; display: flex; align-items: center; gap: 1rem;';
+                headerActions.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 9999; display: flex; align-items: center; gap: 1rem; background: rgba(0,0,0,0.8); padding: 0.5rem; border-radius: 8px;';
                 document.body.appendChild(headerActions);
             }
         }
 
         // Create language toggle HTML
         const languageToggleHTML = `
-            <div class="language-toggle" style="display: flex; align-items: center; gap: 0.5rem; margin-right: 1rem;">
-                <button class="lang-btn" data-lang="nl" style="padding: 0.5rem; border: 1px solid var(--color-border, #333); background: var(--color-accent-blue, #00ffff); color: var(--color-primary-dark, #0a0a0a); border-radius: 4px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">NL</button>
-                <button class="lang-btn" data-lang="en" style="padding: 0.5rem; border: 1px solid var(--color-border, #333); background: transparent; color: var(--color-text-light, #fff); border-radius: 4px; cursor: pointer; font-size: 0.8rem; font-weight: 600;">EN</button>
+            <div class="language-toggle" style="display: flex; align-items: center; gap: 0.5rem;">
+                <button class="lang-btn" data-lang="nl" style="padding: 0.25rem 0.5rem; border: 1px solid var(--color-border, #333); background: transparent; color: var(--color-text-light, #fff); border-radius: 4px; cursor: pointer; font-size: 0.8rem; transition: all 0.3s ease;">
+                    NL
+                </button>
+                <button class="lang-btn" data-lang="en" style="padding: 0.25rem 0.5rem; border: 1px solid var(--color-border, #333); background: transparent; color: var(--color-text-light, #fff); border-radius: 4px; cursor: pointer; font-size: 0.8rem; transition: all 0.3s ease;">
+                    EN
+                </button>
             </div>
         `;
 
-        // Add to the beginning of header actions
-        headerActions.insertAdjacentHTML('afterbegin', languageToggleHTML);
+        headerActions.insertAdjacentHTML('beforeend', languageToggleHTML);
 
-        // Add event listeners
-        this.addLanguageEventListeners();
-    },
-
-    // Add event listeners to language buttons
-    addLanguageEventListeners: function() {
-        const langButtons = document.querySelectorAll('.lang-btn');
-        langButtons.forEach(btn => {
+        // Add click event listeners
+        headerActions.querySelectorAll('.lang-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const selectedLang = btn.dataset.lang;
-                this.switchLanguage(selectedLang);
+                const lang = e.target.dataset.lang;
+                this.switchLanguage(lang);
             });
         });
     },
 
-    // Switch language
+    // Switch language function
     switchLanguage: function(lang) {
-        // Store preference
+        // Save to localStorage
         localStorage.setItem('selectedLanguage', lang);
         
         // Apply language
@@ -338,10 +389,12 @@ window.LanguageSystem = {
                 btn.classList.add('active');
                 btn.style.background = 'var(--color-accent-blue, #00ffff)';
                 btn.style.color = 'var(--color-primary-dark, #0a0a0a)';
+                btn.style.borderColor = 'var(--color-accent-blue, #00ffff)';
             } else {
                 btn.classList.remove('active');
                 btn.style.background = 'transparent';
                 btn.style.color = 'var(--color-text-light, #fff)';
+                btn.style.borderColor = 'var(--color-border, #333)';
             }
         });
     },
@@ -353,10 +406,14 @@ window.LanguageSystem = {
 
         // Update page title
         const pageTitleMap = {
+            'Tech2wear - Discover Tomorrow\'s Technology Today': lang === 'nl' ? 'Tech2wear - Ontdek De Technologie Van Morgen Vandaag' : 'Tech2wear - Discover Tomorrow\'s Technology Today',
             'My Account': currentTranslations['My Account'],
             'Shopping Cart': currentTranslations['Shopping Cart'],
             'Checkout': currentTranslations['Checkout'],
-            'Shop': currentTranslations['Shop']
+            'Shop': currentTranslations['Shop'],
+            'About Us': currentTranslations['About Us'],
+            'Contact': currentTranslations['Contact'],
+            'Deals': currentTranslations['Deals']
         };
         
         Object.keys(pageTitleMap).forEach(key => {
@@ -365,103 +422,124 @@ window.LanguageSystem = {
             }
         });
 
-        // Translate all text nodes
-        this.translateTextNodes(document.body, currentTranslations);
-
-        // Special handling for specific elements
-        this.translateSpecialElements(currentTranslations);
+        // Comprehensive text translation
+        this.translatePage(currentTranslations);
     },
 
-    // Translate text nodes recursively
-    translateTextNodes: function(element, translations) {
-        // Skip script and style tags
-        if (element.tagName === 'SCRIPT' || element.tagName === 'STYLE') return;
+    // More comprehensive page translation
+    translatePage: function(translations) {
+        // Handle all text elements with specific selectors
+        const textSelectors = [
+            'h1, h2, h3, h4, h5, h6',
+            'p',
+            'span',
+            'a',
+            'button',
+            'label',
+            '.category-title',
+            '.category-description',
+            '.section-title',
+            '.section-subtitle',
+            '.page-title',
+            '.page-subtitle',
+            '.nav-link',
+            '.btn',
+            '.form-label',
+            '.footer-title',
+            '.badge'
+        ];
 
-        // Handle text nodes
-        for (let i = 0; i < element.childNodes.length; i++) {
-            const node = element.childNodes[i];
-            
-            if (node.nodeType === Node.TEXT_NODE) {
-                let text = node.textContent.trim();
-                if (text && translations[text]) {
-                    node.textContent = node.textContent.replace(text, translations[text]);
-                }
-            } else if (node.nodeType === Node.ELEMENT_NODE) {
-                // Recursively translate child elements
-                this.translateTextNodes(node, translations);
+        textSelectors.forEach(selector => {
+            document.querySelectorAll(selector).forEach(element => {
+                this.translateElement(element, translations);
+            });
+        });
+
+        // Special handling for placeholders
+        document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(element => {
+            const placeholder = element.getAttribute('placeholder');
+            if (translations[placeholder]) {
+                element.setAttribute('placeholder', translations[placeholder]);
             }
+        });
+
+        // Special handling for alt text
+        document.querySelectorAll('img[alt]').forEach(element => {
+            const alt = element.getAttribute('alt');
+            if (translations[alt]) {
+                element.setAttribute('alt', translations[alt]);
+            }
+        });
+    },
+
+    // Translate individual element
+    translateElement: function(element, translations) {
+        // Skip if element contains only child elements (no direct text)
+        if (element.children.length > 0 && !element.childNodes.length) return;
+        
+        // Get the text content, handling elements with icons
+        let textContent = '';
+        let hasIcon = false;
+        
+        // Check if element has icon
+        const icon = element.querySelector('i.fas, i.far, i.fab');
+        if (icon) {
+            hasIcon = true;
+            // Get text without icon
+            const clonedElement = element.cloneNode(true);
+            const clonedIcon = clonedElement.querySelector('i.fas, i.far, i.fab');
+            if (clonedIcon) clonedIcon.remove();
+            textContent = clonedElement.textContent.trim();
+        } else {
+            textContent = element.textContent.trim();
+        }
+
+        // Check for exact matches first
+        if (translations[textContent]) {
+            if (hasIcon && icon) {
+                element.innerHTML = icon.outerHTML + ' ' + translations[textContent];
+            } else {
+                element.textContent = translations[textContent];
+            }
+        } else {
+            // Check for partial matches
+            Object.keys(translations).forEach(key => {
+                if (textContent.includes(key) && key.length > 3) { // Avoid matching short words
+                    const newText = textContent.replace(key, translations[key]);
+                    if (hasIcon && icon) {
+                        element.innerHTML = icon.outerHTML + ' ' + newText;
+                    } else {
+                        element.textContent = newText;
+                    }
+                }
+            });
         }
     },
 
-    // Handle special elements that need specific translation logic
-    translateSpecialElements: function(translations) {
-        // Translate buttons with icons
-        document.querySelectorAll('button, .btn, a').forEach(element => {
-            const textContent = element.textContent.trim();
-            Object.keys(translations).forEach(key => {
-                if (textContent.includes(key)) {
-                    const icon = element.querySelector('i');
-                    if (icon) {
-                        element.innerHTML = `${icon.outerHTML} ${translations[key]}`;
-                    } else if (textContent === key) {
-                        element.textContent = translations[key];
-                    }
-                }
-            });
-        });
-
-        // Translate labels
-        document.querySelectorAll('label, .form-label').forEach(label => {
-            Object.keys(translations).forEach(key => {
-                if (label.textContent.includes(key)) {
-                    label.textContent = label.textContent.replace(key, translations[key]);
-                }
-            });
-        });
-
-        // Translate placeholders
-        document.querySelectorAll('input[placeholder], textarea[placeholder]').forEach(input => {
-            Object.keys(translations).forEach(key => {
-                if (input.placeholder.includes(key)) {
-                    input.placeholder = input.placeholder.replace(key, translations[key]);
-                }
-            });
-        });
-
-        // Translate navigation links with icons
-        document.querySelectorAll('.nav-link, .account-nav-link').forEach(link => {
-            const text = link.textContent.trim();
-            Object.keys(translations).forEach(key => {
-                if (text.includes(key)) {
-                    const icon = link.querySelector('i');
-                    if (icon) {
-                        link.innerHTML = `${icon.outerHTML} ${translations[key]}`;
-                    }
-                }
-            });
-        });
-    },
-
-    // Get current language
-    getCurrentLanguage: function() {
-        return localStorage.getItem('selectedLanguage') || 'nl';
-    },
-
-    // Translate a specific text
-    translate: function(key, lang = null) {
-        const targetLang = lang || this.getCurrentLanguage();
-        return this.translations[targetLang] && this.translations[targetLang][key] 
-               ? this.translations[targetLang][key] 
-               : key;
+    // Translate function for other scripts to use
+    translate: function(text) {
+        const currentLang = localStorage.getItem('selectedLanguage') || 'nl';
+        const translations = this.translations[currentLang];
+        return translations && translations[text] ? translations[text] : text;
     }
 };
 
-// Initialize when DOM is loaded
+// Auto-initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
-    LanguageSystem.init();
+    if (window.LanguageSystem) {
+        LanguageSystem.init();
+    }
 });
 
-// Re-initialize on navigation (for SPAs)
-window.addEventListener('popstate', function() {
-    setTimeout(() => LanguageSystem.init(), 100);
-});
+// Also initialize immediately if DOM is already loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.LanguageSystem) {
+            LanguageSystem.init();
+        }
+    });
+} else {
+    if (window.LanguageSystem) {
+        LanguageSystem.init();
+    }
+}
